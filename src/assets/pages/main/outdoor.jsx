@@ -121,7 +121,7 @@ function Outdoor() {
             <div className="stylish-item">
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 4/vecteezy_beautiful-woman-photographer-standing-hand-holding-retro-camera_3146611.jpg"
+                  src="assets/images/outdoors/folder 4/beautiful-woman.jpg"
                   alt="item 1"
                   className="other-img"
                   loading="lazy"
@@ -139,7 +139,7 @@ function Outdoor() {
               </button>
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 4/young-beautiful-woman-tropical-vacation-asia-summer-style-white-boho-dress-sneakers-digital-photo-camera-traveler-straw-hat-relaxed.jpg"
+                  src="assets/images/outdoors/folder 4/young-woman.jpg"
                   alt="item 3"
                   className="other-img"
                   loading="lazy"
