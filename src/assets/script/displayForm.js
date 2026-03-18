@@ -1,9 +1,11 @@
-
+import {closeMobileNews} from "./mobileNav"
 //Displaying login/create Form
-function loginCreateForm(){
+export function displayLoginForm(){
     const signInBtn = document.getElementById("sign-in");
     const formWrap = document.querySelector(".mobile-form");
-    signInBtn.addEventListener("click", ()=>{
+    if(!formWrap) return;
+    if(signInBtn){
+       // signInBtn.addEventListener("click", ()=>{
         const guest = document.getElementById("user-to-log");
         if(guest.textContent !== "Guest"){
             alert("Already logged in"); 
@@ -20,12 +22,14 @@ function loginCreateForm(){
             const overlay = document.getElementById("overlay");
             overlay.classList.toggle("cover");
         }
-    });
-
-    const registerBtn = document.getElementById("register");
+   // });
+    }
+}
+export function displayCreateForm(){
     const registerForm = document.querySelector(".create-accnt-page");
     const toCreateForm = document.getElementById("redirect-to-create-form");
-    toCreateForm.addEventListener("click", ()=>{
+    if(toCreateForm){
+        //toCreateForm.addEventListener("click", ()=>{
         closeAll();
         const isOpen = registerForm.classList.contains("showCreateAccForm");
         if(!isOpen){
@@ -35,9 +39,17 @@ function loginCreateForm(){
             overlay.classList.toggle("cover");
         }
         
-    });
+   // });
+    }
+}
+export function loginCreateForm(){
 
-    registerBtn.addEventListener("click", ()=>{
+    const registerForm = document.querySelector(".create-accnt-page");
+
+    const registerBtn = document.getElementById("register");
+    
+    if(registerBtn){
+         registerBtn.addEventListener("click", ()=>{
         const isOpen = registerForm.classList.contains("showCreateAccForm");
         closeAll();
         if(!isOpen){
@@ -47,10 +59,12 @@ function loginCreateForm(){
             overlay.classList.toggle("cover");
         }
     });
+    }
+   
     closeForm();
 }
 
-function closeForm(){
+export function closeForm(){
     const closeFormBtn = document.querySelectorAll(".close-form-button");
     closeFormBtn.forEach(btn =>{
         btn.addEventListener("click", ()=>{
@@ -60,7 +74,7 @@ function closeForm(){
     });
     toggleEye();
 }
-function mobileUserIndicator(){
+export function mobileUserIndicator(){
     const mobileLoginBtn = document.getElementById("mobile-login-button");
     const savedUser = JSON.parse(localStorage.getItem("loggedUser"));
     if(savedUser){
@@ -69,7 +83,7 @@ function mobileUserIndicator(){
         mobileLoginBtn.src = "./images/logo/profile-user-svgrepo-com-gray.svg";
     }
 }
-function toggleEye(){
+export function toggleEye(){
   document.addEventListener("click", (e) => {
     const eye = e.target.closest(".toggle-password"); //Shared className of the eye
     if(!eye) return;
@@ -83,7 +97,7 @@ function toggleEye(){
 }
 
 //At mobile viewport
-function userDisplay(){
+export function userDisplay(){
     const mobileLoginBtn = document.getElementById("mobile-login-button");
     const formWrap = document.querySelector(".mobile-form");
     const userInfo = document.querySelector(".logged-in-user-info-panel");
@@ -106,7 +120,7 @@ function userDisplay(){
     });  
 }
 //Close form when other button is clicked mobile viewport
-function closeAll(){
+export function closeAll(){
     const formWrap = document.querySelector(".mobile-form");
     const overlay = document.getElementById("overlay");
     const registerForm = document.querySelector(".create-accnt-page");
@@ -114,6 +128,7 @@ function closeAll(){
     const displayNews = document.getElementById("toggle-mobile-news");
     const burgerOpenBtn = document.getElementById("burger-open-button");
     const userInfo = document.querySelector(".logged-in-user-info-panel");
+    if(!userInfo) return;
     if(formWrap){
         formWrap.classList.remove("showLoginDesk");
         formWrap.classList.remove("showLogin");

@@ -1,7 +1,11 @@
+import {hashPassword} from "./passwordHash"
+import {closeAll} from "./displayForm"
+import {mergeCartOnLogin, updateCartCounter} from "./product"
+import {fetchCartContent} from "./cartContent"
 //Loggin account function
-function loginAccount(){
-    const loginForm = document.getElementById("mobile-form-submit");
-    loginForm.addEventListener("submit", async (e) => {
+export async function LoginAccount(e){
+   // const loginForm = document.getElementById("mobile-form-submit");
+  //  loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         const inputUser = document.getElementById("input-user-name");
         const inputPass = document.getElementById("input-user-pass");
@@ -37,16 +41,16 @@ function loginAccount(){
         mergeCartOnLogin(); //add item to the cart of user if there is temporary item cart
         updateCartCounter(); //update counter
         fetchCartContent(); //update cart display 
-    });
+   // });
     //Cancel button of the form
-    const cancelInput = document.getElementById("mobile-cancel-input");
+  /*  const cancelInput = document.getElementById("mobile-cancel-input");
     cancelInput.addEventListener("click", () => {
         document.getElementById("mobile-form-submit").reset();
-    });
+    });*/
 }
 
 //Use to restore the logged in user on reload
-function restoreLoggedUser() {
+export function restoreLoggedUser() {
     const savedUser = JSON.parse(localStorage.getItem("loggedUser"));
     if (savedUser){
         const displayUser = document.getElementById("user-to-log");
@@ -82,7 +86,7 @@ function restoreLoggedUser() {
 }
 
 //For long user name at hover tooltip display
-function hoverLongNameUsers(){
+ export function hoverLongNameUsers(){
     const userNameHover = document.querySelector('.user-name-logged');
     userNameHover.addEventListener('mouseenter', () => {
         if(userNameHover.scrollWidth > userNameHover.clientWidth){ //if the logged user name is longer than the displayed
@@ -95,7 +99,7 @@ function hoverLongNameUsers(){
 
 
 //Forgot password
-function forgotPassword(){
+export function forgotPassword(){
     const forgotPassBtn = document.getElementById("forgot-password");
     forgotPassBtn.addEventListener("click", ()=>{
         alert("Link to forgot password form");

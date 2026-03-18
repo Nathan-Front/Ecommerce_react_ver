@@ -40,7 +40,7 @@ export default function Shoes() {
               </p>
             </div>
             <div className="item-size shoe-size-container">
-              <label for="shoe-size-1" className="shoe-label">
+              <label htmlFor="shoe-size-1" className="shoe-label">
                 Select Size (US / CM):
               </label>
               <select id="shoe-size-1" className="shoe-size-dropdown">
@@ -133,7 +133,7 @@ export default function Shoes() {
               </p>
             </div>
             <div className="item-size shoe-size-container">
-              <label for="shoe-size-2" className="shoe-label">
+              <label htmlFor="shoe-size-2" className="shoe-label">
                 Select Size (US / CM):
               </label>
               <select id="shoe-size-2" className="shoe-size-dropdown">
@@ -226,7 +226,7 @@ export default function Shoes() {
               </p>
             </div>
             <div className="item-size shoe-size-container">
-              <label for="shoe-size-3" className="shoe-label">
+              <label htmlFor="shoe-size-3" className="shoe-label">
                 Select Size (US / CM):
               </label>
               <select id="shoe-size-3" className="shoe-size-dropdown">
@@ -319,7 +319,7 @@ export default function Shoes() {
               </p>
             </div>
             <div className="item-size shoe-size-container">
-              <label for="shoe-size-4" className="shoe-label">
+              <label htmlFor="shoe-size-4" className="shoe-label">
                 Select Size (US / CM):
               </label>
               <select id="shoe-size-4" className="shoe-size-dropdown">
@@ -412,7 +412,7 @@ export default function Shoes() {
               </p>
             </div>
             <div className="item-size shoe-size-container">
-              <label for="shoe-size-5" className="shoe-label">
+              <label htmlFor="shoe-size-5" className="shoe-label">
                 Select Size (US / CM):
               </label>
               <select id="shoe-size-5" className="shoe-size-dropdown">
@@ -505,7 +505,7 @@ export default function Shoes() {
               </p>
             </div>
             <div className="item-size shoe-size-container">
-              <label for="shoe-size-6" className="shoe-label">
+              <label htmlFor="shoe-size-6" className="shoe-label">
                 Select Size (US / CM):
               </label>
               <select id="shoe-size-6" className="shoe-size-dropdown">
@@ -598,7 +598,7 @@ export default function Shoes() {
               </p>
             </div>
             <div className="item-size shoe-size-container">
-              <label for="shoe-size-7" className="shoe-label">
+              <label htmlFor="shoe-size-7" className="shoe-label">
                 Select Size (US / CM):
               </label>
               <select id="shoe-size-7" className="shoe-size-dropdown">
@@ -691,7 +691,7 @@ export default function Shoes() {
               </p>
             </div>
             <div className="item-size shoe-size-container">
-              <label for="shoe-size-8" className="shoe-label">
+              <label htmlFor="shoe-size-8" className="shoe-label">
                 Select Size (US / CM):
               </label>
               <select id="shoe-size-8" className="shoe-size-dropdown">
@@ -784,7 +784,7 @@ export default function Shoes() {
               </p>
             </div>
             <div className="item-size shoe-size-container">
-              <label for="shoe-size-9" className="shoe-label">
+              <label htmlFor="shoe-size-9" className="shoe-label">
                 Select Size (US / CM):
               </label>
               <select id="shoe-size-9" className="shoe-size-dropdown">
@@ -877,7 +877,7 @@ export default function Shoes() {
               </p>
             </div>
             <div className="item-size shoe-size-container">
-              <label for="shoe-size-10" className="shoe-label">
+              <label htmlFor="shoe-size-10" className="shoe-label">
                 Select Size (US / CM):
               </label>
               <select id="shoe-size-10" className="shoe-size-dropdown">

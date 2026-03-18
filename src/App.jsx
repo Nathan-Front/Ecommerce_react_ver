@@ -8,6 +8,8 @@ import BestOffer from "./assets/pages/main/bestOffer";
 import Outdoor from "./assets/pages/main/outdoor";
 import Footer from "./assets/pages/footer/footer";
 import MobileFooter from "./assets/pages/footer/MobileFooter";
+import LoginAccount from "./assets/pages/forms/loginForm";
+import CreateForm from "./assets/pages/forms/createForm";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <Outdoor />
       <Footer />
       <MobileFooter />
+      <LoginAccount />
+      <CreateForm />
     </>
   );
 }

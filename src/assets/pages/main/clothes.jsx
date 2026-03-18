@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useState } from "react";
 function Clothes() {
+  const [checked, setChecked] = useState(false);
   return (
     <>
       <div className="clothe-panel owl-carousel-container">
@@ -40,20 +41,21 @@ function Clothes() {
             </div>
             <div className="item-size">
               <h2>Size:</h2>
-              <label for="size-ss">
+              <label htmlFor="size-ss">
                 <input
                   name="select-size-1"
                   value="SS"
                   id="size-ss"
                   type="radio"
                   className="radio-button"
-                  checked
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
                 />
-                <span className="select-size" for="size-ss">
+                <span className="select-size" htmlFor="size-ss">
                   SS
                 </span>
               </label>
-              <label for="size-s">
+              <label htmlFor="size-s">
                 <input
                   name="select-size-1"
                   value="S"
@@ -61,11 +63,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-s">
+                <span className="select-size" htmlFor="size-s">
                   S
                 </span>
               </label>
-              <label for="size-m">
+              <label htmlFor="size-m">
                 <input
                   name="select-size-1"
                   value="M"
@@ -73,11 +75,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-m">
+                <span className="select-size" htmlFor="size-m">
                   M
                 </span>
               </label>
-              <label for="size-l">
+              <label htmlFor="size-l">
                 <input
                   name="select-size-1"
                   value="L"
@@ -85,11 +87,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-l">
+                <span className="select-size" htmlFor="size-l">
                   L
                 </span>
               </label>
-              <label for="size-ll">
+              <label htmlFor="size-ll">
                 <input
                   name="select-size-1"
                   value="2L"
@@ -97,11 +99,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-ll">
+                <span className="select-size" htmlFor="size-ll">
                   2L
                 </span>
               </label>
-              <label for="size-lll">
+              <label htmlFor="size-lll">
                 <input
                   name="select-size-1"
                   value="3L"
@@ -109,7 +111,7 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-lll">
+                <span className="select-size" htmlFor="size-lll">
                   3L
                 </span>
               </label>
@@ -162,20 +164,21 @@ function Clothes() {
             </div>
             <div className="item-size">
               <h2>Size:</h2>
-              <label for="size-ss-2">
+              <label htmlFor="size-ss-2">
                 <input
                   name="select-size-2"
                   value="SS"
                   id="size-ss-2"
                   type="radio"
                   className="radio-button"
-                  checked
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
                 />
-                <span className="select-size" for="size-ss-2">
+                <span className="select-size" htmlFor="size-ss-2">
                   SS
                 </span>
               </label>
-              <label for="size-s-2">
+              <label htmlFor="size-s-2">
                 <input
                   name="select-size-2"
                   value="S"
@@ -183,11 +186,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-s-2">
+                <span className="select-size" htmlFor="size-s-2">
                   S
                 </span>
               </label>
-              <label for="size-m-2">
+              <label htmlFor="size-m-2">
                 <input
                   name="select-size-2"
                   value="M"
@@ -195,11 +198,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-m-2">
+                <span className="select-size" htmlFor="size-m-2">
                   M
                 </span>
               </label>
-              <label for="size-l-2">
+              <label htmlFor="size-l-2">
                 <input
                   name="select-size-2"
                   value="L"
@@ -207,11 +210,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-l-2">
+                <span className="select-size" htmlFor="size-l-2">
                   L
                 </span>
               </label>
-              <label for="size-ll-2">
+              <label htmlFor="size-ll-2">
                 <input
                   name="select-size-2"
                   value="2L"
@@ -219,11 +222,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-ll-2">
+                <span className="select-size" htmlFor="size-ll-2">
                   2L
                 </span>
               </label>
-              <label for="size-lll-2">
+              <label htmlFor="size-lll-2">
                 <input
                   name="select-size-2"
                   value="3L"
@@ -231,7 +234,7 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-lll-2">
+                <span className="select-size" htmlFor="size-lll-2">
                   3L
                 </span>
               </label>
@@ -284,20 +287,21 @@ function Clothes() {
             </div>
             <div className="item-size">
               <h2>Size:</h2>
-              <label for="size-ss-3">
+              <label htmlFor="size-ss-3">
                 <input
                   name="select-size-3"
                   value="SS"
                   id="size-ss-3"
                   type="radio"
                   className="radio-button"
-                  checked
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
                 />
-                <span className="select-size" for="size-ss-3">
+                <span className="select-size" htmlFor="size-ss-3">
                   SS
                 </span>
               </label>
-              <label for="size-s-3">
+              <label htmlFor="size-s-3">
                 <input
                   name="select-size-3"
                   value="S"
@@ -305,11 +309,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-s-3">
+                <span className="select-size" htmlFor="size-s-3">
                   S
                 </span>
               </label>
-              <label for="size-m-3">
+              <label htmlFor="size-m-3">
                 <input
                   name="select-size-3"
                   value="M"
@@ -317,11 +321,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-m-3">
+                <span className="select-size" htmlFor="size-m-3">
                   M
                 </span>
               </label>
-              <label for="size-l-3">
+              <label htmlFor="size-l-3">
                 <input
                   name="select-size-3"
                   value="L"
@@ -329,11 +333,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-l-3">
+                <span className="select-size" htmlFor="size-l-3">
                   L
                 </span>
               </label>
-              <label for="size-ll-3">
+              <label htmlFor="size-ll-3">
                 <input
                   name="select-size-3"
                   value="2L"
@@ -341,11 +345,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-ll-3">
+                <span className="select-size" htmlFor="size-ll-3">
                   2L
                 </span>
               </label>
-              <label for="size-lll-3">
+              <label htmlFor="size-lll-3">
                 <input
                   name="select-size-3"
                   value="3L"
@@ -353,7 +357,7 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-lll-3">
+                <span className="select-size" htmlFor="size-lll-3">
                   3L
                 </span>
               </label>
@@ -406,20 +410,21 @@ function Clothes() {
             </div>
             <div className="item-size">
               <h2>Size:</h2>
-              <label for="size-ss-4">
+              <label htmlFor="size-ss-4">
                 <input
                   name="select-size-4"
                   value="SS"
                   id="size-ss-4"
                   type="radio"
                   className="radio-button"
-                  checked
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
                 />
-                <span className="select-size" for="size-ss-4">
+                <span className="select-size" htmlFor="size-ss-4">
                   SS
                 </span>
               </label>
-              <label for="size-s-4">
+              <label htmlFor="size-s-4">
                 <input
                   name="select-size-4"
                   value="S"
@@ -427,11 +432,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-s-4">
+                <span className="select-size" htmlFor="size-s-4">
                   S
                 </span>
               </label>
-              <label for="size-m-4">
+              <label htmlFor="size-m-4">
                 <input
                   name="select-size-4"
                   value="M"
@@ -439,11 +444,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-m-4">
+                <span className="select-size" htmlFor="size-m-4">
                   M
                 </span>
               </label>
-              <label for="size-l-4">
+              <label htmlFor="size-l-4">
                 <input
                   name="select-size-4"
                   value="L"
@@ -451,11 +456,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-l-4">
+                <span className="select-size" htmlFor="size-l-4">
                   L
                 </span>
               </label>
-              <label for="size-ll-4">
+              <label htmlFor="size-ll-4">
                 <input
                   name="select-size-4"
                   value="2L"
@@ -463,11 +468,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-ll-4">
+                <span className="select-size" htmlFor="size-ll-4">
                   2L
                 </span>
               </label>
-              <label for="size-lll-4">
+              <label htmlFor="size-lll-4">
                 <input
                   name="select-size-4"
                   value="3L"
@@ -475,7 +480,7 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-lll-4">
+                <span className="select-size" htmlFor="size-lll-4">
                   3L
                 </span>
               </label>
@@ -528,20 +533,21 @@ function Clothes() {
             </div>
             <div className="item-size">
               <h2>Size:</h2>
-              <label for="size-ss-5">
+              <label htmlFor="size-ss-5">
                 <input
                   name="select-size-5"
                   value="SS"
                   id="size-ss-5"
                   type="radio"
                   className="radio-button"
-                  checked
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
                 />
-                <span className="select-size" for="size-ss-5">
+                <span className="select-size" htmlFor="size-ss-5">
                   SS
                 </span>
               </label>
-              <label for="size-s-5">
+              <label htmlFor="size-s-5">
                 <input
                   name="select-size-5"
                   value="S"
@@ -549,11 +555,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-s-5">
+                <span className="select-size" htmlFor="size-s-5">
                   S
                 </span>
               </label>
-              <label for="size-m-5">
+              <label htmlFor="size-m-5">
                 <input
                   name="select-size-5"
                   value="M"
@@ -561,11 +567,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-m-5">
+                <span className="select-size" htmlFor="size-m-5">
                   M
                 </span>
               </label>
-              <label for="size-l-5">
+              <label htmlFor="size-l-5">
                 <input
                   name="select-size-5"
                   value="L"
@@ -573,11 +579,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-l-5">
+                <span className="select-size" htmlFor="size-l-5">
                   L
                 </span>
               </label>
-              <label for="size-ll-5">
+              <label htmlFor="size-ll-5">
                 <input
                   name="select-size-5"
                   value="2L"
@@ -585,11 +591,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-ll-5">
+                <span className="select-size" htmlFor="size-ll-5">
                   2L
                 </span>
               </label>
-              <label for="size-lll-5">
+              <label htmlFor="size-lll-5">
                 <input
                   name="select-size-5"
                   value="3L"
@@ -597,7 +603,7 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-lll-5">
+                <span className="select-size" htmlFor="size-lll-5">
                   3L
                 </span>
               </label>
@@ -650,20 +656,21 @@ function Clothes() {
             </div>
             <div className="item-size">
               <h2>Size:</h2>
-              <label for="size-ss-6">
+              <label htmlFor="size-ss-6">
                 <input
                   name="select-size-6"
                   value="SS"
                   id="size-ss-6"
                   type="radio"
                   className="radio-button"
-                  checked
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
                 />
-                <span className="select-size" for="size-ss-6">
+                <span className="select-size" htmlFor="size-ss-6">
                   SS
                 </span>
               </label>
-              <label for="size-s-6">
+              <label htmlFor="size-s-6">
                 <input
                   name="select-size-6"
                   value="S"
@@ -671,11 +678,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-s-6">
+                <span className="select-size" htmlFor="size-s-6">
                   S
                 </span>
               </label>
-              <label for="size-m-6">
+              <label htmlFor="size-m-6">
                 <input
                   name="select-size-6"
                   value="M"
@@ -683,11 +690,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-m-6">
+                <span className="select-size" htmlFor="size-m-6">
                   M
                 </span>
               </label>
-              <label for="size-l-6">
+              <label htmlFor="size-l-6">
                 <input
                   name="select-size-6"
                   value="L"
@@ -695,11 +702,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-l-6">
+                <span className="select-size" htmlFor="size-l-6">
                   L
                 </span>
               </label>
-              <label for="size-ll-6">
+              <label htmlFor="size-ll-6">
                 <input
                   name="select-size-6"
                   value="2L"
@@ -707,11 +714,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-ll-6">
+                <span className="select-size" htmlFor="size-ll-6">
                   2L
                 </span>
               </label>
-              <label for="size-lll-6">
+              <label htmlFor="size-lll-6">
                 <input
                   name="select-size-6"
                   value="3L"
@@ -719,7 +726,7 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-lll-6">
+                <span className="select-size" htmlFor="size-lll-6">
                   3L
                 </span>
               </label>
@@ -772,20 +779,21 @@ function Clothes() {
             </div>
             <div className="item-size">
               <h2>Size:</h2>
-              <label for="size-ss-7">
+              <label htmlFor="size-ss-7">
                 <input
                   name="select-size-7"
                   value="SS"
                   id="size-ss-7"
                   type="radio"
                   className="radio-button"
-                  checked
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
                 />
-                <span className="select-size" for="size-ss-7">
+                <span className="select-size" htmlFor="size-ss-7">
                   SS
                 </span>
               </label>
-              <label for="size-s-7">
+              <label htmlFor="size-s-7">
                 <input
                   name="select-size-7"
                   value="S"
@@ -793,11 +801,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-s-7">
+                <span className="select-size" htmlFor="size-s-7">
                   S
                 </span>
               </label>
-              <label for="size-m-7">
+              <label htmlFor="size-m-7">
                 <input
                   name="select-size-7"
                   value="M"
@@ -805,11 +813,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-m-7">
+                <span className="select-size" htmlFor="size-m-7">
                   M
                 </span>
               </label>
-              <label for="size-l-7">
+              <label htmlFor="size-l-7">
                 <input
                   name="select-size-7"
                   value="L"
@@ -817,11 +825,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-l-7">
+                <span className="select-size" htmlFor="size-l-7">
                   L
                 </span>
               </label>
-              <label for="size-ll-7">
+              <label htmlFor="size-ll-7">
                 <input
                   name="select-size-7"
                   value="2L"
@@ -829,11 +837,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-ll-7">
+                <span className="select-size" htmlFor="size-ll-7">
                   2L
                 </span>
               </label>
-              <label for="size-lll-7">
+              <label htmlFor="size-lll-7">
                 <input
                   name="select-size-7"
                   value="3L"
@@ -841,7 +849,7 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-lll-7">
+                <span className="select-size" htmlFor="size-lll-7">
                   3L
                 </span>
               </label>
@@ -894,20 +902,21 @@ function Clothes() {
             </div>
             <div className="item-size">
               <h2>Size:</h2>
-              <label for="size-ss-8">
+              <label htmlFor="size-ss-8">
                 <input
                   name="select-size-8"
                   value="SS"
                   id="size-ss-8"
                   type="radio"
                   className="radio-button"
-                  checked
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
                 />
-                <span className="select-size" for="size-ss-8">
+                <span className="select-size" htmlFor="size-ss-8">
                   SS
                 </span>
               </label>
-              <label for="size-s-8">
+              <label htmlFor="size-s-8">
                 <input
                   name="select-size-8"
                   value="S"
@@ -915,11 +924,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-s-8">
+                <span className="select-size" htmlFor="size-s-8">
                   S
                 </span>
               </label>
-              <label for="size-m-8">
+              <label htmlFor="size-m-8">
                 <input
                   name="select-size-8"
                   value="M"
@@ -927,11 +936,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-m-8">
+                <span className="select-size" htmlFor="size-m-8">
                   M
                 </span>
               </label>
-              <label for="size-l-8">
+              <label htmlFor="size-l-8">
                 <input
                   name="select-size-8"
                   value="L"
@@ -939,11 +948,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-l-8">
+                <span className="select-size" htmlFor="size-l-8">
                   L
                 </span>
               </label>
-              <label for="size-ll-8">
+              <label htmlFor="size-ll-8">
                 <input
                   name="select-size-8"
                   value="2L"
@@ -951,11 +960,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-ll-8">
+                <span className="select-size" htmlFor="size-ll-8">
                   2L
                 </span>
               </label>
-              <label for="size-lll-8">
+              <label htmlFor="size-lll-8">
                 <input
                   name="select-size-8"
                   value="3L"
@@ -963,7 +972,7 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-lll-8">
+                <span className="select-size" htmlFor="size-lll-8">
                   3L
                 </span>
               </label>
@@ -1016,20 +1025,21 @@ function Clothes() {
             </div>
             <div className="item-size">
               <h2>Size:</h2>
-              <label for="size-ss-9">
+              <label htmlFor="size-ss-9">
                 <input
                   name="select-size-9"
                   value="SS"
                   id="size-ss-9"
                   type="radio"
                   className="radio-button"
-                  checked
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
                 />
-                <span className="select-size" for="size-ss-9">
+                <span className="select-size" htmlFor="size-ss-9">
                   SS
                 </span>
               </label>
-              <label for="size-s-9">
+              <label htmlFor="size-s-9">
                 <input
                   name="select-size-9"
                   value="S"
@@ -1037,11 +1047,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-s-9">
+                <span className="select-size" htmlFor="size-s-9">
                   S
                 </span>
               </label>
-              <label for="size-m-9">
+              <label htmlFor="size-m-9">
                 <input
                   name="select-size-9"
                   value="M"
@@ -1049,11 +1059,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-m-9">
+                <span className="select-size" htmlFor="size-m-9">
                   M
                 </span>
               </label>
-              <label for="size-l-9">
+              <label htmlFor="size-l-9">
                 <input
                   name="select-size-9"
                   value="L"
@@ -1061,11 +1071,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-l-9">
+                <span className="select-size" htmlFor="size-l-9">
                   L
                 </span>
               </label>
-              <label for="size-ll-9">
+              <label htmlFor="size-ll-9">
                 <input
                   name="select-size-9"
                   value="2L"
@@ -1073,11 +1083,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-ll-9">
+                <span className="select-size" htmlFor="size-ll-9">
                   2L
                 </span>
               </label>
-              <label for="size-lll-9">
+              <label htmlFor="size-lll-9">
                 <input
                   name="select-size-9"
                   value="3L"
@@ -1085,7 +1095,7 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-lll-9">
+                <span className="select-size" htmlFor="size-lll-9">
                   3L
                 </span>
               </label>
@@ -1138,20 +1148,21 @@ function Clothes() {
             </div>
             <div className="item-size">
               <h2>Size:</h2>
-              <label for="size-ss-10">
+              <label htmlFor="size-ss-10">
                 <input
                   name="select-size-10"
                   value="SS"
                   id="size-ss-10"
                   type="radio"
                   className="radio-button"
-                  checked
+                  checked={checked}
+                  onChange={(e) => setChecked(e.target.checked)}
                 />
-                <span className="select-size" for="size-ss-10">
+                <span className="select-size" htmlFor="size-ss-10">
                   SS
                 </span>
               </label>
-              <label for="size-s-10">
+              <label htmlFor="size-s-10">
                 <input
                   name="select-size-10"
                   value="S"
@@ -1159,11 +1170,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-s-10">
+                <span className="select-size" htmlFor="size-s-10">
                   S
                 </span>
               </label>
-              <label for="size-m-10">
+              <label htmlFor="size-m-10">
                 <input
                   name="select-size-10"
                   value="M"
@@ -1171,11 +1182,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-m-10">
+                <span className="select-size" htmlFor="size-m-10">
                   M
                 </span>
               </label>
-              <label for="size-l-10">
+              <label htmlFor="size-l-10">
                 <input
                   name="select-size-10"
                   value="L"
@@ -1183,11 +1194,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-l-10">
+                <span className="select-size" htmlFor="size-l-10">
                   L
                 </span>
               </label>
-              <label for="size-ll-10">
+              <label htmlFor="size-ll-10">
                 <input
                   name="select-size-10"
                   value="2L"
@@ -1195,11 +1206,11 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-ll-10">
+                <span className="select-size" htmlFor="size-ll-10">
                   2L
                 </span>
               </label>
-              <label for="size-lll-10">
+              <label htmlFor="size-lll-10">
                 <input
                   name="select-size-10"
                   value="3L"
@@ -1207,7 +1218,7 @@ function Clothes() {
                   type="radio"
                   className="radio-button"
                 />
-                <span className="select-size" for="size-lll-10">
+                <span className="select-size" htmlFor="size-lll-10">
                   3L
                 </span>
               </label>

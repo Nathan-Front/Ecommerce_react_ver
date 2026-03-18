@@ -1,13 +1,13 @@
-
+import {closeAll} from "./displayForm"
 //Mobile viewport nav buttons
-function returnHome(){
+export function returnHome(){
     const homeBtn = document.getElementById("mobile-home-button");
     homeBtn.addEventListener("click", ()=>{
         window.location.href = "index.html";
     });
 }
 
-function mobileCart(){
+export function mobileCart(){
     const cartBtn = document.getElementById("cart-button");
     const cartWrap = document.querySelector(".check-out-cart-panel");
     cartBtn.addEventListener("click", ()=>{
@@ -35,7 +35,7 @@ function mobileCart(){
         closeAll();
     });
 }
-function burgerButton(){
+export function burgerButton(){
     const burgerOpenBtn = document.getElementById("burger-open-button");
     const displayNews = document.getElementById("toggle-mobile-news");
     burgerOpenBtn.addEventListener("click", ()=>{
@@ -49,7 +49,7 @@ function burgerButton(){
         }
     });
 }
-function mobileNewsContent(){
+export function mobileNewsContent(){
     const sections = document.querySelectorAll(".mobile-menu-section");
     sections.forEach(section => {
         const btn = section.querySelector("span");
@@ -62,7 +62,7 @@ function mobileNewsContent(){
         });
     });
 }
-function closeMobileNews(){
+export function closeMobileNews(){
     const sections = document.querySelectorAll(".mobile-menu-section");
     sections.forEach(s => s.classList.remove("openContent"));
 }

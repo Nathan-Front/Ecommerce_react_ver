@@ -1,4 +1,9 @@
+import { useState } from "react";
+import { displayLoginForm, displayCreateForm } from "../../script/displayForm";
 function MainNav() {
+  useState(() => {
+    displayLoginForm();
+  }, []);
   return (
     <>
       <div className="title-cart-panel">
@@ -10,7 +15,13 @@ function MainNav() {
 
           <div className="login-container">
             <p>
-              <a>Sign in</a> or <a>Register</a>
+              <a id="sign-in" onClick={displayLoginForm}>
+                Sign in
+              </a>
+              or
+              <a id="register" onClick={displayCreateForm}>
+                Register
+              </a>
             </p>
           </div>
 
