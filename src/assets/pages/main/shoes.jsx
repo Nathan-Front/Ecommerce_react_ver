@@ -1,0 +1,944 @@
+export default function Shoes() {
+  return (
+    <>
+      <div className="clothe-panel owl-carousel-container-shoes">
+        <h2 className="item-title-category">Shoes</h2>
+        <ul
+          className="clothing owl-carousel-shoes"
+          id="clothing-container-shoes"
+        >
+          <li
+            className="list-of-items carousel-item-shoes mobile-main-panel-active-2"
+            data-product-id="11"
+            data-image-src="assets/images/Shoes/shoe1.jpg"
+            data-filter-opt1="Men"
+            data-filter-opt2="Fall"
+          >
+            <div className="item-descript">
+              <div>
+                <p>
+                  Item name:<span className="product-name">W-shoes</span>
+                </p>
+                <p>
+                  Item price ($)<span className="item-price">49.99</span>
+                </p>
+              </div>
+
+              <p className="item-seller">seller: ABC comp.</p>
+              <img
+                className="item-img"
+                src="assets/images/Shoes/shoe1.jpg"
+                alt="W-shoes"
+                loading="lazy"
+              />
+              <p>
+                Item description <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Molestias temporibus quae corporis minima sapiente dolorum
+                autem, exercitationem quod porro enim error ipsam sit ullam
+                saepe distinctio perferendis incidunt deleniti accusamus!
+              </p>
+            </div>
+            <div className="item-size shoe-size-container">
+              <label for="shoe-size-1" className="shoe-label">
+                Select Size (US / CM):
+              </label>
+              <select id="shoe-size-1" className="shoe-size-dropdown">
+                <option value="">--Select Size--</option>
+                <option value="6" data-size="US 6 (24 cm)">
+                  US 6 (24 cm)
+                </option>
+                <option value="6.5" data-size="US 6.5 (24.5 cm)">
+                  US 6.5 (24.5 cm)
+                </option>
+                <option value="7" data-size="US 7 (25 cm)">
+                  US 7 (25 cm)
+                </option>
+                <option value="7.5" data-size="US 7.5 (25.5 cm)">
+                  US 7.5 (25.5 cm)
+                </option>
+                <option value="8" data-size="US 8 (26 cm)">
+                  US 8 (26 cm)
+                </option>
+                <option value="8.5" data-size="US 8.5 (26.5 cm)">
+                  US 8.5 (26.5 cm)
+                </option>
+                <option value="9" data-size="US 9 (27 cm)">
+                  US 9 (27 cm)
+                </option>
+                <option value="9.5" data-size="US 9.5 (27.5 cm)">
+                  US 9.5 (27.5 cm)
+                </option>
+                <option value="10" data-size="US 10 (28 cm)">
+                  US 10 (28 cm)
+                </option>
+                <option value="10.5" data-size="US 10.5 (28.5 cm)">
+                  US 10.5 (28.5 cm)
+                </option>
+                <option value="11" data-size="US 11 (29 cm)">
+                  US 11 (29 cm)
+                </option>
+                <option value="11.5" data-size="US 11.5 (29.5 cm)">
+                  US 11.5 (29.5 cm)
+                </option>
+                <option value="12" data-size="US 12 (30 cm)">
+                  US 12 (30 cm)
+                </option>
+              </select>
+            </div>
+            <div className="item-cart-button">
+              <button type="button" className="add-cart-button">
+                Add to cart
+              </button>
+              <button type="button" className="counter-minus">
+                -
+              </button>
+              <span className="item-count itemTotal-11">0</span>
+              <button type="button" className="counter-add">
+                +
+              </button>
+            </div>
+          </li>
+
+          <li
+            className="list-of-items carousel-item-shoes"
+            data-product-id="12"
+            data-image-src="assets/images/Shoes/shoe2.jpg"
+            data-filter-opt1="Men"
+            data-filter-opt2="Spring"
+          >
+            <div className="item-descript">
+              <div>
+                <p>
+                  Item name:<span className="product-name">R-shoes</span>
+                </p>
+                <p>
+                  Item price ($)<span className="item-price">35.75</span>
+                </p>
+              </div>
+
+              <p className="item-seller">seller: ABC comp.</p>
+              <img
+                className="item-img"
+                src="assets/images/Shoes/shoe2.jpg"
+                alt="R-shoes"
+                loading="lazy"
+              />
+              <p>
+                Item description <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Molestias temporibus quae corporis minima sapiente dolorum
+                autem, exercitationem quod porro enim error ipsam sit ullam
+                saepe distinctio perferendis incidunt deleniti accusamus!
+              </p>
+            </div>
+            <div className="item-size shoe-size-container">
+              <label for="shoe-size-2" className="shoe-label">
+                Select Size (US / CM):
+              </label>
+              <select id="shoe-size-2" className="shoe-size-dropdown">
+                <option value="">--Select Size--</option>
+                <option value="6" data-size="US 6 (24 cm)">
+                  US 6 (24 cm)
+                </option>
+                <option value="6.5" data-size="US 6.5 (24.5 cm)">
+                  US 6.5 (24.5 cm)
+                </option>
+                <option value="7" data-size="US 7 (25 cm)">
+                  US 7 (25 cm)
+                </option>
+                <option value="7.5" data-size="US 7.5 (25.5 cm)">
+                  US 7.5 (25.5 cm)
+                </option>
+                <option value="8" data-size="US 8 (26 cm)">
+                  US 8 (26 cm)
+                </option>
+                <option value="8.5" data-size="US 8.5 (26.5 cm)">
+                  US 8.5 (26.5 cm)
+                </option>
+                <option value="9" data-size="US 9 (27 cm)">
+                  US 9 (27 cm)
+                </option>
+                <option value="9.5" data-size="US 9.5 (27.5 cm)">
+                  US 9.5 (27.5 cm)
+                </option>
+                <option value="10" data-size="US 10 (28 cm)">
+                  US 10 (28 cm)
+                </option>
+                <option value="10.5" data-size="US 10.5 (28.5 cm)">
+                  US 10.5 (28.5 cm)
+                </option>
+                <option value="11" data-size="US 11 (29 cm)">
+                  US 11 (29 cm)
+                </option>
+                <option value="11.5" data-size="US 11.5 (29.5 cm)">
+                  US 11.5 (29.5 cm)
+                </option>
+                <option value="12" data-size="US 12 (30 cm)">
+                  US 12 (30 cm)
+                </option>
+              </select>
+            </div>
+            <div className="item-cart-button">
+              <button type="button" className="add-cart-button">
+                Add to cart
+              </button>
+              <button type="button" className="counter-minus">
+                -
+              </button>
+              <span className="item-count itemTotal-12">0</span>
+              <button type="button" className="counter-add">
+                +
+              </button>
+            </div>
+          </li>
+
+          <li
+            className="list-of-items carousel-item-shoes"
+            data-product-id="13"
+            data-image-src="assets/images/Shoes/shoe3.jpg"
+            data-filter-opt1="Women"
+            data-filter-opt2="Winter"
+          >
+            <div className="item-descript">
+              <div>
+                <p>
+                  Item name:<span className="product-name">L-shoes</span>
+                </p>
+                <p>
+                  Item price ($)<span className="item-price">30.00</span>
+                </p>
+              </div>
+
+              <p className="item-seller">seller: ABC comp.</p>
+              <img
+                className="item-img"
+                src="assets/images/Shoes/shoe3.jpg"
+                alt="L-shoes"
+                loading="lazy"
+              />
+              <p>
+                Item description <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Molestias temporibus quae corporis minima sapiente dolorum
+                autem, exercitationem quod porro enim error ipsam sit ullam
+                saepe distinctio perferendis incidunt deleniti accusamus!
+              </p>
+            </div>
+            <div className="item-size shoe-size-container">
+              <label for="shoe-size-3" className="shoe-label">
+                Select Size (US / CM):
+              </label>
+              <select id="shoe-size-3" className="shoe-size-dropdown">
+                <option value="">--Select Size--</option>
+                <option value="6" data-size="US 6 (24 cm)">
+                  US 6 (24 cm)
+                </option>
+                <option value="6.5" data-size="US 6.5 (24.5 cm)">
+                  US 6.5 (24.5 cm)
+                </option>
+                <option value="7" data-size="US 7 (25 cm)">
+                  US 7 (25 cm)
+                </option>
+                <option value="7.5" data-size="US 7.5 (25.5 cm)">
+                  US 7.5 (25.5 cm)
+                </option>
+                <option value="8" data-size="US 8 (26 cm)">
+                  US 8 (26 cm)
+                </option>
+                <option value="8.5" data-size="US 8.5 (26.5 cm)">
+                  US 8.5 (26.5 cm)
+                </option>
+                <option value="9" data-size="US 9 (27 cm)">
+                  US 9 (27 cm)
+                </option>
+                <option value="9.5" data-size="US 9.5 (27.5 cm)">
+                  US 9.5 (27.5 cm)
+                </option>
+                <option value="10" data-size="US 10 (28 cm)">
+                  US 10 (28 cm)
+                </option>
+                <option value="10.5" data-size="US 10.5 (28.5 cm)">
+                  US 10.5 (28.5 cm)
+                </option>
+                <option value="11" data-size="US 11 (29 cm)">
+                  US 11 (29 cm)
+                </option>
+                <option value="11.5" data-size="US 11.5 (29.5 cm)">
+                  US 11.5 (29.5 cm)
+                </option>
+                <option value="12" data-size="US 12 (30 cm)">
+                  US 12 (30 cm)
+                </option>
+              </select>
+            </div>
+            <div className="item-cart-button">
+              <button type="button" className="add-cart-button">
+                Add to cart
+              </button>
+              <button type="button" className="counter-minus">
+                -
+              </button>
+              <span className="item-count itemTotal-13">0</span>
+              <button type="button" className="counter-add">
+                +
+              </button>
+            </div>
+          </li>
+
+          <li
+            className="list-of-items carousel-item-shoes"
+            data-product-id="14"
+            data-image-src="assets/images/Shoes/shoe4.jpg"
+            data-filter-opt1="Women"
+            data-filter-opt2="Fall"
+          >
+            <div className="item-descript">
+              <div>
+                <p>
+                  Item name:<span className="product-name">X-shoes</span>
+                </p>
+                <p>
+                  Item price ($)<span className="item-price">25.00</span>
+                </p>
+              </div>
+
+              <p className="item-seller">seller: ABC comp.</p>
+              <img
+                className="item-img"
+                src="assets/images/Shoes/shoe4.jpg"
+                alt="L-shoes"
+                loading="lazy"
+              />
+              <p>
+                Item description <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Molestias temporibus quae corporis minima sapiente dolorum
+                autem, exercitationem quod porro enim error ipsam sit ullam
+                saepe distinctio perferendis incidunt deleniti accusamus!
+              </p>
+            </div>
+            <div className="item-size shoe-size-container">
+              <label for="shoe-size-4" className="shoe-label">
+                Select Size (US / CM):
+              </label>
+              <select id="shoe-size-4" className="shoe-size-dropdown">
+                <option value="">--Select Size--</option>
+                <option value="6" data-size="US 6 (24 cm)">
+                  US 6 (24 cm)
+                </option>
+                <option value="6.5" data-size="US 6.5 (24.5 cm)">
+                  US 6.5 (24.5 cm)
+                </option>
+                <option value="7" data-size="US 7 (25 cm)">
+                  US 7 (25 cm)
+                </option>
+                <option value="7.5" data-size="US 7.5 (25.5 cm)">
+                  US 7.5 (25.5 cm)
+                </option>
+                <option value="8" data-size="US 8 (26 cm)">
+                  US 8 (26 cm)
+                </option>
+                <option value="8.5" data-size="US 8.5 (26.5 cm)">
+                  US 8.5 (26.5 cm)
+                </option>
+                <option value="9" data-size="US 9 (27 cm)">
+                  US 9 (27 cm)
+                </option>
+                <option value="9.5" data-size="US 9.5 (27.5 cm)">
+                  US 9.5 (27.5 cm)
+                </option>
+                <option value="10" data-size="US 10 (28 cm)">
+                  US 10 (28 cm)
+                </option>
+                <option value="10.5" data-size="US 10.5 (28.5 cm)">
+                  US 10.5 (28.5 cm)
+                </option>
+                <option value="11" data-size="US 11 (29 cm)">
+                  US 11 (29 cm)
+                </option>
+                <option value="11.5" data-size="US 11.5 (29.5 cm)">
+                  US 11.5 (29.5 cm)
+                </option>
+                <option value="12" data-size="US 12 (30 cm)">
+                  US 12 (30 cm)
+                </option>
+              </select>
+            </div>
+            <div className="item-cart-button">
+              <button type="button" className="add-cart-button">
+                Add to cart
+              </button>
+              <button type="button" className="counter-minus">
+                -
+              </button>
+              <span className="item-count itemTotal-14">0</span>
+              <button type="button" className="counter-add">
+                +
+              </button>
+            </div>
+          </li>
+
+          <li
+            className="list-of-items carousel-item-shoes"
+            data-product-id="15"
+            data-image-src="assets/images/Shoes/shoe5.jpg"
+            data-filter-opt1="Women"
+            data-filter-opt2="Spring"
+          >
+            <div className="item-descript">
+              <div>
+                <p>
+                  Item name:<span className="product-name">B-shoes</span>
+                </p>
+                <p>
+                  Item price ($)<span className="item-price">19.99</span>
+                </p>
+              </div>
+
+              <p className="item-seller">seller: ABC comp.</p>
+              <img
+                className="item-img"
+                src="assets/images/Shoes/shoe5.jpg"
+                alt="B-shoes"
+                loading="lazy"
+              />
+              <p>
+                Item description <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Molestias temporibus quae corporis minima sapiente dolorum
+                autem, exercitationem quod porro enim error ipsam sit ullam
+                saepe distinctio perferendis incidunt deleniti accusamus!
+              </p>
+            </div>
+            <div className="item-size shoe-size-container">
+              <label for="shoe-size-5" className="shoe-label">
+                Select Size (US / CM):
+              </label>
+              <select id="shoe-size-5" className="shoe-size-dropdown">
+                <option value="">--Select Size--</option>
+                <option value="6" data-size="US 6 (24 cm)">
+                  US 6 (24 cm)
+                </option>
+                <option value="6.5" data-size="US 6.5 (24.5 cm)">
+                  US 6.5 (24.5 cm)
+                </option>
+                <option value="7" data-size="US 7 (25 cm)">
+                  US 7 (25 cm)
+                </option>
+                <option value="7.5" data-size="US 7.5 (25.5 cm)">
+                  US 7.5 (25.5 cm)
+                </option>
+                <option value="8" data-size="US 8 (26 cm)">
+                  US 8 (26 cm)
+                </option>
+                <option value="8.5" data-size="US 8.5 (26.5 cm)">
+                  US 8.5 (26.5 cm)
+                </option>
+                <option value="9" data-size="US 9 (27 cm)">
+                  US 9 (27 cm)
+                </option>
+                <option value="9.5" data-size="US 9.5 (27.5 cm)">
+                  US 9.5 (27.5 cm)
+                </option>
+                <option value="10" data-size="US 10 (28 cm)">
+                  US 10 (28 cm)
+                </option>
+                <option value="10.5" data-size="US 10.5 (28.5 cm)">
+                  US 10.5 (28.5 cm)
+                </option>
+                <option value="11" data-size="US 11 (29 cm)">
+                  US 11 (29 cm)
+                </option>
+                <option value="11.5" data-size="US 11.5 (29.5 cm)">
+                  US 11.5 (29.5 cm)
+                </option>
+                <option value="12" data-size="US 12 (30 cm)">
+                  US 12 (30 cm)
+                </option>
+              </select>
+            </div>
+            <div className="item-cart-button">
+              <button type="button" className="add-cart-button">
+                Add to cart
+              </button>
+              <button type="button" className="counter-minus">
+                -
+              </button>
+              <span className="item-count itemTotal-15">0</span>
+              <button type="button" className="counter-add">
+                +
+              </button>
+            </div>
+          </li>
+
+          <li
+            className="list-of-items carousel-item-shoes"
+            data-product-id="16"
+            data-image-src="assets/images/Shoes/shoe6.jpg"
+            data-filter-opt1="Women"
+            data-filter-opt2="Fall"
+          >
+            <div className="item-descript">
+              <div>
+                <p>
+                  Item name:<span className="product-name">Y-shoes</span>
+                </p>
+                <p>
+                  Item price ($)<span className="item-price">25.00</span>
+                </p>
+              </div>
+
+              <p className="item-seller">seller: ABC comp.</p>
+              <img
+                className="item-img"
+                src="assets/images/Shoes/shoe6.jpg"
+                alt="Y-shoes"
+                loading="lazy"
+              />
+              <p>
+                Item description <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Molestias temporibus quae corporis minima sapiente dolorum
+                autem, exercitationem quod porro enim error ipsam sit ullam
+                saepe distinctio perferendis incidunt deleniti accusamus!
+              </p>
+            </div>
+            <div className="item-size shoe-size-container">
+              <label for="shoe-size-6" className="shoe-label">
+                Select Size (US / CM):
+              </label>
+              <select id="shoe-size-6" className="shoe-size-dropdown">
+                <option value="">--Select Size--</option>
+                <option value="6" data-size="US 6 (24 cm)">
+                  US 6 (24 cm)
+                </option>
+                <option value="6.5" data-size="US 6.5 (24.5 cm)">
+                  US 6.5 (24.5 cm)
+                </option>
+                <option value="7" data-size="US 7 (25 cm)">
+                  US 7 (25 cm)
+                </option>
+                <option value="7.5" data-size="US 7.5 (25.5 cm)">
+                  US 7.5 (25.5 cm)
+                </option>
+                <option value="8" data-size="US 8 (26 cm)">
+                  US 8 (26 cm)
+                </option>
+                <option value="8.5" data-size="US 8.5 (26.5 cm)">
+                  US 8.5 (26.5 cm)
+                </option>
+                <option value="9" data-size="US 9 (27 cm)">
+                  US 9 (27 cm)
+                </option>
+                <option value="9.5" data-size="US 9.5 (27.5 cm)">
+                  US 9.5 (27.5 cm)
+                </option>
+                <option value="10" data-size="US 10 (28 cm)">
+                  US 10 (28 cm)
+                </option>
+                <option value="10.5" data-size="US 10.5 (28.5 cm)">
+                  US 10.5 (28.5 cm)
+                </option>
+                <option value="11" data-size="US 11 (29 cm)">
+                  US 11 (29 cm)
+                </option>
+                <option value="11.5" data-size="US 11.5 (29.5 cm)">
+                  US 11.5 (29.5 cm)
+                </option>
+                <option value="12" data-size="US 12 (30 cm)">
+                  US 12 (30 cm)
+                </option>
+              </select>
+            </div>
+            <div className="item-cart-button">
+              <button type="button" className="add-cart-button">
+                Add to cart
+              </button>
+              <button type="button" className="counter-minus">
+                -
+              </button>
+              <span className="item-count itemTotal-16">0</span>
+              <button type="button" className="counter-add">
+                +
+              </button>
+            </div>
+          </li>
+
+          <li
+            className="list-of-items carousel-item-shoes"
+            data-product-id="17"
+            data-image-src="assets/images/Shoes/Sshoe.jpg"
+            data-filter-opt1="Men"
+            data-filter-opt2="Spring"
+          >
+            <div className="item-descript">
+              <div>
+                <p>
+                  Item name:<span className="product-name">A-shoes</span>
+                </p>
+                <p>
+                  Item price ($)<span className="item-price">25.00</span>
+                </p>
+              </div>
+
+              <p className="item-seller">seller: ABC comp.</p>
+              <img
+                className="item-img"
+                src="assets/images/Shoes/Sshoe.jpg"
+                alt="A-shoes"
+                loading="lazy"
+              />
+              <p>
+                Item description <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Molestias temporibus quae corporis minima sapiente dolorum
+                autem, exercitationem quod porro enim error ipsam sit ullam
+                saepe distinctio perferendis incidunt deleniti accusamus!
+              </p>
+            </div>
+            <div className="item-size shoe-size-container">
+              <label for="shoe-size-7" className="shoe-label">
+                Select Size (US / CM):
+              </label>
+              <select id="shoe-size-7" className="shoe-size-dropdown">
+                <option value="">--Select Size--</option>
+                <option value="6" data-size="US 6 (24 cm)">
+                  US 6 (24 cm)
+                </option>
+                <option value="6.5" data-size="US 6.5 (24.5 cm)">
+                  US 6.5 (24.5 cm)
+                </option>
+                <option value="7" data-size="US 7 (25 cm)">
+                  US 7 (25 cm)
+                </option>
+                <option value="7.5" data-size="US 7.5 (25.5 cm)">
+                  US 7.5 (25.5 cm)
+                </option>
+                <option value="8" data-size="US 8 (26 cm)">
+                  US 8 (26 cm)
+                </option>
+                <option value="8.5" data-size="US 8.5 (26.5 cm)">
+                  US 8.5 (26.5 cm)
+                </option>
+                <option value="9" data-size="US 9 (27 cm)">
+                  US 9 (27 cm)
+                </option>
+                <option value="9.5" data-size="US 9.5 (27.5 cm)">
+                  US 9.5 (27.5 cm)
+                </option>
+                <option value="10" data-size="US 10 (28 cm)">
+                  US 10 (28 cm)
+                </option>
+                <option value="10.5" data-size="US 10.5 (28.5 cm)">
+                  US 10.5 (28.5 cm)
+                </option>
+                <option value="11" data-size="US 11 (29 cm)">
+                  US 11 (29 cm)
+                </option>
+                <option value="11.5" data-size="US 11.5 (29.5 cm)">
+                  US 11.5 (29.5 cm)
+                </option>
+                <option value="12" data-size="US 12 (30 cm)">
+                  US 12 (30 cm)
+                </option>
+              </select>
+            </div>
+            <div className="item-cart-button">
+              <button type="button" className="add-cart-button">
+                Add to cart
+              </button>
+              <button type="button" className="counter-minus">
+                -
+              </button>
+              <span className="item-count itemTotal-17">0</span>
+              <button type="button" className="counter-add">
+                +
+              </button>
+            </div>
+          </li>
+
+          <li
+            className="list-of-items carousel-item-shoes"
+            data-product-id="18"
+            data-image-src="assets/images/Shoes/Wshoe1.jpg"
+            data-filter-opt1="Women"
+            data-filter-opt2="Spring"
+          >
+            <div className="item-descript">
+              <div>
+                <p>
+                  Item name:<span className="product-name">W-shoes</span>
+                </p>
+                <p>
+                  Item price ($)<span className="item-price">25.00</span>
+                </p>
+              </div>
+
+              <p className="item-seller">seller: ABC comp.</p>
+              <img
+                className="item-img"
+                src="assets/images/Shoes/Wshoe1.jpg"
+                alt="W-shoes"
+                loading="lazy"
+              />
+              <p>
+                Item description <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Molestias temporibus quae corporis minima sapiente dolorum
+                autem, exercitationem quod porro enim error ipsam sit ullam
+                saepe distinctio perferendis incidunt deleniti accusamus!
+              </p>
+            </div>
+            <div className="item-size shoe-size-container">
+              <label for="shoe-size-8" className="shoe-label">
+                Select Size (US / CM):
+              </label>
+              <select id="shoe-size-8" className="shoe-size-dropdown">
+                <option value="">--Select Size--</option>
+                <option value="6" data-size="US 6 (24 cm)">
+                  US 6 (24 cm)
+                </option>
+                <option value="6.5" data-size="US 6.5 (24.5 cm)">
+                  US 6.5 (24.5 cm)
+                </option>
+                <option value="7" data-size="US 7 (25 cm)">
+                  US 7 (25 cm)
+                </option>
+                <option value="7.5" data-size="US 7.5 (25.5 cm)">
+                  US 7.5 (25.5 cm)
+                </option>
+                <option value="8" data-size="US 8 (26 cm)">
+                  US 8 (26 cm)
+                </option>
+                <option value="8.5" data-size="US 8.5 (26.5 cm)">
+                  US 8.5 (26.5 cm)
+                </option>
+                <option value="9" data-size="US 9 (27 cm)">
+                  US 9 (27 cm)
+                </option>
+                <option value="9.5" data-size="US 9.5 (27.5 cm)">
+                  US 9.5 (27.5 cm)
+                </option>
+                <option value="10" data-size="US 10 (28 cm)">
+                  US 10 (28 cm)
+                </option>
+                <option value="10.5" data-size="US 10.5 (28.5 cm)">
+                  US 10.5 (28.5 cm)
+                </option>
+                <option value="11" data-size="US 11 (29 cm)">
+                  US 11 (29 cm)
+                </option>
+                <option value="11.5" data-size="US 11.5 (29.5 cm)">
+                  US 11.5 (29.5 cm)
+                </option>
+                <option value="12" data-size="US 12 (30 cm)">
+                  US 12 (30 cm)
+                </option>
+              </select>
+            </div>
+            <div className="item-cart-button">
+              <button type="button" className="add-cart-button">
+                Add to cart
+              </button>
+              <button type="button" className="counter-minus">
+                -
+              </button>
+              <span className="item-count itemTotal-18">0</span>
+              <button type="button" className="counter-add">
+                +
+              </button>
+            </div>
+          </li>
+
+          <li
+            className="list-of-items carousel-item-shoes"
+            data-product-id="19"
+            data-image-src="assets/images/Shoes/Wshoe2.jpg"
+            data-filter-opt1="Men"
+            data-filter-opt2="Fall"
+          >
+            <div className="item-descript">
+              <div>
+                <p>
+                  Item name:<span className="product-name">Q-shoes</span>
+                </p>
+                <p>
+                  Item price ($)<span className="item-price">25.00</span>
+                </p>
+              </div>
+
+              <p className="item-seller">seller: ABC comp.</p>
+              <img
+                className="item-img"
+                src="assets/images/Shoes/Wshoe2.jpg"
+                alt="Q-shoes"
+                loading="lazy"
+              />
+              <p>
+                Item description <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Molestias temporibus quae corporis minima sapiente dolorum
+                autem, exercitationem quod porro enim error ipsam sit ullam
+                saepe distinctio perferendis incidunt deleniti accusamus!
+              </p>
+            </div>
+            <div className="item-size shoe-size-container">
+              <label for="shoe-size-9" className="shoe-label">
+                Select Size (US / CM):
+              </label>
+              <select id="shoe-size-9" className="shoe-size-dropdown">
+                <option value="">--Select Size--</option>
+                <option value="6" data-size="US 6 (24 cm)">
+                  US 6 (24 cm)
+                </option>
+                <option value="6.5" data-size="US 6.5 (24.5 cm)">
+                  US 6.5 (24.5 cm)
+                </option>
+                <option value="7" data-size="US 7 (25 cm)">
+                  US 7 (25 cm)
+                </option>
+                <option value="7.5" data-size="US 7.5 (25.5 cm)">
+                  US 7.5 (25.5 cm)
+                </option>
+                <option value="8" data-size="US 8 (26 cm)">
+                  US 8 (26 cm)
+                </option>
+                <option value="8.5" data-size="US 8.5 (26.5 cm)">
+                  US 8.5 (26.5 cm)
+                </option>
+                <option value="9" data-size="US 9 (27 cm)">
+                  US 9 (27 cm)
+                </option>
+                <option value="9.5" data-size="US 9.5 (27.5 cm)">
+                  US 9.5 (27.5 cm)
+                </option>
+                <option value="10" data-size="US 10 (28 cm)">
+                  US 10 (28 cm)
+                </option>
+                <option value="10.5" data-size="US 10.5 (28.5 cm)">
+                  US 10.5 (28.5 cm)
+                </option>
+                <option value="11" data-size="US 11 (29 cm)">
+                  US 11 (29 cm)
+                </option>
+                <option value="11.5" data-size="US 11.5 (29.5 cm)">
+                  US 11.5 (29.5 cm)
+                </option>
+                <option value="12" data-size="US 12 (30 cm)">
+                  US 12 (30 cm)
+                </option>
+              </select>
+            </div>
+            <div className="item-cart-button">
+              <button type="button" className="add-cart-button">
+                Add to cart
+              </button>
+              <button type="button" className="counter-minus">
+                -
+              </button>
+              <span className="item-count itemTotal-19">0</span>
+              <button type="button" className="counter-add">
+                +
+              </button>
+            </div>
+          </li>
+
+          <li
+            className="list-of-items carousel-item-shoes"
+            data-product-id="20"
+            data-image-src="assets/images/Shoes/Wshoe3.jpg"
+            data-filter-opt1="Women"
+            data-filter-opt2="Fall"
+          >
+            <div className="item-descript">
+              <div>
+                <p>
+                  Item name:<span className="product-name">G-shoes</span>
+                </p>
+                <p>
+                  Item price ($)<span className="item-price">25.00</span>
+                </p>
+              </div>
+
+              <p className="item-seller">seller: ABC comp.</p>
+              <img
+                className="item-img"
+                src="assets/images/Shoes/Wshoe3.jpg"
+                alt="G-shoes"
+                loading="lazy"
+              />
+              <p>
+                Item description <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Molestias temporibus quae corporis minima sapiente dolorum
+                autem, exercitationem quod porro enim error ipsam sit ullam
+                saepe distinctio perferendis incidunt deleniti accusamus!
+              </p>
+            </div>
+            <div className="item-size shoe-size-container">
+              <label for="shoe-size-10" className="shoe-label">
+                Select Size (US / CM):
+              </label>
+              <select id="shoe-size-10" className="shoe-size-dropdown">
+                <option value="">--Select Size--</option>
+                <option value="6" data-size="US 6 (24 cm)">
+                  US 6 (24 cm)
+                </option>
+                <option value="6.5" data-size="US 6.5 (24.5 cm)">
+                  US 6.5 (24.5 cm)
+                </option>
+                <option value="7" data-size="US 7 (25 cm)">
+                  US 7 (25 cm)
+                </option>
+                <option value="7.5" data-size="US 7.5 (25.5 cm)">
+                  US 7.5 (25.5 cm)
+                </option>
+                <option value="8" data-size="US 8 (26 cm)">
+                  US 8 (26 cm)
+                </option>
+                <option value="8.5" data-size="US 8.5 (26.5 cm)">
+                  US 8.5 (26.5 cm)
+                </option>
+                <option value="9" data-size="US 9 (27 cm)">
+                  US 9 (27 cm)
+                </option>
+                <option value="9.5" data-size="US 9.5 (27.5 cm)">
+                  US 9.5 (27.5 cm)
+                </option>
+                <option value="10" data-size="US 10 (28 cm)">
+                  US 10 (28 cm)
+                </option>
+                <option value="10.5" data-size="US 10.5 (28.5 cm)">
+                  US 10.5 (28.5 cm)
+                </option>
+                <option value="11" data-size="US 11 (29 cm)">
+                  US 11 (29 cm)
+                </option>
+                <option value="11.5" data-size="US 11.5 (29.5 cm)">
+                  US 11.5 (29.5 cm)
+                </option>
+                <option value="12" data-size="US 12 (30 cm)">
+                  US 12 (30 cm)
+                </option>
+              </select>
+            </div>
+            <div className="item-cart-button">
+              <button type="button" className="add-cart-button">
+                Add to cart
+              </button>
+              <button type="button" className="counter-minus">
+                -
+              </button>
+              <span className="item-count itemTotal-20">0</span>
+              <button type="button" className="counter-add">
+                +
+              </button>
+            </div>
+          </li>
+        </ul>
+        <div className="mobile-main-panel-slider-dots-2"></div>
+      </div>
+    </>
+  );
+}

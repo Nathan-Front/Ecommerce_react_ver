@@ -1,0 +1,193 @@
+.clothe-panel{
+    width: 95vw;
+    overflow: hidden;
+    background-color: white;
+    padding-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25em;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+.item-title-category{
+    margin: 1em 0 0.5em 1em;
+    font-size: 2em;
+    font-weight: bolder;
+    color: #4682b4;  
+}
+
+.clothing{
+    width: 100%;
+    padding: 0 20px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+@media only screen and (max-width: 599px){
+    .clothe-panel{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .item-title-category{
+        margin: 1em 0 0.5em 0.7em;
+    }
+}
+.clothing> li{
+    width: 100%;
+    margin: 0 auto;
+    border: 1px #4682b4 solid;
+    display: grid;
+    flex-direction: column;
+    border-radius: 0.25em;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+.item-descript{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+}
+.item-descript> div{
+    width: inherit;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+}
+.item-descript> div> p{
+    display: flex;
+    flex-direction: column;
+}
+.item-descript> div> p> span{
+    font-size: clamp(1.1rem, 1.2vw 1.5rem);
+    font-weight: bolder;
+    color: #4682b4;
+}
+.item-descript> div> p:last-child{
+    margin-left: auto;
+    text-align: left;
+}
+.item-descript> p{
+    font-size: clamp(1.2rem, 1.3vw 1.6rem);
+}
+.item-descript> p:nth-child(2){
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.item-descript> img:nth-child(3){
+    width: clamp(150px, 65%, 250px);
+    aspect-ratio: 1 / 1;
+    margin: 10px auto;
+    border-radius: 0.25em;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.item-descript> p:nth-child(4){
+   width: 100%;
+   font-size: clamp(0.8rem, 1vw, 1.2rem);
+   margin: 10px auto;
+}
+.item-size{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.item-size> h2{
+    font-size: 1.1em;
+    display: flex;
+    align-self: center;
+    margin: 0% 2% 5% 0%;
+}
+.item-size> label{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 1em;
+    display: flex;
+    align-self: center;
+    align-items: center;
+}
+.item-size label input[type="radio"]{
+    display: none;
+}
+
+.select-size{
+    font-size: clamp(0.6rem, 0.9vw, 1.2rem);
+    border: 1px rgb(0, 0, 0) solid;
+    display: flex;
+    width: 80%;
+    min-width: 20%;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+.item-size input[type="radio"]:checked + .select-size{
+    background-color: #87ceeb;
+    border-color: #4682b4;
+    color: #111;
+}
+.clothing li label{
+    margin: 0% 0% 5% 0%;
+}
+.item-cart-button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0% auto 3% auto;
+    align-content: center;  
+}
+.add-cart-button{
+    min-width: 50%;
+    border-radius: 0.25em;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);  
+}
+.item-cart-button> span{
+    width: 8%;
+    margin: auto 5%;
+    font-size: 1em;
+    text-align: center;
+    color: #4682b4;
+    font-weight: bold;
+}
+.item-cart-button> button:first-child{
+    background-color: #87ceeb;
+    border: 1px  #4682b4 solid;
+    border-radius: 0.25em;
+    width: fit-content;
+    font-size: 0.85em;
+}
+.item-cart-button> button:nth-child(2){
+    margin: 0% 0% 0% 3%;
+    width: 1.5rem;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+.item-cart-button button:nth-child(4){
+    margin: 0% 3% 0% 0%;
+    width: 1.5rem;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+.left, .left-shoes{
+    left: -0.2%;
+    width: 2.5em;
+    height: 3em;
+    color: #87ceeb;
+    position: absolute;
+    display: none;
+}
+.right, .right-shoes{
+    right: -0.2%;
+    width: 2.5em;
+    height: 3em;
+    color: #87ceeb;
+    display: none;
+}
+.left:hover, .right:hover, .left-shoes:hover, .right-shoes:hover{
+    color: #4682b4;
+}

@@ -1,0 +1,21 @@
+.item-panel{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    padding-top: 5em;
+}
+.clothe-panel{
+    width: 95vw;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: white;
+    padding-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25em;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+

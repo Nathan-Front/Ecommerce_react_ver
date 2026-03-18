@@ -1,0 +1,56 @@
+<form class="create-accnt-page" id="create-accnt-btn" novalidate>
+  <img
+    id="close-login-panel"
+    src="images/logo/close-cross-svgrepo-com.svg"
+    alt=""
+    class="close-form-button"
+  />
+  <h1 class="form-title">Create Account:</h1>
+  <label for="input-uName"><b>Username</b></label>
+  <input
+    id="input-uName"
+    type="text"
+    placeholder="input Username"
+    name="uname"
+    autocomplete="current-user"
+    required
+  />
+  <label for="input-pass"><b>Password</b></label>
+  <div class="pass-input-field">
+    <input
+      id="input-pass"
+      type="password"
+      placeholder="input password"
+      name="pass"
+      autocomplete="current-password"
+      required
+    />
+    <i
+      class="fa-solid fa-eye toggle-password"
+      data-target="input-pass"
+      role="button"
+      tabindex="0"
+      id="eye2"
+    ></i>
+  </div>
+  <label for="input-email"><b>E-mail address</b></label>
+  <input
+    id="input-email"
+    type="text"
+    placeholder="input password"
+    name="pass"
+    required
+  />
+  <small class="error"></small>
+  <label for="input-number"><b>Contact number</b></label>
+  <input
+    id="input-number"
+    type="text"
+    placeholder="input contact number"
+    name="uphone"
+  />
+  <div class="login-create">
+    <button type="submit">Create account</button>
+    <button type="button" id="cancel-create-input">Cancel</button>
+  </div>
+</form>
