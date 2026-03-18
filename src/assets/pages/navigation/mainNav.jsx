@@ -4,10 +4,7 @@ function MainNav() {
       <div className="title-cart-panel">
         <div className="nav-area">
           <div className="logo-company">
-            <img
-              src="/assets/images/logo/letter-uppercase-square-n-svgrepo-com.svg"
-              alt="company logo"
-            />
+            <img src="assets/images/logo/page-logo.svg" alt="company logo" />
             <h1>Notare</h1>
           </div>
 
@@ -69,7 +66,7 @@ function MainNav() {
                   temporibus, corporis qui accusamus!
                 </p>
                 <img
-                  src="/assets/images/category/communication-social-media-icons.jpg"
+                  src="assets/images/category/communication-social-media-icons.jpg"
                   alt="Trend icon"
                 />
               </div>

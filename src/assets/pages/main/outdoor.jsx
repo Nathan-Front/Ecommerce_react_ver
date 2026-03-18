@@ -45,7 +45,7 @@ function Outdoor() {
                   className="adventure-3 other-offer-button"
                 >
                   <img
-                    src="assets/images/outdoors/folder 1/vecteezy_ai-generated-a-river-flowing-through-a-green-forest_42196286.jpg"
+                    src="assets/images/outdoors/folder 1/hike-gears.jpg"
                     alt="item 3"
                     className="other-img"
                     loading="lazy"
@@ -74,7 +74,7 @@ function Outdoor() {
               </button>
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 2/view-composition-with-neatly-arranged-organized-sport-items.jpg"
+                  src="assets/images/outdoors/folder 2/composition.jpg"
                   alt="item 2"
                   className="other-img"
                   loading="lazy"
@@ -93,7 +93,7 @@ function Outdoor() {
             <div className="gadget-item">
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 3/modern-stationary-collection-arrangement.jpg"
+                  src="assets/images/outdoors/folder 3/collection.jpg"
                   alt="item 3"
                   className="other-img"
                   loading="lazy"
@@ -102,7 +102,7 @@ function Outdoor() {
               </button>
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 3/vecteezy_outdoor-survival-gear-including-ropes-compass-knife_73785059.jpg"
+                  src="assets/images/outdoors/folder 3/survival-kit.jpg"
                   alt="item 4"
                   className="other-img"
                   loading="lazy"
@@ -130,7 +130,7 @@ function Outdoor() {
               </button>
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 4/high-angle-man-exploring-nature.jpg"
+                  src="assets/images/outdoors/folder 4/exploring-man.jpg"
                   alt="item 2"
                   className="other-img"
                   loading="lazy"
