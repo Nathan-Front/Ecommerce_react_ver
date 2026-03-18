@@ -1,0 +1,386 @@
+
+.title-cart-panel{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+.nav-area{
+    width: 100%;
+    display: flex;
+    background-color: #add8e6;
+    gap: 2%;
+}
+.mobile-header-cart-tab{
+    display: none;
+}
+@media only screen and (max-width: 599px){
+    .title-cart-panel{
+        display: none;
+    }
+    .mobile-header-cart-tab{
+        width: 100%;
+        display: flex;
+        z-index: 9;
+        position: fixed;
+        background-color: #add8e6;
+        padding: 5px 0;
+        align-items: center;
+        z-index: 999;
+    }
+    .mobile-header-cart-tab> img:first-child{
+        width: clamp(30px, 7vw, 40px);
+        margin: 0 0 0 1em;
+    }
+    .mobile-header-cart-tab> img:last-child{
+        width: clamp(25px, 1vw, 30px);
+        margin: 0;
+        position: absolute;
+        right: 1em;
+    } 
+}
+.logo-company{
+    margin: 0 0 0 1em;
+    display: flex;
+    align-items: center;
+}
+.logo-company h1{
+    margin: 0 0 0 0.2em;
+    padding: 1% 0%;
+    font-size: clamp(2rem, 3.5vw, 4rem);
+}
+.logo-company img{
+    width: clamp(2rem, 4vw, 4.5rem);
+}
+.login-container{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    align-content: center;
+    justify-content: end;
+    position: relative;
+    margin: auto 0 auto auto;
+}
+.login-container p{
+    display: flex;
+    margin: auto 1em auto 0;
+    width: clamp(6rem, 10vw, 7rem);
+    font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+}
+.login-container p a{
+    width: fit-content;
+    text-decoration: none;
+    color: #4682b4;
+    margin: 0% 2%;
+    font-weight: bold;
+}
+.login-container p a:hover{
+    cursor: pointer;
+    color: rgb(145, 30, 30);
+}
+.item-to-cart-checkout{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: end;
+    margin: 1.2rem 2rem 0rem 1rem;
+    gap: 5%;
+    position: relative;
+    padding: 0.4rem;    
+}
+.item-to-cart-checkout:hover{
+    cursor: pointer;
+}
+.cart-checkout-qty{
+    position: absolute;
+    top: -0.3rem;
+    right: 0.25rem;
+    background-color: rgb(145, 30, 30);
+    color: white;
+    font-weight: bold;
+    font-size: clamp(0.55rem, 0.8vw, 0.9rem);
+    padding: 0.15rem 0.4rem;
+    border-radius: 50%;
+    min-width: 0.75rem;
+    height: auto;
+    text-align: center;
+    line-height: 1;
+}
+.item-to-cart-checkout img{
+    width: clamp(1.2rem, 1.7vw, 1.8rem);
+    height: clamp(1.2rem, 1.7vw, 1.8rem);
+    object-fit: contain;
+}
+
+.drop-menu-items{
+    font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+    z-index: 99;
+}
+.drop-menu-items:hover{
+    cursor: pointer;
+}
+.category-panel{
+    min-width: 100%;
+    height: 25px;
+    margin: 0;
+    padding: 0 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    gap: 1em;
+    background-color: #87ceeb;
+}
+@media only screen and (max-width: 599px){
+    .category-panel{
+        display: none;
+    }
+}
+.news-button,
+.category-button,
+.daily-button {
+    width: fit-content;
+    min-height: inherit;
+    padding: 2px 0;
+    text-align: center;
+}
+.category-button-news,
+.category-button-panel,
+.daily-button-panel{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    align-content: center;
+    width: 100vw;
+    height: 25px;
+    background-color: whitesmoke;
+    margin: 0 auto;
+}
+
+.category-button-news> div{
+    min-height: inherit;
+}
+.category-button-news> div:first-child{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    gap: 1em;
+    margin: 1.5em 0 0 1em;
+    
+}
+.new-item-display-button{
+   width: fit-content;
+   border: none; 
+   display: inline-block;
+   overflow: hidden;
+   position: relative;
+   transition: color 0.5s ease-in-out;
+   z-index: 10;
+   font-size: clamp(0.7rem, 1.2vw, 1.3rem);
+}
+.new-item-display-button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #87ceeb;
+    transition: width 0.5s ease-in-out;
+    z-index: -1;
+}
+.new-item-display-button:hover{
+    cursor: pointer;
+}
+.new-item-display-button:hover::before{
+    width: 100%;
+    left: 0;
+}
+.new-item-panel{
+    width: 80%;
+    height: 100%;
+    display: none;
+    flex-direction: row;
+    overflow: hidden;
+    opacity: 0.8;
+    margin: 0;
+    gap: 10px;
+}
+.news-descript{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    width: 15%;
+    height: inherit;
+    margin: 1.5em 0 0 0;
+}
+.news-descript> span{
+    width: fit-content;
+    display: flex;
+    align-self: left;
+}
+.news-descript> span:first-child{
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
+    font-weight: bold;
+    margin: 0;
+}
+.news-descript> span:nth-child(2){
+    font-size:  clamp(0.7rem, 0.9vw, 1.1rem);
+    margin: 10% 0% 0% 0%;
+}
+.news-descript> span:last-child{
+    font-size:  clamp(0.7rem, 0.8vw, 1rem);
+    margin: 15% 0% 0% 0%;
+}
+.new-item-panel> p{
+    width:60%;
+    display: flex;
+    text-align: left;
+    margin: 2% 0% 0% 0%;
+    font-size:  clamp(0.7rem, 1vw, 1.1rem);
+    line-height: 1.5em;
+}
+.newsItemActive{
+    background-color: #87ceeb;
+    border-radius: 2em;
+}
+#news-1{
+    display: flex;
+}
+.category-button-news> div:nth-child(3),
+.category-button-news> div:nth-child(4),
+.category-button-news> div:nth-child(5){
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.new-item-panel> img{
+    width: 30%;
+    min-width: 10%;
+    max-width: 30%;
+    max-height: 80%;
+    min-height: 80%;
+    margin: auto 5% auto 2%;
+    border-radius: 0.25em;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.category-button-panel{
+    justify-content: flex-start;
+    gap: 1em;
+}
+.category-button-panel> div,
+.daily-button-panel> div{
+    width: 15%;
+    height: 90%;
+    margin-top: 0%;
+    text-align: center;
+    margin: auto 0;
+}
+.category-button-panel> div:first-child,
+.daily-button-panel> div:first-child{
+    margin-left: 1em;
+}
+.dropdown-buttons{
+    margin: 2% 0%;
+    font-size: clamp(0.7rem, 1.2vw, 1.3rem);
+}
+.category-images,
+.daily-images{
+   width: 100%;
+   height: 100%;
+   border: none;
+   background-color: white;
+   display: flex;
+   flex-direction: column;
+   justify-items: center;
+   border-radius: 0.25em;
+}
+.category-images> img,
+.daily-images> img{
+    width: 90%;
+    height: 80%;
+    margin: 0 auto;
+    border-radius: 0.25em;
+    opacity: 0.5;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.category-images> img:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.daily-images span{
+    margin: 2% 0%;
+    font-size: 1.2em;
+}
+.daily-images img:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.news-button:hover .category-button-news,
+.category-button:hover .category-button-panel,
+.daily-button:hover .daily-button-panel{
+    display: flex;
+    animation: slide 600ms ease-in-out;
+    top: 100%;
+
+    height: 200px;
+}
+@keyframes slide {
+    from{
+        transform: translateY(-20px);
+        opacity: 0;    
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;    
+    }
+}
+
+.logged-in-user{
+    width: auto;
+    margin: 0% 2em 0 auto;
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 599px){
+    .logged-in-user{
+        display: none;
+    }
+}
+.logged-in-user p{
+    width: fit-content;
+    margin: 0;
+    padding-right: 2%;
+    font-size: clamp(0.8rem, 1vw, 1.5rem);
+    text-align: right;
+}
+.user-name-logged{
+    width: clamp(3rem, 5vw, 7rem);
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: clamp(0.7rem, 1vw, 1.3rem);
+    color: black;
+    font-weight: bold;
+}
+.logged-in-user button{
+    width: fit-content;
+    font-size: clamp(0.7rem, 1vw, 1.5rem);
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    white-space: nowrap;
+}
+.logged-in-user button:hover{
+    cursor: pointer;
+}
+.logged-in-user-info-panel{
+    display: none;
+}

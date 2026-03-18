@@ -1,0 +1,119 @@
+
+.main-panel-upper{
+    height: clamp(300px, 60vw, 600px);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.upper-carousel-wrap{
+    margin: 0;
+    padding: 0;
+}
+.upper-carousel-wrap> div> img{
+    width: 100%;
+    height: 100%;
+}
+.main-panel-upper-h2{
+    font-size: clamp(0.9rem, 2vw, 1.5rem);
+    width: 90%;
+    position: absolute;  
+    bottom: 13rem;
+    left: 4rem;
+}
+.upper-text{
+    font-size: clamp(0.7rem, 1.5vw, 1.2rem);
+    font-weight: bolder;
+    width: 90%;
+    position: absolute;  
+    bottom: 11rem;
+    left: 4rem;
+}
+.upper-carousel-button{
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 3vw, 30px);
+    font-size: clamp(1rem, 1.5vw, 3rem);
+    border: none;
+    border-radius: 0.25em;
+    font-weight: bold;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 7rem;
+    left: 4rem;
+    background-color: #ff7a18;
+    color: white;
+}
+.upper-carousel-button:hover{
+    cursor: pointer;
+    background-color: #e85d04;
+}
+
+.panel-upper{
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    position: relative;
+}
+.third-panel-wrap> h2,
+.third-panel-wrap> p{
+    color: white;
+    text-shadow: 1px 1px 0 #333,
+        -1px -1px 0 #333,
+        1px -1px 0 #333,
+        -1px 1px 0 #333,
+        2px 2px 5px rgba(0,0,0,0.65);
+    width: 100%;
+    flex-direction: column;
+}
+.upper-carousel{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    display: flex;
+    pointer-events: none; /*Needed to be able to do the click function*/
+    transition: opacity 0.6s ease;
+}
+.upper-carousel.upper-hide{
+    opacity: 0;
+}
+.upper-carousel.upper-display{
+    opacity: 1;
+    pointer-events: auto;
+    display: flex;
+}
+
+
+@media only screen and (max-width: 599px){
+    .main-panel-upper{
+        min-height: 300px;
+        height: 350px;
+    }
+    .upper-carousel-wrap{
+        width: 100%;
+    }
+    .upper-carousel-wrap > div > img{
+        width: 100%;
+        min-height: 300px;
+        height: 350px;
+        margin-top: 3rem;
+    }
+    .main-panel-upper-h2,
+    .upper-text{
+        display: none;
+    }
+    .upper-carousel-button{
+        left: 2rem;
+        bottom: 2rem;
+    }
+    
+}
+@media (min-width: 600px) and (max-width:768px){
+    .main-panel-upper-h2{
+        bottom: 7.5rem;
+    }
+    .upper-text{
+        bottom: 6rem;
+    }
+    .upper-carousel-button{ 
+        bottom: 2rem;
+    }
+}
