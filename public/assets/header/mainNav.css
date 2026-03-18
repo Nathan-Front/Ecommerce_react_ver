@@ -72,7 +72,7 @@
     font-size: clamp(0.8rem, 1.2vw, 1.2rem);
 }
 .login-container p a{
-    min-width: fit-content;
+    width: fit-content;
     text-decoration: none;
     color: #4682b4;
     margin: 0% 2%;
