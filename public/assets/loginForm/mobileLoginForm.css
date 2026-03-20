@@ -11,7 +11,7 @@
     z-index: 10;
     transition: 0.4s ease;
 }
-@media only screen and (max-width: 599){
+@media only screen and (max-width: 599px){
     #overlay.cover{
         display: none;
     }
@@ -128,17 +128,17 @@
         right: 0; 
         padding: 100px 0 3rem 0;
     }
-    .mobile-form.showLogin{
+    .mobile-form.showLoginDesk{
         transform: translateX(0);
-        top: 0%;
-        right: 0%;
+        top: 0;
+        right: 0;
     }
     .close-form-button{
         top: 4rem;
         left: 1rem;
     }
     .form-title{
-        margin: 1rem auto 1rem auto;
+        margin: 2rem auto 1rem auto;
     }
     .login-page-hidden> label{
         width: 90%;

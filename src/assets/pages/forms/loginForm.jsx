@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { LoginAccount } from "../../script/loginForm";
-import MainNav from "../navigation/mainNav";
+import MobileUserInfo from "./mobileUserInfo";
 
 function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
   const [checked, setChecked] = useState(true);
@@ -109,6 +109,7 @@ function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
           </div>
         </div>
       </form>
+      <MobileUserInfo loggedIn={setLoggedUser} />
     </>
   );
 }

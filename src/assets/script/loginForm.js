@@ -20,6 +20,7 @@ export async function LoginAccount(formData){
         if(existUser){
             localStorage.setItem("loggedUser", JSON.stringify({
                 user: existUser,
+                //userIndicator: userIndicator
               //  indicator: userLogIndicator,
             }));
             const savedUser = JSON.parse(localStorage.getItem("loggedUser"));
@@ -42,7 +43,7 @@ export async function LoginAccount(formData){
             }*/
          //   closeAll();
          //   restoreLoggedUser();
-            return { success: true, user: existUser };
+            return { success: true, user: existUser};
        }else{
              return { error: "Invalid username or password" };
         }

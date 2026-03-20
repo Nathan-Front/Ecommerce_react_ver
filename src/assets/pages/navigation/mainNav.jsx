@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LoginForm from "../forms/loginForm";
 import CreateForm from "../forms/createForm";
+import MobileUserInfo from "../forms/mobileUserInfo";
 function MainNav({ loggedUser, setLoggedUser }) {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
@@ -14,12 +15,25 @@ function MainNav({ loggedUser, setLoggedUser }) {
     setIsLoginOpen(false);
     document.body.classList.add("no-scroll");
   }
-  function closeAll() {
+  function closeForm() {
     setIsLoginOpen(false);
     setIsRegisterOpen(false);
+    setShowUserInfo(false);
     document.body.classList.remove("no-scroll");
   }
-
+  function handleSignOut() {
+    localStorage.removeItem("loggedUser");
+    setLoggedUser(null);
+    alert("Logged out");
+  }
+  const [showUserInfo, setShowUserInfo] = useState(false);
+  function showUserIndicator() {
+    if (loggedUser) {
+      setShowUserInfo(true);
+    } else {
+      openLogin();
+    }
+  }
   return (
     <>
       <div className="title-cart-panel">
@@ -31,7 +45,12 @@ function MainNav({ loggedUser, setLoggedUser }) {
 
           <div className="login-container">
             <p>
-              <a id="sign-in" onClick={openLogin}>
+              <a
+                id="sign-in"
+                onClick={() =>
+                  loggedUser ? alert("Already signed in") : openLogin()
+                }
+              >
                 Sign in
               </a>
               or
@@ -224,21 +243,46 @@ function MainNav({ loggedUser, setLoggedUser }) {
             <span className="user-name-logged" id="user-to-log">
               {loggedUser?.userName || "Guest"}
             </span>
-            <button type="button" className="sign-out">
-              Sign out
-            </button>
+            {loggedUser ? (
+              <button
+                type="button"
+                className="sign-out"
+                onClick={handleSignOut}
+              >
+                Sign out
+              </button>
+            ) : null}
           </div>
         </div>
       </div>
+      <div className="mobile-header-cart-tab">
+        <img src="assets/images/logo/page-logo.svg" alt="company logo" />
+        <img
+          id="mobile-login-button"
+          src={
+            loggedUser
+              ? "assets/images/logo/profile-user-svgrepo-com-green.svg"
+              : "assets/images/logo/profile-user-svgrepo-com-gray.svg"
+          }
+          alt="login button"
+          onClick={showUserIndicator}
+        />
+      </div>
+      <MobileUserInfo
+        onClose={closeForm}
+        showUserInfo={showUserInfo}
+        handleSignOut={handleSignOut}
+        loggedUser={loggedUser}
+      />
       <LoginForm
         isOpen={isLoginOpen}
-        onClose={closeAll}
+        onClose={closeForm}
         openRegister={openRegister}
         setLoggedUser={setLoggedUser}
       />
       <CreateForm
         isOpen={isRegisterOpen}
-        onClose={closeAll}
+        onClose={closeForm}
         openLogin={openLogin}
       />
       <div
