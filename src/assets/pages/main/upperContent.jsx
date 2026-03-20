@@ -9,6 +9,13 @@ function UpperContent() {
     return () => clearInterval(interval);
   }, []);
 
+  const [isClickedButton, setIsClickedButton] = useState("");
+  useEffect(() => {
+    if (isClickedButton) {
+      alert("Link to " + isClickedButton);
+    }
+  }, [isClickedButton]);
+
   return (
     <>
       <div className="main-panel-upper">
@@ -24,7 +31,11 @@ function UpperContent() {
               See what's trending this summer
             </h2>
             <p className="upper-text">What's hot this summer?</p>
-            <button type="button" className="upper-carousel-button">
+            <button
+              type="button"
+              className="upper-carousel-button"
+              onClick={() => setIsClickedButton("Take a look")}
+            >
               Take a look
             </button>
           </div>
@@ -37,7 +48,11 @@ function UpperContent() {
             />
             <h2 className="main-panel-upper-h2">Collectibles</h2>
             <p className="upper-text">Take home some of our collectibles.</p>
-            <button type="button" className="upper-carousel-button">
+            <button
+              type="button"
+              className="upper-carousel-button"
+              onClick={() => setIsClickedButton("Check 'em out")}
+            >
               Check 'em out
             </button>
           </div>
@@ -50,7 +65,13 @@ function UpperContent() {
             />
             <h2 className="main-panel-upper-h2">Branded</h2>
             <p className="upper-text">Let's take you to the next chapter</p>
-            <button type="button" className="upper-carousel-button">
+            <button
+              type="button"
+              className="upper-carousel-button"
+              onClick={() => {
+                setIsClickedButton("Shop now");
+              }}
+            >
               Shop now
             </button>
           </div>
