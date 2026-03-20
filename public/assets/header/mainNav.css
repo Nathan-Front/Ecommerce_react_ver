@@ -212,6 +212,9 @@
     margin: 0;
     gap: 10px;
 }
+.new-item-panel.active-panel {
+    display: flex;
+}
 .news-descript{
     display: flex;
     flex-direction: column;
@@ -246,12 +249,9 @@
     font-size:  clamp(0.7rem, 1vw, 1.1rem);
     line-height: 1.5em;
 }
-.newsItemActive{
+.active-panel-indicate{
     background-color: #87ceeb;
     border-radius: 2em;
-}
-#news-1{
-    display: flex;
 }
 .category-button-news> div:nth-child(3),
 .category-button-news> div:nth-child(4),

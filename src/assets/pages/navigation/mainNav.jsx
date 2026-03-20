@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LoginForm from "../forms/loginForm";
 import CreateForm from "../forms/createForm";
 import MobileUserInfo from "../forms/mobileUserInfo";
@@ -34,6 +34,9 @@ function MainNav({ loggedUser, setLoggedUser }) {
       openLogin();
     }
   }
+
+  const [isActiveTab, setIsActiveTab] = useState("Trending");
+
   return (
     <>
       <div className="title-cart-panel">
@@ -72,34 +75,45 @@ function MainNav({ loggedUser, setLoggedUser }) {
               <div>
                 <button
                   type="button"
-                  className="new-item-display-button newsItemActive"
-                  data-target="news-1"
+                  className={`new-item-display-button ${isActiveTab === "Trending" ? "active-panel active-panel-indicate" : ""}`}
+                  onClick={() => {
+                    setIsActiveTab("Trending");
+                  }}
                 >
                   Trending item
                 </button>
                 <button
                   type="button"
-                  className="new-item-display-button"
-                  data-target="news-2"
+                  className={`new-item-display-button ${isActiveTab === "New" ? "active-panel active-panel-indicate" : ""}`}
+                  onClick={() => {
+                    setIsActiveTab("New");
+                  }}
                 >
                   New releases
                 </button>
                 <button
                   type="button"
-                  className="new-item-display-button"
-                  data-target="news-3"
+                  className={`new-item-display-button ${isActiveTab === "Most" ? "active-panel active-panel-indicate" : ""}`}
+                  onClick={() => {
+                    setIsActiveTab("Most");
+                  }}
                 >
                   Most ordered
                 </button>
                 <button
                   type="button"
-                  className="new-item-display-button"
-                  data-target="news-4"
+                  className={`new-item-display-button ${isActiveTab === "Creative" ? "active-panel active-panel-indicate" : ""}`}
+                  onClick={() => {
+                    setIsActiveTab("Creative");
+                  }}
                 >
                   Creative styles
                 </button>
               </div>
-              <div className="new-item-panel" id="news-1">
+              <div
+                className={`new-item-panel ${isActiveTab === "Trending" ? "active-panel" : ""}`}
+                id="news-1"
+              >
                 <div className="news-descript">
                   <span>Some text</span>
                   <span>Some text</span>
@@ -116,7 +130,10 @@ function MainNav({ loggedUser, setLoggedUser }) {
                   alt="Trend icon"
                 />
               </div>
-              <div className="new-item-panel" id="news-2">
+              <div
+                className={`new-item-panel ${isActiveTab === "New" ? "active-panel" : ""}`}
+                id="news-2"
+              >
                 <p>
                   Some text here: Lorem ipsum dolor sit, amet consectetur
                   adipisicing elit. Harum dolorem praesentium at alias velit
@@ -128,7 +145,10 @@ function MainNav({ loggedUser, setLoggedUser }) {
                   alt="New release"
                 />
               </div>
-              <div className="new-item-panel" id="news-3">
+              <div
+                className={`new-item-panel ${isActiveTab === "Most" ? "active-panel" : ""}`}
+                id="news-3"
+              >
                 <p>
                   Some text here: Lorem ipsum dolor sit, amet consectetur
                   adipisicing elit. Harum dolorem praesentium at alias velit
@@ -140,7 +160,10 @@ function MainNav({ loggedUser, setLoggedUser }) {
                   alt="Most ordered"
                 />
               </div>
-              <div className="new-item-panel" id="news-4">
+              <div
+                className={`new-item-panel ${isActiveTab === "Creative" ? "active-panel" : ""}`}
+                id="news-4"
+              >
                 <p>
                   Some text here: Lorem ipsum dolor sit, amet consectetur
                   adipisicing elit. Harum dolorem praesentium at alias velit
