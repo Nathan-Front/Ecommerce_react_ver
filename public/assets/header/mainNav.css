@@ -344,7 +344,7 @@
 
 .logged-in-user{
     width: auto;
-    margin: 0% 2em 0 auto;
+    margin: 0% 1em 0 auto;
     display: flex;
     align-items: center;
 }
@@ -353,12 +353,25 @@
         display: none;
     }
 }
-.logged-in-user p{
-    width: fit-content;
+.logged-in-user> p{
+     font-size: clamp(0.9rem, 1.2vw, 1.5rem);
+}
+.login-logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
     margin: 0;
     padding-right: 2%;
-    font-size: clamp(0.8rem, 1vw, 1.5rem);
     text-align: right;
+    gap: 3px;
+}
+#sign-in,
+#register{
+    margin: 0;
+    min-width: fit-content;
+    font-size: clamp(0.8rem, 1vw, 1.5rem);
+    
 }
 .user-name-logged{
     width: clamp(3rem, 5vw, 7rem);

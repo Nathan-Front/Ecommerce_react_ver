@@ -1,9 +1,21 @@
+import { useState, useEffect } from "react";
 function UpperContent() {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % 3);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <div className="main-panel-upper">
         <div className="upper-carousel-wrap">
-          <div className="panel-upper upper-carousel upper-display">
+          <div
+            className={`panel-upper upper-carousel ${index === 0 ? "upper-display" : "upper-hide"}`}
+          >
             <img
               src="assets/images/upper-panel/summer.jpg"
               alt="summer image"
@@ -16,7 +28,9 @@ function UpperContent() {
               Take a look
             </button>
           </div>
-          <div className="panel-upper upper-carousel">
+          <div
+            className={`panel-upper upper-carousel ${index === 1 ? "upper-display" : "upper-hide"}`}
+          >
             <img
               src="assets/images/upper-panel/top-view-composition-with-neatly-arranged-organized-sport-items.jpg"
               alt="sport item image"
@@ -27,7 +41,9 @@ function UpperContent() {
               Check 'em out
             </button>
           </div>
-          <div className="panel-upper upper-carousel third-panel-wrap">
+          <div
+            className={`panel-upper upper-carousel ${index === 2 ? "upper-display" : "upper-hide"} third-panel-wrap`}
+          >
             <img
               src="assets/images/upper-panel/tourism-items-arrangement-top-view.jpg"
               alt="tourism image"

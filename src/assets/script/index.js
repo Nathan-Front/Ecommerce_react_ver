@@ -125,7 +125,7 @@ function categoryToggle() {
     });
 }
 
-function animateUpperImages() {
+export function animateUpperImages() {
     let images = document.querySelectorAll(".upper-carousel");
     if (images.length === 0) return null;
     let imageIndex = 0;

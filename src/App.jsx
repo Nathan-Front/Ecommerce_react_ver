@@ -19,8 +19,8 @@ function App() {
         await new Promise((resolve) => setTimeout(resolve, 0));
 
         const saved = JSON.parse(localStorage.getItem("loggedUser"));
-        if (saved?.user) {
-          setLoggedUser(saved.user);
+        if (saved) {
+          setLoggedUser(saved);
         }
       } catch (error) {
         console.error("Error loading user from localStorage:", error);

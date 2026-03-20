@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { LoginAccount } from "../../script/loginForm";
+import { LoginAccount, rememberMe } from "../../script/loginForm";
 import MobileUserInfo from "./mobileUserInfo";
 
 function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
-  const [checked, setChecked] = useState(true);
   const [loginForm, setLoginForm] = useState({
     userName: "",
     userPassword: "",
@@ -17,8 +16,11 @@ function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
     }
     alert("login successful");
     setLoggedUser(result.user);
+    await rememberMe(checked, result.user);
     onClose();
   }
+  const [checked, setChecked] = useState(true);
+
   return (
     <>
       <form

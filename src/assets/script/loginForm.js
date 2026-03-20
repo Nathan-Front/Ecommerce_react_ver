@@ -58,7 +58,14 @@ export async function LoginAccount(formData){
         document.getElementById("mobile-form-submit").reset();
     });*/
 }
-
+export async function rememberMe(check, user){
+    if (check) {
+      localStorage.setItem("loggedUser", JSON.stringify(user));
+    } else {
+      localStorage.removeItem("loggedUser");
+    }
+    return { success: true };
+}
 //Use to restore the logged in user on reload
 export function restoreLoggedUser() {
     const savedUser = JSON.parse(localStorage.getItem("loggedUser"));

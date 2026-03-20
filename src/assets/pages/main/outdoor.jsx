@@ -121,7 +121,7 @@ function Outdoor() {
             <div className="stylish-item">
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 4/beautiful-woman.jpg"
+                  src="assets/images/outdoors/folder 4/beautiful-women.jpg"
                   alt="item 1"
                   className="other-img"
                   loading="lazy"
@@ -139,7 +139,7 @@ function Outdoor() {
               </button>
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 4/young-woman.jpg"
+                  src="assets/images/outdoors/folder 4/young-women.jpg"
                   alt="item 3"
                   className="other-img"
                   loading="lazy"

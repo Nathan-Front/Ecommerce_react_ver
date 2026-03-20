@@ -44,7 +44,7 @@ function MainNav({ loggedUser, setLoggedUser }) {
           </div>
 
           <div className="login-container">
-            <p>
+            <p className="login-logout">
               <a
                 id="sign-in"
                 onClick={() =>
@@ -61,7 +61,7 @@ function MainNav({ loggedUser, setLoggedUser }) {
           </div>
 
           <div className="item-to-cart-checkout">
-            <img src="/assets/images/logo/pngwing.com.png" alt="" />
+            <img src="assets/images/logo/pngwing.com.png" alt="" />
             <span className="cart-checkout-qty">0</span>
           </div>
         </div>
@@ -124,7 +124,7 @@ function MainNav({ loggedUser, setLoggedUser }) {
                   quod aperiam temporibus, corporis qui accusamus!
                 </p>
                 <img
-                  src="/assets/images/category/couple-backpacks-rocks-sunset.jpg"
+                  src="assets/images/category/couple-backpacks-rocks-sunset.jpg"
                   alt="New release"
                 />
               </div>
@@ -241,7 +241,7 @@ function MainNav({ loggedUser, setLoggedUser }) {
           <div className="logged-in-user">
             <p>Hi!</p>
             <span className="user-name-logged" id="user-to-log">
-              {loggedUser?.userName || "Guest"}
+              {loggedUser?.userName || " Guest"}
             </span>
             {loggedUser ? (
               <button
