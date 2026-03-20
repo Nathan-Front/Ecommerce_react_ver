@@ -1,9 +1,25 @@
 import { useState } from "react";
-import { displayLoginForm, displayCreateForm } from "../../script/displayForm";
-function MainNav() {
-  useState(() => {
-    displayLoginForm();
-  }, []);
+import LoginForm from "../forms/loginForm";
+import CreateForm from "../forms/createForm";
+function MainNav({ loggedUser, setLoggedUser }) {
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+  function openLogin() {
+    setIsLoginOpen(true);
+    setIsRegisterOpen(false);
+    document.body.classList.add("no-scroll");
+  }
+  function openRegister() {
+    setIsRegisterOpen(true);
+    setIsLoginOpen(false);
+    document.body.classList.add("no-scroll");
+  }
+  function closeAll() {
+    setIsLoginOpen(false);
+    setIsRegisterOpen(false);
+    document.body.classList.remove("no-scroll");
+  }
+
   return (
     <>
       <div className="title-cart-panel">
@@ -15,11 +31,11 @@ function MainNav() {
 
           <div className="login-container">
             <p>
-              <a id="sign-in" onClick={displayLoginForm}>
+              <a id="sign-in" onClick={openLogin}>
                 Sign in
               </a>
               or
-              <a id="register" onClick={displayCreateForm}>
+              <a id="register" onClick={openRegister}>
                 Register
               </a>
             </p>
@@ -206,7 +222,7 @@ function MainNav() {
           <div className="logged-in-user">
             <p>Hi!</p>
             <span className="user-name-logged" id="user-to-log">
-              Guest
+              {loggedUser?.userName || "Guest"}
             </span>
             <button type="button" className="sign-out">
               Sign out
@@ -214,6 +230,21 @@ function MainNav() {
           </div>
         </div>
       </div>
+      <LoginForm
+        isOpen={isLoginOpen}
+        onClose={closeAll}
+        openRegister={openRegister}
+        setLoggedUser={setLoggedUser}
+      />
+      <CreateForm
+        isOpen={isRegisterOpen}
+        onClose={closeAll}
+        openLogin={openLogin}
+      />
+      <div
+        id="overlay"
+        className={isLoginOpen || isRegisterOpen ? "cover" : ""}
+      />
     </>
   );
 }

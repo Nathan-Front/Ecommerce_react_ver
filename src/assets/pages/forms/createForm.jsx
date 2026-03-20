@@ -1,18 +1,47 @@
-function CreateForm() {
+import { useState } from "react";
+import { createAccount } from "../../script/createAccountForm";
+function CreateForm({ isOpen, onClose, openLogin }) {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    contact: "",
+  });
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const result = await createAccount(form);
+
+    if (result.error) {
+      alert(result.error);
+      return;
+    }
+
+    alert("Account created!");
+
+    openLogin();
+  }
   return (
     <>
-      <form className="create-accnt-page" id="create-accnt-btn" noValidate>
+      <form
+        onSubmit={handleSubmit}
+        className={`create-accnt-page ${isOpen ? "showCreateAccForm" : ""}`}
+        id="create-accnt-btn"
+        noValidate
+      >
         <img
           id="close-login-panel"
           src="assets/images/logo/close-cross-svgrepo-com.svg"
           alt="close form button"
           className="close-form-button"
+          onClick={onClose}
         />
         <h1 className="form-title">Create Account:</h1>
         <label htmlFor="input-uName">
           <b>Username</b>
         </label>
         <input
+          value={form.name}
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
           id="input-uName"
           type="text"
           placeholder="input Username"
@@ -25,6 +54,8 @@ function CreateForm() {
         </label>
         <div className="pass-input-field">
           <input
+            value={form.password}
+            onChange={(e) => setForm({ ...form, password: e.target.value })}
             id="input-pass"
             type="password"
             placeholder="input password"
@@ -44,6 +75,8 @@ function CreateForm() {
           <b>E-mail address</b>
         </label>
         <input
+          value={form.email}
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
           id="input-email"
           type="text"
           placeholder="input password"
@@ -55,6 +88,8 @@ function CreateForm() {
           <b>Contact number</b>
         </label>
         <input
+          value={form.contact}
+          onChange={(e) => setForm({ ...form, contact: e.target.value })}
           id="input-number"
           type="text"
           placeholder="input contact number"
@@ -63,7 +98,7 @@ function CreateForm() {
         <div className="login-create">
           <button type="submit">Create account</button>
           <button type="button" id="cancel-create-input">
-            Cancel
+            Clear
           </button>
         </div>
       </form>

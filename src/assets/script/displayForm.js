@@ -1,7 +1,7 @@
 import {closeMobileNews} from "./mobileNav"
 //Displaying login/create Form
 export function displayLoginForm(){
-    const signInBtn = document.getElementById("sign-in");
+    /*const signInBtn = document.getElementById("sign-in");
     const formWrap = document.querySelector(".mobile-form");
     if(!formWrap) return;
     if(signInBtn){
@@ -23,7 +23,8 @@ export function displayLoginForm(){
             overlay.classList.toggle("cover");
         }
    // });
-    }
+    }*/
+   
 }
 export function displayCreateForm(){
     const registerForm = document.querySelector(".create-accnt-page");
@@ -121,7 +122,7 @@ export function userDisplay(){
 }
 //Close form when other button is clicked mobile viewport
 export function closeAll(){
-    const formWrap = document.querySelector(".mobile-form");
+   /* const formWrap = document.querySelector(".mobile-form");
     const overlay = document.getElementById("overlay");
     const registerForm = document.querySelector(".create-accnt-page");
     const cart = document.querySelector(".check-out-cart-panel");
@@ -148,6 +149,8 @@ export function closeAll(){
     }
     if(burgerOpenBtn){
         burgerOpenBtn.src = "./images/logo/icon-hamburger.svg";
-    }
-    document.body.classList.remove("no-scroll");
+    }*/
+   
+
+  document.body.classList.remove("no-scroll");
 }

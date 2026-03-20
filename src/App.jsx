@@ -10,11 +10,31 @@ import Footer from "./assets/pages/footer/footer";
 import MobileFooter from "./assets/pages/footer/MobileFooter";
 import LoginAccount from "./assets/pages/forms/loginForm";
 import CreateForm from "./assets/pages/forms/createForm";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [loggedUser, setLoggedUser] = useState(null);
+  useEffect(() => {
+    //Define async function inside useEffect
+    const fetchLoggedUser = async () => {
+      try {
+        //Simulate a quick delay
+        await new Promise((resolve) => setTimeout(resolve, 0));
+
+        const saved = JSON.parse(localStorage.getItem("loggedUser"));
+        if (saved?.user) {
+          setLoggedUser(saved.user);
+        }
+      } catch (error) {
+        console.error("Error loading user from localStorage:", error);
+        setLoggedUser(null);
+      }
+    };
+    fetchLoggedUser();
+  }, []);
   return (
     <>
-      <MainNav />
+      <MainNav loggedUser={loggedUser} setLoggedUser={setLoggedUser} />
       <MobileNav />
       <UpperContent />
       <Items />
@@ -24,8 +44,6 @@ function App() {
       <Outdoor />
       <Footer />
       <MobileFooter />
-      <LoginAccount />
-      <CreateForm />
     </>
   );
 }

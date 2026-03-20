@@ -1,20 +1,37 @@
 import { useState } from "react";
-import { displayCreateForm, closeForm } from "../../script/displayForm";
-function LoginForm() {
-  const [checked, setChecked] = useState(false);
-  useState(() => {
-    displayCreateForm();
-    closeForm();
-  }, []);
+import { LoginAccount } from "../../script/loginForm";
+import MainNav from "../navigation/mainNav";
+
+function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
+  const [checked, setChecked] = useState(true);
+  const [loginForm, setLoginForm] = useState({
+    userName: "",
+    userPassword: "",
+  });
+  async function submitHandle(e) {
+    e.preventDefault();
+    const result = await LoginAccount(loginForm);
+    if (result.error) {
+      alert(result.error);
+      return;
+    }
+    alert("login successful");
+    setLoggedUser(result.user);
+    onClose();
+  }
   return (
     <>
-      <form className="mobile-form" id="mobile-form-submit">
+      <form
+        onSubmit={submitHandle}
+        className={`mobile-form ${isOpen ? "showLoginDesk" : ""}`}
+        id="mobile-form-submit"
+      >
         <img
           id="close-login-panel"
           src="assets/images/logo/close-cross-svgrepo-com.svg"
           alt="close form button"
           className="close-form-button"
-          onClick={closeForm}
+          onClick={onClose}
         />
         <h1 className="form-title">Login Account:</h1>
         <div className="login-page-hidden" id="login-page">
@@ -22,6 +39,10 @@ function LoginForm() {
             <b>Username</b>
           </label>
           <input
+            value={loginForm.userName}
+            onChange={(e) =>
+              setLoginForm({ ...loginForm, userName: e.target.value })
+            }
             type="text"
             placeholder="input Username"
             name="uname"
@@ -33,6 +54,10 @@ function LoginForm() {
           </label>
           <div className="login-pass-input-field">
             <input
+              value={loginForm.userPassword}
+              onChange={(e) =>
+                setLoginForm({ ...loginForm, userPassword: e.target.value })
+              }
               type="password"
               placeholder="input password"
               name="pass"
@@ -59,7 +84,7 @@ function LoginForm() {
             type="button"
             id="redirect-to-create-form"
             className="mobile-no-acc-btn"
-            onClick={displayCreateForm}
+            onClick={openRegister}
           >
             Don't have account yet?
           </button>
@@ -76,7 +101,7 @@ function LoginForm() {
           </label>
           <div className="cancel-forgot">
             <button type="button" id="mobile-cancel-input">
-              Cancel
+              Clear
             </button>
             <p className="forgot-pass">
               Forgot <a id="forgot-password">password?</a>
@@ -84,8 +109,6 @@ function LoginForm() {
           </div>
         </div>
       </form>
-
-      <div id="overlay"></div>
     </>
   );
 }
