@@ -36,7 +36,85 @@ function MainNav({ loggedUser, setLoggedUser }) {
   }
 
   const [isActiveTab, setIsActiveTab] = useState("Trending");
-
+  const tabs = [
+    {
+      id: "Trending",
+      label: "Trending item",
+      content: (
+        <>
+          <div className="news-descript">
+            <span>Some text</span>
+            <span>Some text</span>
+            <span>Some text</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum
+            dolorem praesentium at alias velit cum. Eius optio maiores delectus
+            unde ipsam labore a numquam quod aperiam temporibus, corporis qui
+            accusamus!
+          </p>
+          <img
+            src="assets/images/category/communication-social-media-icons.jpg"
+            alt="Trend icon"
+          />
+        </>
+      ),
+    },
+    {
+      id: "New",
+      label: "New releases",
+      content: (
+        <>
+          <p>
+            Some text here: Lorem ipsum dolor sit, amet consectetur adipisicing
+            elit. Harum dolorem praesentium at alias velit cum. Eius optio
+            maiores delectus unde ipsam labore a numquam quod aperiam
+            temporibus, corporis qui accusamus!
+          </p>
+          <img
+            src="assets/images/category/couple-backpacks-rocks-sunset.jpg"
+            alt="New release"
+          />
+        </>
+      ),
+    },
+    {
+      id: "Most",
+      label: "Most ordered",
+      content: (
+        <>
+          <p>
+            Some text here: Lorem ipsum dolor sit, amet consectetur adipisicing
+            elit. Harum dolorem praesentium at alias velit cum. Eius optio
+            maiores delectus unde ipsam labore a numquam quod aperiam
+            temporibus, corporis qui accusamus!
+          </p>
+          <img
+            src="assets/images/category/denim-sneakers-street-style.jpg"
+            alt="Most ordered"
+          />
+        </>
+      ),
+    },
+    {
+      id: "Creative",
+      label: "Creative styles",
+      content: (
+        <>
+          <p>
+            Some text here: Lorem ipsum dolor sit, amet consectetur adipisicing
+            elit. Harum dolorem praesentium at alias velit cum. Eius optio
+            maiores delectus unde ipsam labore a numquam quod aperiam
+            temporibus, corporis qui accusamus!
+          </p>
+          <img
+            src="assets/images/upper-panel/vecteezy_antique-table-holds-old-literature-rustic-elegance_24642428.jpg"
+            alt="Creative styles"
+          />
+        </>
+      ),
+    },
+  ];
   return (
     <>
       <div className="title-cart-panel">
@@ -73,7 +151,7 @@ function MainNav({ loggedUser, setLoggedUser }) {
             <span className="drop-menu-items">News</span>
             <div className="category-button-news">
               <div>
-                <button
+                {/* <button
                   type="button"
                   className={`new-item-display-button ${isActiveTab === "Trending" ? "active-panel active-panel-indicate" : ""}`}
                   onClick={() => {
@@ -108,11 +186,36 @@ function MainNav({ loggedUser, setLoggedUser }) {
                   }}
                 >
                   Creative styles
-                </button>
+                </button>*/}
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    className={`new-item-display-button ${
+                      isActiveTab === tab.id
+                        ? "active-panel active-panel-indicate"
+                        : ""
+                    }`}
+                    onClick={() => setIsActiveTab(tab.id)}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
               </div>
-              <div
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  className={`new-item-panel ${
+                    isActiveTab === tab.id ? "active-panel" : ""
+                  }`}
+                >
+                  {tab.content}
+                </div>
+              ))}
+
+              {/*    <div
                 className={`new-item-panel ${isActiveTab === "Trending" ? "active-panel" : ""}`}
-                id="news-1"
+                id={"news-1"}
               >
                 <div className="news-descript">
                   <span>Some text</span>
@@ -174,7 +277,7 @@ function MainNav({ loggedUser, setLoggedUser }) {
                   src="assets/images/upper-panel/vecteezy_antique-table-holds-old-literature-rustic-elegance_24642428.jpg"
                   alt="Creative styles"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="category-button">
