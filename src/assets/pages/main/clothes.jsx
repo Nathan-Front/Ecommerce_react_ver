@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { items } from "../../data/items";
 function Clothes() {
-  const [checked, setChecked] = useState(false);
-  const [isSelectItem, setIsSelectItem] = useState({
+  /*const [isSelectItem, setIsSelectItem] = useState({
     id: "",
     item: "",
     seller: "",
@@ -11,7 +10,10 @@ function Clothes() {
     itemSize: "",
     qty: "",
     totalPrice: "",
-  });
+  });*/
+  const [selectedSize, setSelectedSize] = useState(
+    Object.fromEntries(items.map((item) => [item.id, item.sizes[0]])),
+  );
   return (
     <>
       <div className="clothe-panel owl-carousel-container">
@@ -26,7 +28,7 @@ function Clothes() {
               <div className="item-descript">
                 <div>
                   <p>
-                    Item name:<span className="product-name">{item.item}</span>
+                    Item name:<span className="product-name">{item.name}</span>
                   </p>
                   <p>
                     Item price ($)
@@ -38,7 +40,7 @@ function Clothes() {
                 <img
                   className="item-img"
                   src={item.img}
-                  alt={item.item}
+                  alt={item.name}
                   loading="lazy"
                 />
                 <p>
@@ -51,85 +53,26 @@ function Clothes() {
               </div>
               <div className="item-size">
                 <h2>Size:</h2>
-                <label htmlFor="size-ss">
-                  <input
-                    name="select-size-1"
-                    value="SS"
-                    id="size-ss"
-                    type="radio"
-                    className="radio-button"
-                    checked={checked}
-                    onChange={(e) => setChecked(e.target.checked)}
-                  />
-                  <span className="select-size" htmlFor="size-ss">
-                    SS
-                  </span>
-                </label>
-                <label htmlFor="size-s">
-                  <input
-                    name="select-size-1"
-                    value="S"
-                    id="size-s"
-                    type="radio"
-                    className="radio-button"
-                    onChange={(e) => setChecked(e.target.checked)}
-                  />
-                  <span className="select-size" htmlFor="size-s">
-                    S
-                  </span>
-                </label>
-                <label htmlFor="size-m">
-                  <input
-                    name="select-size-1"
-                    value="M"
-                    id="size-m"
-                    type="radio"
-                    className="radio-button"
-                    onChange={(e) => setChecked(e.target.checked)}
-                  />
-                  <span className="select-size" htmlFor="size-m">
-                    M
-                  </span>
-                </label>
-                <label htmlFor="size-l">
-                  <input
-                    name="select-size-1"
-                    value="L"
-                    id="size-l"
-                    type="radio"
-                    className="radio-button"
-                    onChange={(e) => setChecked(e.target.checked)}
-                  />
-                  <span className="select-size" htmlFor="size-l">
-                    L
-                  </span>
-                </label>
-                <label htmlFor="size-ll">
-                  <input
-                    name="select-size-1"
-                    value="2L"
-                    id="size-ll"
-                    type="radio"
-                    className="radio-button"
-                    onChange={(e) => setChecked(e.target.checked)}
-                  />
-                  <span className="select-size" htmlFor="size-ll">
-                    2L
-                  </span>
-                </label>
-                <label htmlFor="size-lll">
-                  <input
-                    name="select-size-1"
-                    value="3L"
-                    id="size-lll"
-                    type="radio"
-                    className="radio-button"
-                    onChange={(e) => setChecked(e.target.checked)}
-                  />
-                  <span className="select-size" htmlFor="size-lll">
-                    3L
-                  </span>
-                </label>
+                {item.sizes.map((size) => (
+                  <label key={size}>
+                    <input
+                      type="radio"
+                      name={`size-${item.id}`}
+                      value={size}
+                      className="radio-button"
+                      checked={selectedSize[item.id] === size}
+                      onChange={(e) =>
+                        setSelectedSize({
+                          ...selectedSize,
+                          [item.id]: e.target.value,
+                        })
+                      }
+                    />
+                    <span className="select-size" htmlFor="size-ss">
+                      {size}
+                    </span>
+                  </label>
+                ))}
               </div>
               <div className="item-cart-button">
                 <button type="button" className="add-cart-button">

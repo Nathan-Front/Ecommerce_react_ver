@@ -114,7 +114,7 @@
     align-self: center;
     align-items: center;
 }
-.item-size label input[type="radio"]{
+.item-size input[type="radio"]{
     display: none;
 }
 
