@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LoginForm from "../forms/loginForm";
 import CreateForm from "../forms/createForm";
 import MobileUserInfo from "../forms/mobileUserInfo";
+import Cart from "../cart/cart";
+import MobileFooter from "../footer/MobileFooter";
 function MainNav({ loggedUser, setLoggedUser }) {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
@@ -34,7 +36,17 @@ function MainNav({ loggedUser, setLoggedUser }) {
       openLogin();
     }
   }
-
+  const [isCartPanel, setIsCartPanel] = useState(false);
+  useEffect(() => {
+    if (isCartPanel) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [isCartPanel]);
+  function displayCart() {
+    setIsCartPanel((prev) => !prev);
+  }
   const [isActiveTab, setIsActiveTab] = useState("Trending");
   const tabs = [
     {
@@ -177,7 +189,11 @@ function MainNav({ loggedUser, setLoggedUser }) {
           </div>
 
           <div className="item-to-cart-checkout">
-            <img src="assets/images/logo/pngwing.com.png" alt="" />
+            <img
+              src="assets/images/logo/pngwing.com.png"
+              alt=""
+              onClick={displayCart}
+            />
             <span className="cart-checkout-qty">0</span>
           </div>
         </div>
@@ -201,16 +217,13 @@ function MainNav({ loggedUser, setLoggedUser }) {
                   </button>
                 ))}
               </div>
-              {tabs.map((tab) => (
-                <div
-                  key={tab.id}
-                  className={`new-item-panel ${
-                    isActiveTab === tab.id ? "active-panel" : ""
-                  }`}
-                >
-                  {tab.content}
-                </div>
-              ))}
+              {tabs.map((tab) =>
+                isActiveTab === tab.id ? (
+                  <div key={tab.id} className="new-item-panel active-panel">
+                    {tab.content}
+                  </div>
+                ) : null,
+              )}
             </div>
           </div>
           <div className="category-button">
@@ -298,9 +311,11 @@ function MainNav({ loggedUser, setLoggedUser }) {
         onClose={closeForm}
         openLogin={openLogin}
       />
+      <Cart isCartOpen={isCartPanel} toggleCart={displayCart} />
+      <MobileFooter isCartOpen={isCartPanel} showCart={displayCart} />
       <div
         id="overlay"
-        className={isLoginOpen || isRegisterOpen ? "cover" : ""}
+        className={isLoginOpen || isRegisterOpen || isCartPanel ? "cover" : ""}
       />
     </>
   );

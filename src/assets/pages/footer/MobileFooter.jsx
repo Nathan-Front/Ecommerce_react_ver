@@ -1,4 +1,4 @@
-function MobileFooter() {
+function MobileFooter({ showCart }) {
   return (
     <>
       <footer className="mobile-footer">
@@ -13,7 +13,11 @@ function MobileFooter() {
             </button>
           </li>
           <li>
-            <button type="button" className="mobile-footer-buttons">
+            <button
+              type="button"
+              className="mobile-footer-buttons"
+              onClick={showCart}
+            >
               <img
                 src="assets/images/logo/pngwing.com.png"
                 alt="cart button"

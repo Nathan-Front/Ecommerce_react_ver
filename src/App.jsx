@@ -6,7 +6,7 @@ import Shoes from "./assets/pages/main/shoes";
 import BestOffer from "./assets/pages/main/bestOffer";
 import Outdoor from "./assets/pages/main/outdoor";
 import Footer from "./assets/pages/footer/footer";
-import MobileFooter from "./assets/pages/footer/MobileFooter";
+
 import { useState, useEffect } from "react";
 
 function App() {
@@ -39,7 +39,6 @@ function App() {
       <BestOffer />
       <Outdoor />
       <Footer />
-      <MobileFooter />
     </>
   );
 }
