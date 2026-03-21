@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createAccount } from "../../script/createAccountForm";
+
 function CreateForm({ isOpen, onClose, openLogin }) {
   const [form, setForm] = useState({
     name: "",
@@ -7,6 +8,15 @@ function CreateForm({ isOpen, onClose, openLogin }) {
     password: "",
     contact: "",
   });
+  const clearForm = () => {
+    setForm({
+      name: "",
+      email: "",
+      password: "",
+      contact: "",
+    });
+    toggleEye();
+  };
   async function handleSubmit(e) {
     e.preventDefault();
     const result = await createAccount(form);
@@ -20,6 +30,8 @@ function CreateForm({ isOpen, onClose, openLogin }) {
 
     openLogin();
   }
+  const [showPassword, setShowPassword] = useState(false);
+  const toggleEye = () => setShowPassword((prev) => !prev);
   return (
     <>
       <form
@@ -57,18 +69,19 @@ function CreateForm({ isOpen, onClose, openLogin }) {
             value={form.password}
             onChange={(e) => setForm({ ...form, password: e.target.value })}
             id="input-pass"
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="input password"
             name="pass"
             autoComplete="current-password"
             required
           />
           <i
-            className="fa-solid fa-eye toggle-password"
+            className={`fa-solid fa-eye ${showPassword ? "fa-eye-slash" : ""} toggle-password`}
             data-target="input-pass"
             role="button"
             tabIndex="0"
             id="eye2"
+            onClick={toggleEye}
           ></i>
         </div>
         <label htmlFor="input-email">
@@ -97,7 +110,7 @@ function CreateForm({ isOpen, onClose, openLogin }) {
         />
         <div className="login-create">
           <button type="submit">Create account</button>
-          <button type="button" id="cancel-create-input">
+          <button type="button" id="cancel-create-input" onClick={clearForm}>
             Clear
           </button>
         </div>

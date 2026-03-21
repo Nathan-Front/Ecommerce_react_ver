@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { LoginAccount, rememberMe } from "../../script/loginForm";
 import MobileUserInfo from "./mobileUserInfo";
-
+import CreateForm from "./createForm";
 function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
   const [loginForm, setLoginForm] = useState({
     userName: "",
     userPassword: "",
   });
+  const clearForm = () => {
+    setLoginForm({
+      userName: "",
+      userPassword: "",
+    });
+    toggleEye();
+  };
   async function submitHandle(e) {
     e.preventDefault();
     const result = await LoginAccount(loginForm);
@@ -20,6 +27,8 @@ function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
     onClose();
   }
   const [checked, setChecked] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
+  const toggleEye = () => setShowPassword((prev) => !prev);
 
   return (
     <>
@@ -60,7 +69,7 @@ function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
               onChange={(e) =>
                 setLoginForm({ ...loginForm, userPassword: e.target.value })
               }
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="input password"
               name="pass"
               id="input-user-pass"
@@ -68,11 +77,12 @@ function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
               required
             />
             <i
-              className="fa-solid fa-eye toggle-password"
+              className={`fa-solid fa-eye ${showPassword ? "fa-eye-slash" : ""} toggle-password`}
               data-target="input-user-pass"
               role="button"
               tabIndex="0"
               id="eye"
+              onClick={toggleEye}
             ></i>
           </div>
           <button
@@ -102,11 +112,19 @@ function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
             <span>Remember me</span>
           </label>
           <div className="cancel-forgot">
-            <button type="button" id="mobile-cancel-input">
+            <button type="button" id="mobile-cancel-input" onClick={clearForm}>
               Clear
             </button>
             <p className="forgot-pass">
-              Forgot <a id="forgot-password">password?</a>
+              Forgot{" "}
+              <a
+                id="forgot-password"
+                onClick={() => {
+                  alert("Link to forgot password");
+                }}
+              >
+                password?
+              </a>
             </p>
           </div>
         </div>
