@@ -1,10 +1,6 @@
 import MainNav from "./assets/pages/navigation/mainNav";
 import UpperContent from "./assets/pages/main/upperContent";
 import Items from "./assets/pages/main/items";
-import Clothes from "./assets/pages/main/clothes";
-import Shoes from "./assets/pages/main/shoes";
-import BestOffer from "./assets/pages/main/bestOffer";
-import Outdoor from "./assets/pages/main/outdoor";
 import Footer from "./assets/pages/footer/footer";
 
 import { useState, useEffect } from "react";
@@ -34,10 +30,7 @@ function App() {
       <MainNav loggedUser={loggedUser} setLoggedUser={setLoggedUser} />
       <UpperContent />
       <Items />
-      <Clothes />
-      <Shoes />
-      <BestOffer />
-      <Outdoor />
+
       <Footer />
     </>
   );

@@ -1,1241 +1,150 @@
-import React from "react";
 import { useState } from "react";
+import { items } from "../../data/items";
 function Clothes() {
   const [checked, setChecked] = useState(false);
+  const [isSelectItem, setIsSelectItem] = useState({
+    id: "",
+    item: "",
+    seller: "",
+    itemImg: "",
+    itemPrice: "",
+    itemSize: "",
+    qty: "",
+    totalPrice: "",
+  });
   return (
     <>
       <div className="clothe-panel owl-carousel-container">
         <h2 className="item-title-category">Clothes</h2>
         <ul className="clothing owl-carousel" id="clothing-container">
-          <li
-            className="list-of-items carousel-item mobile-main-panel-active"
-            data-product-id="1"
-            data-image-src="assets/images/clothe/casual_men.jpg"
-            data-filter-opt1="Men"
-            data-filter-opt2="Fall"
-          >
-            <div className="item-descript">
-              <div>
+          {items.map((item) => (
+            <li
+              className="list-of-items carousel-item mobile-main-panel-active"
+              data-product-id="1"
+              key={item.id}
+            >
+              <div className="item-descript">
+                <div>
+                  <p>
+                    Item name:<span className="product-name">{item.item}</span>
+                  </p>
+                  <p>
+                    Item price ($)
+                    <span className="item-price">{item.price.toFixed(2)}</span>
+                  </p>
+                </div>
+
+                <p className="item-seller">seller: {item.seller}</p>
+                <img
+                  className="item-img"
+                  src={item.img}
+                  alt={item.item}
+                  loading="lazy"
+                />
                 <p>
-                  Item name:<span className="product-name">M-jacket</span>
-                </p>
-                <p>
-                  Item price ($)<span className="item-price">9.75</span>
+                  Item description <br />
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Molestias temporibus quae corporis minima sapiente dolorum
+                  autem, exercitationem quod porro enim error ipsam sit ullam
+                  saepe distinctio perferendis incidunt deleniti accusamus!
                 </p>
               </div>
-
-              <p className="item-seller">seller: ABC comp.</p>
-              <img
-                className="item-img"
-                src="assets/images/clothe/casual_men.jpg"
-                alt="M-jacket"
-                loading="lazy"
-              />
-              <p>
-                Item description <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Molestias temporibus quae corporis minima sapiente dolorum
-                autem, exercitationem quod porro enim error ipsam sit ullam
-                saepe distinctio perferendis incidunt deleniti accusamus!
-              </p>
-            </div>
-            <div className="item-size">
-              <h2>Size:</h2>
-              <label htmlFor="size-ss">
-                <input
-                  name="select-size-1"
-                  value="SS"
-                  id="size-ss"
-                  type="radio"
-                  className="radio-button"
-                  checked={checked}
-                  onChange={(e) => setChecked(e.target.checked)}
-                />
-                <span className="select-size" htmlFor="size-ss">
-                  SS
-                </span>
-              </label>
-              <label htmlFor="size-s">
-                <input
-                  name="select-size-1"
-                  value="S"
-                  id="size-s"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-s">
-                  S
-                </span>
-              </label>
-              <label htmlFor="size-m">
-                <input
-                  name="select-size-1"
-                  value="M"
-                  id="size-m"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-m">
-                  M
-                </span>
-              </label>
-              <label htmlFor="size-l">
-                <input
-                  name="select-size-1"
-                  value="L"
-                  id="size-l"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-l">
-                  L
-                </span>
-              </label>
-              <label htmlFor="size-ll">
-                <input
-                  name="select-size-1"
-                  value="2L"
-                  id="size-ll"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-ll">
-                  2L
-                </span>
-              </label>
-              <label htmlFor="size-lll">
-                <input
-                  name="select-size-1"
-                  value="3L"
-                  id="size-lll"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-lll">
-                  3L
-                </span>
-              </label>
-            </div>
-            <div className="item-cart-button">
-              <button type="button" className="add-cart-button">
-                Add to cart
-              </button>
-              <button type="button" className="counter-minus">
-                -
-              </button>
-              <span className="item-count itemTotal-1">0</span>
-              <button type="button" className="counter-add">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li
-            className="list-of-items carousel-item"
-            data-product-id="2"
-            data-image-src="assets/images/clothe/casual_women.jpg"
-            data-filter-opt1="Women"
-            data-filter-opt2="Spring"
-          >
-            <div className="item-descript">
-              <div>
-                <p>
-                  Item name:<span className="product-name">W-jacket</span>
-                </p>
-                <p>
-                  Item price ($)<span className="item-price">10.00</span>
-                </p>
+              <div className="item-size">
+                <h2>Size:</h2>
+                <label htmlFor="size-ss">
+                  <input
+                    name="select-size-1"
+                    value="SS"
+                    id="size-ss"
+                    type="radio"
+                    className="radio-button"
+                    checked={checked}
+                    onChange={(e) => setChecked(e.target.checked)}
+                  />
+                  <span className="select-size" htmlFor="size-ss">
+                    SS
+                  </span>
+                </label>
+                <label htmlFor="size-s">
+                  <input
+                    name="select-size-1"
+                    value="S"
+                    id="size-s"
+                    type="radio"
+                    className="radio-button"
+                    onChange={(e) => setChecked(e.target.checked)}
+                  />
+                  <span className="select-size" htmlFor="size-s">
+                    S
+                  </span>
+                </label>
+                <label htmlFor="size-m">
+                  <input
+                    name="select-size-1"
+                    value="M"
+                    id="size-m"
+                    type="radio"
+                    className="radio-button"
+                    onChange={(e) => setChecked(e.target.checked)}
+                  />
+                  <span className="select-size" htmlFor="size-m">
+                    M
+                  </span>
+                </label>
+                <label htmlFor="size-l">
+                  <input
+                    name="select-size-1"
+                    value="L"
+                    id="size-l"
+                    type="radio"
+                    className="radio-button"
+                    onChange={(e) => setChecked(e.target.checked)}
+                  />
+                  <span className="select-size" htmlFor="size-l">
+                    L
+                  </span>
+                </label>
+                <label htmlFor="size-ll">
+                  <input
+                    name="select-size-1"
+                    value="2L"
+                    id="size-ll"
+                    type="radio"
+                    className="radio-button"
+                    onChange={(e) => setChecked(e.target.checked)}
+                  />
+                  <span className="select-size" htmlFor="size-ll">
+                    2L
+                  </span>
+                </label>
+                <label htmlFor="size-lll">
+                  <input
+                    name="select-size-1"
+                    value="3L"
+                    id="size-lll"
+                    type="radio"
+                    className="radio-button"
+                    onChange={(e) => setChecked(e.target.checked)}
+                  />
+                  <span className="select-size" htmlFor="size-lll">
+                    3L
+                  </span>
+                </label>
               </div>
-
-              <p className="item-seller">seller: ABC comp.</p>
-              <img
-                className="item-img"
-                src="assets/images/clothe/casual_women.jpg"
-                alt="W-jacket"
-                loading="lazy"
-              />
-              <p>
-                Item description <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Molestias temporibus quae corporis minima sapiente dolorum
-                autem, exercitationem quod porro enim error ipsam sit ullam
-                saepe distinctio perferendis incidunt deleniti accusamus!
-              </p>
-            </div>
-            <div className="item-size">
-              <h2>Size:</h2>
-              <label htmlFor="size-ss-2">
-                <input
-                  name="select-size-2"
-                  value="SS"
-                  id="size-ss-2"
-                  type="radio"
-                  className="radio-button"
-                  checked={checked}
-                  onChange={(e) => setChecked(e.target.checked)}
-                />
-                <span className="select-size" htmlFor="size-ss-2">
-                  SS
-                </span>
-              </label>
-              <label htmlFor="size-s-2">
-                <input
-                  name="select-size-2"
-                  value="S"
-                  id="size-s-2"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-s-2">
-                  S
-                </span>
-              </label>
-              <label htmlFor="size-m-2">
-                <input
-                  name="select-size-2"
-                  value="M"
-                  id="size-m-2"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-m-2">
-                  M
-                </span>
-              </label>
-              <label htmlFor="size-l-2">
-                <input
-                  name="select-size-2"
-                  value="L"
-                  id="size-l-2"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-l-2">
-                  L
-                </span>
-              </label>
-              <label htmlFor="size-ll-2">
-                <input
-                  name="select-size-2"
-                  value="2L"
-                  id="size-ll-2"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-ll-2">
-                  2L
-                </span>
-              </label>
-              <label htmlFor="size-lll-2">
-                <input
-                  name="select-size-2"
-                  value="3L"
-                  id="size-lll-2"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-lll-2">
-                  3L
-                </span>
-              </label>
-            </div>
-            <div className="item-cart-button">
-              <button type="button" className="add-cart-button">
-                Add to cart
-              </button>
-              <button type="button" className="counter-minus">
-                -
-              </button>
-              <span className="item-count itemTotal-2">0</span>
-              <button type="button" className="counter-add">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li
-            className="list-of-items carousel-item"
-            data-product-id="3"
-            data-image-src="assets/images/clothe/jacket_men_2.png"
-            data-filter-opt1="Men"
-            data-filter-opt2="Winter"
-          >
-            <div className="item-descript">
-              <div>
-                <p>
-                  Item name:<span className="product-name">K-jacket</span>
-                </p>
-                <p>
-                  Item price ($)<span className="item-price">20.00</span>
-                </p>
+              <div className="item-cart-button">
+                <button type="button" className="add-cart-button">
+                  Add to cart
+                </button>
+                <button type="button" className="counter-minus">
+                  -
+                </button>
+                <span className="item-count itemTotal-1">0</span>
+                <button type="button" className="counter-add">
+                  +
+                </button>
               </div>
-
-              <p className="item-seller">seller: ABC comp.</p>
-              <img
-                className="item-img"
-                src="assets/images/clothe/jacket_men_2.png"
-                alt="K-jacket"
-                loading="lazy"
-              />
-              <p>
-                Item description <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Molestias temporibus quae corporis minima sapiente dolorum
-                autem, exercitationem quod porro enim error ipsam sit ullam
-                saepe distinctio perferendis incidunt deleniti accusamus!
-              </p>
-            </div>
-            <div className="item-size">
-              <h2>Size:</h2>
-              <label htmlFor="size-ss-3">
-                <input
-                  name="select-size-3"
-                  value="SS"
-                  id="size-ss-3"
-                  type="radio"
-                  className="radio-button"
-                  checked={checked}
-                  onChange={(e) => setChecked(e.target.checked)}
-                />
-                <span className="select-size" htmlFor="size-ss-3">
-                  SS
-                </span>
-              </label>
-              <label htmlFor="size-s-3">
-                <input
-                  name="select-size-3"
-                  value="S"
-                  id="size-s-3"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-s-3">
-                  S
-                </span>
-              </label>
-              <label htmlFor="size-m-3">
-                <input
-                  name="select-size-3"
-                  value="M"
-                  id="size-m-3"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-m-3">
-                  M
-                </span>
-              </label>
-              <label htmlFor="size-l-3">
-                <input
-                  name="select-size-3"
-                  value="L"
-                  id="size-l-3"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-l-3">
-                  L
-                </span>
-              </label>
-              <label htmlFor="size-ll-3">
-                <input
-                  name="select-size-3"
-                  value="2L"
-                  id="size-ll-3"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-ll-3">
-                  2L
-                </span>
-              </label>
-              <label htmlFor="size-lll-3">
-                <input
-                  name="select-size-3"
-                  value="3L"
-                  id="size-lll-3"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-lll-3">
-                  3L
-                </span>
-              </label>
-            </div>
-            <div className="item-cart-button">
-              <button type="button" className="add-cart-button">
-                Add to cart
-              </button>
-              <button type="button" className="counter-minus">
-                -
-              </button>
-              <span className="item-count itemTotal-3">0</span>
-              <button type="button" className="counter-add">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li
-            className="list-of-items carousel-item"
-            data-product-id="4"
-            data-image-src="assets/images/clothe/jacket_men.jpg"
-            data-filter-opt1="Men"
-            data-filter-opt2="Fall"
-          >
-            <div className="item-descript">
-              <div>
-                <p>
-                  Item name:<span className="product-name">C-jacket</span>
-                </p>
-                <p>
-                  Item price ($)<span className="item-price">17.25</span>
-                </p>
-              </div>
-
-              <p className="item-seller">seller: ABC comp.</p>
-              <img
-                className="item-img"
-                src="assets/images/clothe/jacket_men.jpg"
-                alt="C-jacket"
-                loading="lazy"
-              />
-              <p>
-                Item description <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Molestias temporibus quae corporis minima sapiente dolorum
-                autem, exercitationem quod porro enim error ipsam sit ullam
-                saepe distinctio perferendis incidunt deleniti accusamus!
-              </p>
-            </div>
-            <div className="item-size">
-              <h2>Size:</h2>
-              <label htmlFor="size-ss-4">
-                <input
-                  name="select-size-4"
-                  value="SS"
-                  id="size-ss-4"
-                  type="radio"
-                  className="radio-button"
-                  checked={checked}
-                  onChange={(e) => setChecked(e.target.checked)}
-                />
-                <span className="select-size" htmlFor="size-ss-4">
-                  SS
-                </span>
-              </label>
-              <label htmlFor="size-s-4">
-                <input
-                  name="select-size-4"
-                  value="S"
-                  id="size-s-4"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-s-4">
-                  S
-                </span>
-              </label>
-              <label htmlFor="size-m-4">
-                <input
-                  name="select-size-4"
-                  value="M"
-                  id="size-m-4"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-m-4">
-                  M
-                </span>
-              </label>
-              <label htmlFor="size-l-4">
-                <input
-                  name="select-size-4"
-                  value="L"
-                  id="size-l-4"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-l-4">
-                  L
-                </span>
-              </label>
-              <label htmlFor="size-ll-4">
-                <input
-                  name="select-size-4"
-                  value="2L"
-                  id="size-ll-4"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-ll-4">
-                  2L
-                </span>
-              </label>
-              <label htmlFor="size-lll-4">
-                <input
-                  name="select-size-4"
-                  value="3L"
-                  id="size-lll-4"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-lll-4">
-                  3L
-                </span>
-              </label>
-            </div>
-            <div className="item-cart-button">
-              <button type="button" className="add-cart-button">
-                Add to cart
-              </button>
-              <button type="button" className="counter-minus">
-                -
-              </button>
-              <span className="item-count itemTotal-4">0</span>
-              <button type="button" className="counter-add">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li
-            className="list-of-items carousel-item"
-            data-product-id="5"
-            data-image-src="assets/images/clothe/dress.jpg"
-            data-filter-opt1="Women"
-            data-filter-opt2="Summer"
-          >
-            <div className="item-descript">
-              <div>
-                <p>
-                  Item name:<span className="product-name">D-dress</span>
-                </p>
-                <p>
-                  Item price ($)<span className="item-price">7.50</span>
-                </p>
-              </div>
-
-              <p className="item-seller">seller: ABC comp.</p>
-              <img
-                className="item-img"
-                src="assets/images/clothe/dress.jpg"
-                alt="D-dress"
-                loading="lazy"
-              />
-              <p>
-                Item description <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Molestias temporibus quae corporis minima sapiente dolorum
-                autem, exercitationem quod porro enim error ipsam sit ullam
-                saepe distinctio perferendis incidunt deleniti accusamus!
-              </p>
-            </div>
-            <div className="item-size">
-              <h2>Size:</h2>
-              <label htmlFor="size-ss-5">
-                <input
-                  name="select-size-5"
-                  value="SS"
-                  id="size-ss-5"
-                  type="radio"
-                  className="radio-button"
-                  checked={checked}
-                  onChange={(e) => setChecked(e.target.checked)}
-                />
-                <span className="select-size" htmlFor="size-ss-5">
-                  SS
-                </span>
-              </label>
-              <label htmlFor="size-s-5">
-                <input
-                  name="select-size-5"
-                  value="S"
-                  id="size-s-5"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-s-5">
-                  S
-                </span>
-              </label>
-              <label htmlFor="size-m-5">
-                <input
-                  name="select-size-5"
-                  value="M"
-                  id="size-m-5"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-m-5">
-                  M
-                </span>
-              </label>
-              <label htmlFor="size-l-5">
-                <input
-                  name="select-size-5"
-                  value="L"
-                  id="size-l-5"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-l-5">
-                  L
-                </span>
-              </label>
-              <label htmlFor="size-ll-5">
-                <input
-                  name="select-size-5"
-                  value="2L"
-                  id="size-ll-5"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-ll-5">
-                  2L
-                </span>
-              </label>
-              <label htmlFor="size-lll-5">
-                <input
-                  name="select-size-5"
-                  value="3L"
-                  id="size-lll-5"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-lll-5">
-                  3L
-                </span>
-              </label>
-            </div>
-            <div className="item-cart-button">
-              <button type="button" className="add-cart-button">
-                Add to cart
-              </button>
-              <button type="button" className="counter-minus">
-                -
-              </button>
-              <span className="item-count itemTotal-5">0</span>
-              <button type="button" className="counter-add">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li
-            className="list-of-items carousel-item"
-            data-product-id="6"
-            data-image-src="assets/images/clothe/summer_m_1.jpg"
-            data-filter-opt1="Men"
-            data-filter-opt2="Summer"
-          >
-            <div className="item-descript">
-              <div>
-                <p>
-                  Item name:<span className="product-name">M-shirt</span>
-                </p>
-                <p>
-                  Item price ($)<span className="item-price">3.25</span>
-                </p>
-              </div>
-
-              <p className="item-seller">seller: ABC comp.</p>
-              <img
-                className="item-img"
-                src="assets/images/clothe/summer_m_1.jpg"
-                alt="M-shirt"
-                loading="lazy"
-              />
-              <p>
-                Item description <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Molestias temporibus quae corporis minima sapiente dolorum
-                autem, exercitationem quod porro enim error ipsam sit ullam
-                saepe distinctio perferendis incidunt deleniti accusamus!
-              </p>
-            </div>
-            <div className="item-size">
-              <h2>Size:</h2>
-              <label htmlFor="size-ss-6">
-                <input
-                  name="select-size-6"
-                  value="SS"
-                  id="size-ss-6"
-                  type="radio"
-                  className="radio-button"
-                  checked={checked}
-                  onChange={(e) => setChecked(e.target.checked)}
-                />
-                <span className="select-size" htmlFor="size-ss-6">
-                  SS
-                </span>
-              </label>
-              <label htmlFor="size-s-6">
-                <input
-                  name="select-size-6"
-                  value="S"
-                  id="size-s-6"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-s-6">
-                  S
-                </span>
-              </label>
-              <label htmlFor="size-m-6">
-                <input
-                  name="select-size-6"
-                  value="M"
-                  id="size-m-6"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-m-6">
-                  M
-                </span>
-              </label>
-              <label htmlFor="size-l-6">
-                <input
-                  name="select-size-6"
-                  value="L"
-                  id="size-l-6"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-l-6">
-                  L
-                </span>
-              </label>
-              <label htmlFor="size-ll-6">
-                <input
-                  name="select-size-6"
-                  value="2L"
-                  id="size-ll-6"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-ll-6">
-                  2L
-                </span>
-              </label>
-              <label htmlFor="size-lll-6">
-                <input
-                  name="select-size-6"
-                  value="3L"
-                  id="size-lll-6"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-lll-6">
-                  3L
-                </span>
-              </label>
-            </div>
-            <div className="item-cart-button">
-              <button type="button" className="add-cart-button">
-                Add to cart
-              </button>
-              <button type="button" className="counter-minus">
-                -
-              </button>
-              <span className="item-count itemTotal-6">0</span>
-              <button type="button" className="counter-add">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li
-            className="list-of-items carousel-item"
-            data-product-id="7"
-            data-image-src="assets/images/clothe/summer_w_1.jpg"
-            data-filter-opt1="Women"
-            data-filter-opt2="Summer"
-          >
-            <div className="item-descript">
-              <div>
-                <p>
-                  Item name:<span className="product-name">W-shirt</span>
-                </p>
-                <p>
-                  Item price ($)<span className="item-price">4.50</span>
-                </p>
-              </div>
-
-              <p className="item-seller">seller: ABC comp.</p>
-              <img
-                className="item-img"
-                src="assets/images/clothe/summer_w_1.jpg"
-                alt="W-shirt"
-                loading="lazy"
-              />
-              <p>
-                Item description <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Molestias temporibus quae corporis minima sapiente dolorum
-                autem, exercitationem quod porro enim error ipsam sit ullam
-                saepe distinctio perferendis incidunt deleniti accusamus!
-              </p>
-            </div>
-            <div className="item-size">
-              <h2>Size:</h2>
-              <label htmlFor="size-ss-7">
-                <input
-                  name="select-size-7"
-                  value="SS"
-                  id="size-ss-7"
-                  type="radio"
-                  className="radio-button"
-                  checked={checked}
-                  onChange={(e) => setChecked(e.target.checked)}
-                />
-                <span className="select-size" htmlFor="size-ss-7">
-                  SS
-                </span>
-              </label>
-              <label htmlFor="size-s-7">
-                <input
-                  name="select-size-7"
-                  value="S"
-                  id="size-s-7"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-s-7">
-                  S
-                </span>
-              </label>
-              <label htmlFor="size-m-7">
-                <input
-                  name="select-size-7"
-                  value="M"
-                  id="size-m-7"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-m-7">
-                  M
-                </span>
-              </label>
-              <label htmlFor="size-l-7">
-                <input
-                  name="select-size-7"
-                  value="L"
-                  id="size-l-7"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-l-7">
-                  L
-                </span>
-              </label>
-              <label htmlFor="size-ll-7">
-                <input
-                  name="select-size-7"
-                  value="2L"
-                  id="size-ll-7"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-ll-7">
-                  2L
-                </span>
-              </label>
-              <label htmlFor="size-lll-7">
-                <input
-                  name="select-size-7"
-                  value="3L"
-                  id="size-lll-7"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-lll-7">
-                  3L
-                </span>
-              </label>
-            </div>
-            <div className="item-cart-button">
-              <button type="button" className="add-cart-button">
-                Add to cart
-              </button>
-              <button type="button" className="counter-minus">
-                -
-              </button>
-              <span className="item-count itemTotal-7">0</span>
-              <button type="button" className="counter-add">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li
-            className="list-of-items carousel-item"
-            data-product-id="8"
-            data-image-src="assets/images/clothe/summer_w_2.jpg"
-            data-filter-opt1="Women"
-            data-filter-opt2="Fall"
-          >
-            <div className="item-descript">
-              <div>
-                <p>
-                  Item name:<span className="product-name">W-pants</span>
-                </p>
-                <p>
-                  Item price ($)<span className="item-price">8.00</span>
-                </p>
-              </div>
-
-              <p className="item-seller">seller: ABC comp.</p>
-              <img
-                className="item-img"
-                src="assets/images/clothe/summer_w_2.jpg"
-                alt="W-pants"
-                loading="lazy"
-              />
-              <p>
-                Item description <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Molestias temporibus quae corporis minima sapiente dolorum
-                autem, exercitationem quod porro enim error ipsam sit ullam
-                saepe distinctio perferendis incidunt deleniti accusamus!
-              </p>
-            </div>
-            <div className="item-size">
-              <h2>Size:</h2>
-              <label htmlFor="size-ss-8">
-                <input
-                  name="select-size-8"
-                  value="SS"
-                  id="size-ss-8"
-                  type="radio"
-                  className="radio-button"
-                  checked={checked}
-                  onChange={(e) => setChecked(e.target.checked)}
-                />
-                <span className="select-size" htmlFor="size-ss-8">
-                  SS
-                </span>
-              </label>
-              <label htmlFor="size-s-8">
-                <input
-                  name="select-size-8"
-                  value="S"
-                  id="size-s-8"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-s-8">
-                  S
-                </span>
-              </label>
-              <label htmlFor="size-m-8">
-                <input
-                  name="select-size-8"
-                  value="M"
-                  id="size-m-8"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-m-8">
-                  M
-                </span>
-              </label>
-              <label htmlFor="size-l-8">
-                <input
-                  name="select-size-8"
-                  value="L"
-                  id="size-l-8"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-l-8">
-                  L
-                </span>
-              </label>
-              <label htmlFor="size-ll-8">
-                <input
-                  name="select-size-8"
-                  value="2L"
-                  id="size-ll-8"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-ll-8">
-                  2L
-                </span>
-              </label>
-              <label htmlFor="size-lll-8">
-                <input
-                  name="select-size-8"
-                  value="3L"
-                  id="size-lll-8"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-lll-8">
-                  3L
-                </span>
-              </label>
-            </div>
-            <div className="item-cart-button">
-              <button type="button" className="add-cart-button">
-                Add to cart
-              </button>
-              <button type="button" className="counter-minus">
-                -
-              </button>
-              <span className="item-count itemTotal-8">0</span>
-              <button type="button" className="counter-add">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li
-            className="list-of-items carousel-item"
-            data-product-id="9"
-            data-image-src="assets/images/clothe/women_shirt.jpg"
-            data-filter-opt1="Women"
-            data-filter-opt2="Summer"
-          >
-            <div className="item-descript">
-              <div>
-                <p>
-                  Item name:<span className="product-name">K-shirt</span>
-                </p>
-                <p>
-                  Item price ($)<span className="item-price">3.75</span>
-                </p>
-              </div>
-
-              <p className="item-seller">seller: ABC comp.</p>
-              <img
-                className="item-img"
-                src="assets/images/clothe/women_shirt.jpg"
-                alt="K-shirt"
-                loading="lazy"
-              />
-              <p>
-                Item description <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Molestias temporibus quae corporis minima sapiente dolorum
-                autem, exercitationem quod porro enim error ipsam sit ullam
-                saepe distinctio perferendis incidunt deleniti accusamus!
-              </p>
-            </div>
-            <div className="item-size">
-              <h2>Size:</h2>
-              <label htmlFor="size-ss-9">
-                <input
-                  name="select-size-9"
-                  value="SS"
-                  id="size-ss-9"
-                  type="radio"
-                  className="radio-button"
-                  checked={checked}
-                  onChange={(e) => setChecked(e.target.checked)}
-                />
-                <span className="select-size" htmlFor="size-ss-9">
-                  SS
-                </span>
-              </label>
-              <label htmlFor="size-s-9">
-                <input
-                  name="select-size-9"
-                  value="S"
-                  id="size-s-9"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-s-9">
-                  S
-                </span>
-              </label>
-              <label htmlFor="size-m-9">
-                <input
-                  name="select-size-9"
-                  value="M"
-                  id="size-m-9"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-m-9">
-                  M
-                </span>
-              </label>
-              <label htmlFor="size-l-9">
-                <input
-                  name="select-size-9"
-                  value="L"
-                  id="size-l-9"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-l-9">
-                  L
-                </span>
-              </label>
-              <label htmlFor="size-ll-9">
-                <input
-                  name="select-size-9"
-                  value="2L"
-                  id="size-ll-9"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-ll-9">
-                  2L
-                </span>
-              </label>
-              <label htmlFor="size-lll-9">
-                <input
-                  name="select-size-9"
-                  value="3L"
-                  id="size-lll-9"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-lll-9">
-                  3L
-                </span>
-              </label>
-            </div>
-            <div className="item-cart-button">
-              <button type="button" className="add-cart-button">
-                Add to cart
-              </button>
-              <button type="button" className="counter-minus">
-                -
-              </button>
-              <span className="item-count itemTotal-9">0</span>
-              <button type="button" className="counter-add">
-                +
-              </button>
-            </div>
-          </li>
-
-          <li
-            className="list-of-items carousel-item"
-            data-product-id="10"
-            data-image-src="assets/images/clothe/winter_w_2.jpg"
-            data-filter-opt1="Women"
-            data-filter-opt2="Winter"
-          >
-            <div className="item-descript">
-              <div>
-                <p>
-                  Item name:<span className="product-name">W-set</span>
-                </p>
-                <p>
-                  Item price ($)<span className="item-price">17.85</span>
-                </p>
-              </div>
-
-              <p className="item-seller">seller: ABC comp.</p>
-              <img
-                className="item-img"
-                src="assets/images/clothe/winter_w_2.jpg"
-                alt="W-set"
-                loading="lazy"
-              />
-              <p>
-                Item description <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Molestias temporibus quae corporis minima sapiente dolorum
-                autem, exercitationem quod porro enim error ipsam sit ullam
-                saepe distinctio perferendis incidunt deleniti accusamus!
-              </p>
-            </div>
-            <div className="item-size">
-              <h2>Size:</h2>
-              <label htmlFor="size-ss-10">
-                <input
-                  name="select-size-10"
-                  value="SS"
-                  id="size-ss-10"
-                  type="radio"
-                  className="radio-button"
-                  checked={checked}
-                  onChange={(e) => setChecked(e.target.checked)}
-                />
-                <span className="select-size" htmlFor="size-ss-10">
-                  SS
-                </span>
-              </label>
-              <label htmlFor="size-s-10">
-                <input
-                  name="select-size-10"
-                  value="S"
-                  id="size-s-10"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-s-10">
-                  S
-                </span>
-              </label>
-              <label htmlFor="size-m-10">
-                <input
-                  name="select-size-10"
-                  value="M"
-                  id="size-m-10"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-m-10">
-                  M
-                </span>
-              </label>
-              <label htmlFor="size-l-10">
-                <input
-                  name="select-size-10"
-                  value="L"
-                  id="size-l-10"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-l-10">
-                  L
-                </span>
-              </label>
-              <label htmlFor="size-ll-10">
-                <input
-                  name="select-size-10"
-                  value="2L"
-                  id="size-ll-10"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-ll-10">
-                  2L
-                </span>
-              </label>
-              <label htmlFor="size-lll-10">
-                <input
-                  name="select-size-10"
-                  value="3L"
-                  id="size-lll-10"
-                  type="radio"
-                  className="radio-button"
-                />
-                <span className="select-size" htmlFor="size-lll-10">
-                  3L
-                </span>
-              </label>
-            </div>
-            <div className="item-cart-button">
-              <button type="button" className="add-cart-button">
-                Add to cart
-              </button>
-              <button type="button" className="counter-minus">
-                -
-              </button>
-              <span className="item-count itemTotal-10">0</span>
-              <button type="button" className="counter-add">
-                +
-              </button>
-            </div>
-          </li>
+            </li>
+          ))}
         </ul>
         <div className="mobile-main-panel-slider-dots"></div>
       </div>
