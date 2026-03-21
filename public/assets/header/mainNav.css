@@ -273,6 +273,7 @@
 .category-button-panel{
     justify-content: flex-start;
     gap: 1em;
+
 }
 .category-button-panel> div,
 .daily-button-panel> div{
@@ -328,7 +329,6 @@
     display: flex;
     animation: slide 600ms ease-in-out;
     top: 100%;
-
     height: 200px;
 }
 @keyframes slide {
