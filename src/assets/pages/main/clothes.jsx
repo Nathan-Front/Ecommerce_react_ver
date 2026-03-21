@@ -14,6 +14,8 @@ function Clothes() {
   const [selectedSize, setSelectedSize] = useState(
     Object.fromEntries(items.map((item) => [item.id, item.sizes[0]])),
   );
+  const [isCount, setIsCount] = useState({});
+
   return (
     <>
       <div className="clothe-panel owl-carousel-container">
@@ -78,11 +80,31 @@ function Clothes() {
                 <button type="button" className="add-cart-button">
                   Add to cart
                 </button>
-                <button type="button" className="counter-minus">
+                <button
+                  type="button"
+                  className="counter-minus"
+                  onClick={() =>
+                    setIsCount((prev) => ({
+                      ...prev,
+                      [item.id]: Math.max(0, (prev[item.id] || 0) - 1),
+                    }))
+                  }
+                >
                   -
                 </button>
-                <span className="item-count itemTotal-1">0</span>
-                <button type="button" className="counter-add">
+                <span className="item-count itemTotal-1">
+                  {isCount[item.id] || 0}
+                </span>
+                <button
+                  type="button"
+                  className="counter-add"
+                  onClick={() =>
+                    setIsCount((prev) => ({
+                      ...prev,
+                      [item.id]: (prev[item.id] || 0) + 1,
+                    }))
+                  }
+                >
                   +
                 </button>
               </div>
