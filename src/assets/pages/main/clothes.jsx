@@ -12,7 +12,7 @@ function Clothes({ setCartItems }) {
       id: item.id,
       itemN: item.name,
       seller: item.seller,
-      itemImg: item.image,
+      itemImg: item.img,
       itemPrice: item.price,
       itemSize: selectedSize[item.id],
       qty: isCount[item.id] || 1,

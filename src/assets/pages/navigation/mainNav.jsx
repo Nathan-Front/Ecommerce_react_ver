@@ -321,7 +321,12 @@ function MainNav({ loggedUser, setLoggedUser, cartItems, setCartItems }) {
         onClose={closeForm}
         openLogin={openLogin}
       />
-      <Cart isCartOpen={isCartPanel} toggleCart={displayCart} />
+      <Cart
+        isCartOpen={isCartPanel}
+        toggleCart={displayCart}
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+      />
       <MobileFooter isCartOpen={isCartPanel} showCart={displayCart} />
       <div
         id="overlay"
