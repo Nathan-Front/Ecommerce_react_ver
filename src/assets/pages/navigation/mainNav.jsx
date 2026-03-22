@@ -4,9 +4,12 @@ import CreateForm from "../forms/createForm";
 import MobileUserInfo from "../forms/mobileUserInfo";
 import Cart from "../cart/cart";
 import MobileFooter from "../footer/MobileFooter";
-function MainNav({ loggedUser, setLoggedUser }) {
+
+//import { updateCartCounter } from "../../script/product";
+function MainNav({ loggedUser, setLoggedUser, cartItems, setCartItems }) {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+
   function openLogin() {
     setIsLoginOpen(true);
     setIsRegisterOpen(false);
@@ -23,10 +26,14 @@ function MainNav({ loggedUser, setLoggedUser }) {
     setShowUserInfo(false);
     document.body.classList.remove("no-scroll");
   }
+
   function handleSignOut() {
     localStorage.removeItem("loggedUser");
     setLoggedUser(null);
     alert("Logged out");
+    setTimeout(() => {
+      window.location.reload();
+    }, 450);
   }
   const [showUserInfo, setShowUserInfo] = useState(false);
   function showUserIndicator() {
@@ -162,6 +169,8 @@ function MainNav({ loggedUser, setLoggedUser }) {
       img: "assets/images/category/denim-sneakers-street-style.jpg",
     },
   ];
+
+  const cartCount = cartItems.reduce((sum, item) => sum + item.qty, 0);
   return (
     <>
       <div className="title-cart-panel">
@@ -194,7 +203,7 @@ function MainNav({ loggedUser, setLoggedUser }) {
               alt=""
               onClick={displayCart}
             />
-            <span className="cart-checkout-qty">0</span>
+            <span className="cart-checkout-qty">{cartCount}</span>
           </div>
         </div>
         <div className="category-panel">
@@ -305,6 +314,7 @@ function MainNav({ loggedUser, setLoggedUser }) {
         onClose={closeForm}
         openRegister={openRegister}
         setLoggedUser={setLoggedUser}
+        setCartItems={setCartItems}
       />
       <CreateForm
         isOpen={isRegisterOpen}

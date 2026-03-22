@@ -3,33 +3,24 @@ import UpperContent from "./assets/pages/main/upperContent";
 import Items from "./assets/pages/main/items";
 import Footer from "./assets/pages/footer/footer";
 
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
+import { getCartStorage } from "./assets/script/product";
 function App() {
-  const [loggedUser, setLoggedUser] = useState(null);
-  useEffect(() => {
-    //Define async function inside useEffect to make setLoggedUser asynchrouous
-    const fetchLoggedUser = async () => {
-      try {
-        //Simulate a quick delay
-        await new Promise((resolve) => setTimeout(resolve, 0));
+  const [loggedUser, setLoggedUser] = useState(() => {
+    return JSON.parse(localStorage.getItem("loggedUser")) || null;
+  });
 
-        const saved = JSON.parse(localStorage.getItem("loggedUser"));
-        if (saved) {
-          setLoggedUser(saved);
-        }
-      } catch (error) {
-        console.error("Error loading user from localStorage:", error);
-        setLoggedUser(null);
-      }
-    };
-    fetchLoggedUser();
-  }, []);
+  const [cartItems, setCartItems] = useState(() => getCartStorage());
   return (
     <>
-      <MainNav loggedUser={loggedUser} setLoggedUser={setLoggedUser} />
+      <MainNav
+        loggedUser={loggedUser}
+        setLoggedUser={setLoggedUser}
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+      />
       <UpperContent />
-      <Items />
+      <Items setCartItems={setCartItems} />
 
       <Footer />
     </>

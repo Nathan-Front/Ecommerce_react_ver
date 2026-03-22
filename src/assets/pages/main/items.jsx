@@ -2,12 +2,12 @@ import Clothes from "./clothes";
 import Shoes from "./shoes";
 import BestOffer from "./bestOffer";
 import Outdoor from "./outdoor";
-function Items() {
+function Items({ setCartItems }) {
   return (
     <>
       <div className="main-panel" id="Main-Panel">
         <div className="item-panel" id="product-delegation">
-          <Clothes />
+          <Clothes setCartItems={setCartItems} />;
           <Shoes />
           <BestOffer />
           <Outdoor />

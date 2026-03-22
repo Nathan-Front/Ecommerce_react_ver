@@ -1,31 +1,5 @@
 import {closeMobileNews} from "./mobileNav"
 //Displaying login/create Form
-export function displayLoginForm(){
-    /*const signInBtn = document.getElementById("sign-in");
-    const formWrap = document.querySelector(".mobile-form");
-    if(!formWrap) return;
-    if(signInBtn){
-       // signInBtn.addEventListener("click", ()=>{
-        const guest = document.getElementById("user-to-log");
-        if(guest.textContent !== "Guest"){
-            alert("Already logged in"); 
-            return;
-        }
-        const isOpen = formWrap.classList.contains("showLoginDesk");
-        closeAll();
-        const inputUser = document.getElementById("input-user-name");
-        const rememberMe = JSON.parse(localStorage.getItem("rememberUserName"));
-        if(!isOpen){
-            formWrap.classList.add("showLoginDesk");
-            document.body.classList.add("no-scroll");
-            inputUser.value = rememberMe;
-            const overlay = document.getElementById("overlay");
-            overlay.classList.toggle("cover");
-        }
-   // });
-    }*/
-   
-}
 export function displayCreateForm(){
     const registerForm = document.querySelector(".create-accnt-page");
     const toCreateForm = document.getElementById("redirect-to-create-form");

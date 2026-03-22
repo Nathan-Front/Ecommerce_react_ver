@@ -1,19 +1,32 @@
 import { useState } from "react";
 import { LoginAccount, rememberMe } from "../../script/loginForm";
-import MobileUserInfo from "./mobileUserInfo";
-import CreateForm from "./createForm";
-function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
+import { getCartStorage, mergeCartOnLogin } from "../../script/product";
+function LoginForm({
+  isOpen,
+  onClose,
+  openRegister,
+  setLoggedUser,
+  setCartItems,
+}) {
+  const remembered = JSON.parse(localStorage.getItem("rememberMe"));
   const [loginForm, setLoginForm] = useState({
-    userName: "",
+    userName: remembered?.userName ?? "", //if remember, display user, else null, if null/undefined display ""
     userPassword: "",
   });
+  const [checked, setChecked] = useState(!!remembered); //remember ? true : false
+  const [showPassword, setShowPassword] = useState(false);
+  const toggleEye = () => setShowPassword((prev) => !prev);
+
   const clearForm = () => {
     setLoginForm({
       userName: "",
       userPassword: "",
     });
+    setChecked(!!remembered);
+    setShowPassword(false);
     toggleEye();
   };
+
   async function submitHandle(e) {
     e.preventDefault();
     const result = await LoginAccount(loginForm);
@@ -21,14 +34,15 @@ function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
       alert(result.error);
       return;
     }
+
     alert("login successful");
+
     setLoggedUser(result.user);
+    mergeCartOnLogin();
+    setCartItems(getCartStorage());
     await rememberMe(checked, result.user);
     onClose();
   }
-  const [checked, setChecked] = useState(true);
-  const [showPassword, setShowPassword] = useState(false);
-  const toggleEye = () => setShowPassword((prev) => !prev);
 
   return (
     <>
@@ -129,7 +143,6 @@ function LoginForm({ isOpen, onClose, openRegister, setLoggedUser }) {
           </div>
         </div>
       </form>
-      <MobileUserInfo loggedIn={setLoggedUser} />
     </>
   );
 }

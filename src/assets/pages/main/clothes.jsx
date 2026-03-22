@@ -1,21 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { items } from "../../data/items";
-function Clothes() {
-  /*const [isSelectItem, setIsSelectItem] = useState({
-    id: "",
-    item: "",
-    seller: "",
-    itemImg: "",
-    itemPrice: "",
-    itemSize: "",
-    qty: "",
-    totalPrice: "",
-  });*/
+import { addItemToCart, getCartStorage } from "../../script/product";
+function Clothes({ setCartItems }) {
   const [selectedSize, setSelectedSize] = useState(
     Object.fromEntries(items.map((item) => [item.id, item.sizes[0]])),
   );
   const [isCount, setIsCount] = useState({});
+  //const [isSelectItem, setIsSelectItem] = useState({});
+  async function addToCart(item) {
+    const selectedItem = {
+      id: item.id,
+      itemN: item.name,
+      seller: item.seller,
+      itemImg: item.image,
+      itemPrice: item.price,
+      itemSize: selectedSize[item.id],
+      qty: isCount[item.id] || 1,
+      totalPrice: item.price * (isCount[item.id] || 1),
+    };
 
+    addItemToCart(selectedItem);
+    setCartItems(getCartStorage);
+    alert("Item added to cart");
+  }
   return (
     <>
       <div className="clothe-panel owl-carousel-container">
@@ -77,7 +84,11 @@ function Clothes() {
                 ))}
               </div>
               <div className="item-cart-button">
-                <button type="button" className="add-cart-button">
+                <button
+                  type="button"
+                  className="add-cart-button"
+                  onClick={() => addToCart(item)}
+                >
                   Add to cart
                 </button>
                 <button
