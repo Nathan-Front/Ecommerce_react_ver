@@ -1,8 +1,8 @@
-function MobileUserInfo({ onClose, loggedUser, showUserInfo, handleSignOut }) {
+function MobileUserInfo({ isOpen, onClose, loggedUser, handleSignOut }) {
   return (
     <>
       <form
-        className={`logged-in-user-info-panel ${showUserInfo ? "showUserInfo" : ""}`}
+        className={`logged-in-user-info-panel ${isOpen ? "showUserInfo" : ""}`}
         id="mogile-logged-in-panel"
       >
         <img

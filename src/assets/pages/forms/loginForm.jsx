@@ -4,7 +4,6 @@ import { getCartStorage, mergeCartOnLogin } from "../../script/product";
 function LoginForm({
   isOpen,
   onClose,
-  openRegister,
   setLoggedUser,
   setCartItems,
   openRegisterForm,

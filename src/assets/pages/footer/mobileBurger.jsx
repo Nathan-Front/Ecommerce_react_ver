@@ -1,5 +1,5 @@
 import { useState } from "react";
-function MobileBurger({ isBurger, isOpen }) {
+function MobileBurger({ isOpen }) {
   const [toggle, setToggle] = useState("");
   function toggleMenu(menu) {
     setToggle((prev) => (prev === menu ? null : menu));

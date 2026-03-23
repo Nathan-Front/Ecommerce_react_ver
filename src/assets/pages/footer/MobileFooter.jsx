@@ -1,22 +1,4 @@
-import { useState } from "react";
-function MobileFooter({
-  cartCount,
-  setIsBurger,
-  setIsMobileCart,
-  openCart,
-  openBurger,
-  activePanel,
-  setActivePanel,
-}) {
-  const [burgerOpen, setBurgerOpen] = useState(false);
-  function toggleBurger() {
-    setBurgerOpen((prev) => !prev);
-    setIsBurger((prev) => !prev);
-  }
-
-  function displayCart() {
-    setIsMobileCart(true);
-  }
+function MobileFooter({ cartCount, openCart, activePanel, setActivePanel }) {
   return (
     <>
       <footer className="mobile-footer">

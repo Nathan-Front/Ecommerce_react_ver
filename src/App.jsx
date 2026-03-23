@@ -19,6 +19,7 @@ function App() {
   const openBurger = () => setActivePanel("burger");
   const openLogin = () => setActivePanel("login");
   const openRegister = () => setActivePanel("register");
+  const openUserInfo = () => setActivePanel("userInfo");
   const closeAll = () => setActivePanel(null);
   return (
     <>
@@ -42,6 +43,8 @@ function App() {
         /*For createForm*/
         openRegisterForm={openRegister}
         /*For closing other panel */
+        /*For mobileUserInfo panel */
+        openUserInfo={openUserInfo}
         closeAll={closeAll}
       />
       <UpperContent />

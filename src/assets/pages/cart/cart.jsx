@@ -1,6 +1,6 @@
 import { getCartStorage, saveToCartStorage } from "../../script/product";
 import { paymentSummary } from "../../script/cartContent";
-function Cart({ isOpen, isMobileCart, onClose, cartItems, setCartItems }) {
+function Cart({ isOpen, onClose, cartItems, setCartItems }) {
   function deleteItem(id, size) {
     //Delete function
     const updatedCart = getCartStorage().filter(

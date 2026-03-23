@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import LoginForm from "../forms/loginForm";
 import CreateForm from "../forms/createForm";
 import MobileUserInfo from "../forms/mobileUserInfo";
@@ -12,7 +12,6 @@ function MainNav({
   setLoggedUser,
   cartItems,
   setCartItems,
-  setIsCartOpen,
   isMobileCart,
   setIsMobileCart,
   /*For mobileFooter*/
@@ -22,6 +21,7 @@ function MainNav({
   openBurger,
   openLoginForm,
   openRegisterForm,
+  openUserInfo,
   closeAll,
 }) {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -32,17 +32,6 @@ function MainNav({
     setIsRegisterOpen(false);
     document.body.classList.add("no-scroll");
   }
-  function openRegister() {
-    setIsRegisterOpen(true);
-    setIsLoginOpen(false);
-    document.body.classList.add("no-scroll");
-  }
-  function closeForm() {
-    setIsLoginOpen(false);
-    setIsRegisterOpen(false);
-    setShowUserInfo(false);
-    document.body.classList.remove("no-scroll");
-  }
 
   function handleSignOut() {
     localStorage.removeItem("loggedUser");
@@ -52,22 +41,6 @@ function MainNav({
       window.location.reload();
     }, 450);
   }
-  const [showUserInfo, setShowUserInfo] = useState(false);
-  function showUserIndicator() {
-    if (loggedUser) {
-      setShowUserInfo(true);
-    } else {
-      openLogin();
-    }
-  }
-  const [isCartPanel, setIsCartPanel] = useState(false);
-  useEffect(() => {
-    if (isCartPanel) {
-      document.body.classList.add("no-scroll");
-    } else {
-      document.body.classList.remove("no-scroll");
-    }
-  }, [isCartPanel]);
   function displayCart() {
     openCart((prev) => !prev);
   }
@@ -202,13 +175,13 @@ function MainNav({
               <a
                 id="sign-in"
                 onClick={() =>
-                  loggedUser ? alert("Already signed in") : openLogin()
+                  loggedUser ? alert("Already signed in") : openLoginForm()
                 }
               >
                 Sign in
               </a>
               or
-              <a id="register" onClick={openRegister}>
+              <a id="register" onClick={openRegisterForm}>
                 Register
               </a>
             </p>
@@ -317,19 +290,16 @@ function MainNav({
               : "assets/images/logo/profile-user-svgrepo-com-gray.svg"
           }
           alt="login button"
-          onClick={openLoginForm}
+          onClick={loggedUser ? openUserInfo : openLoginForm}
         />
       </div>
       <MobileUserInfo
-        onClose={closeForm}
-        showUserInfo={showUserInfo}
         handleSignOut={handleSignOut}
         loggedUser={loggedUser}
+        isOpen={activePanel === "userInfo"}
+        onClose={closeAll}
       />
       <LoginForm
-        // isOpen={isLoginOpen}
-        //onClose={closeForm}
-        //openRegister={openRegister}
         openRegisterForm={openRegisterForm}
         setLoggedUser={setLoggedUser}
         setCartItems={setCartItems}
@@ -337,14 +307,11 @@ function MainNav({
         onClose={closeAll}
       />
       <CreateForm
-        //isOpen={isRegisterOpen}
-        //onClose={closeForm}
         openLogin={openLogin}
         isOpen={activePanel === "register"}
         onClose={closeAll}
       />
       <Cart
-        isCartOpen={isCartPanel}
         isMobileCart={isMobileCart}
         cartItems={cartItems}
         setCartItems={setCartItems}
