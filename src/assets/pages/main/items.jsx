@@ -8,7 +8,7 @@ function Items({ setCartItems }) {
       <div className="main-panel" id="Main-Panel">
         <div className="item-panel" id="product-delegation">
           <Clothes setCartItems={setCartItems} />
-          <Shoes />
+          <Shoes setCartItems={setCartItems} />
           <BestOffer />
           <Outdoor />
         </div>

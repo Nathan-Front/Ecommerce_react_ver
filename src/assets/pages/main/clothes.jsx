@@ -1,28 +1,29 @@
 import { useState } from "react";
 import { items } from "../../data/items";
-import { addItemToCart, getCartStorage } from "../../script/product";
+import { getCartStorage, addToCart } from "../../script/product";
 function Clothes({ setCartItems }) {
   const [selectedSize, setSelectedSize] = useState(
     Object.fromEntries(items.map((item) => [item.id, item.sizes[0]])),
   );
   const [isCount, setIsCount] = useState({});
-  //const [isSelectItem, setIsSelectItem] = useState({});
-  async function addToCart(item) {
-    const selectedItem = {
-      id: item.id,
-      itemN: item.name,
-      seller: item.seller,
-      itemImg: item.img,
-      itemPrice: item.price,
-      itemSize: selectedSize[item.id],
-      qty: isCount[item.id] || 1,
-      totalPrice: item.price * (isCount[item.id] || 1),
-    };
 
-    addItemToCart(selectedItem);
-    setCartItems(getCartStorage);
+  function handleAddToCart(item) {
+    const size = selectedSize[item.id];
+    const qty = isCount[item.id] || 0;
+
+    if (qty <= 0) {
+      alert("Add quantity first");
+      return;
+    }
+    setIsCount((prev) => ({
+      ...prev,
+      [item.id]: 0,
+    }));
+    addToCart(item, size, qty);
+    setCartItems(getCartStorage());
     alert("Item added to cart");
   }
+
   return (
     <>
       <div className="clothe-panel owl-carousel-container">
@@ -87,7 +88,7 @@ function Clothes({ setCartItems }) {
                 <button
                   type="button"
                   className="add-cart-button"
-                  onClick={() => addToCart(item)}
+                  onClick={() => handleAddToCart(item)}
                 >
                   Add to cart
                 </button>

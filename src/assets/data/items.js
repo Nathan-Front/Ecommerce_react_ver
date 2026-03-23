@@ -82,3 +82,91 @@ export const items = [
   },
 
 ];
+
+const shoeSizes = [
+  "US 6 (24 cm)", "US 6.5 (24.5 cm)", "US 7 (25 cm)", "US 7.5 (25.5 cm)",
+  "US 8 (26 cm)", "US 8.5 (26.5 cm)", "US 9 (27 cm)", "US 9.5 (27.5 cm)",
+  "US 10 (28 cm)", "US 10.5 (28.5 cm)", "US 11 (29 cm)", "US 11.5 (29.5 cm)", "US 12 (30 cm)"
+];
+export const shoesItems = [
+  {
+    id: "11",
+    name: "Style shoes",
+    price: 19.75,
+    seller: "ABC comp.",
+    img: "assets/images/Shoes/shoe1.jpg",
+    sizes: [...shoeSizes]
+  },
+  {
+  id: "12",
+  name: "Running Shoes",
+  price: 24.50,
+  seller: "ABC comp.",
+  img: "assets/images/Shoes/shoe2.jpg",
+  sizes: [...shoeSizes]
+  },
+  {
+    id: "13",
+    name: "Casual Sneakers",
+    price: 21.30,
+    seller: "ABC comp.",
+    img: "assets/images/Shoes/shoe5.jpg",
+    sizes: [...shoeSizes]
+  },
+  {
+    id: "14",
+    name: "Sport Trainers",
+    price: 27.99,
+    seller: "ABC comp.",
+    img: "assets/images/Shoes/Wshoe3.jpg",
+    sizes: [...shoeSizes]
+  },
+  {
+    id: "15",
+    name: "Street Shoes",
+    price: 22.10,
+    seller: "ABC comp.",
+    img: "assets/images/Shoes/shoe3.jpg",
+    sizes: [...shoeSizes]
+  },
+  {
+    id: "16",
+    name: "Comfort Walkers",
+    price: 18.90,
+    seller: "ABC comp.",
+    img: "assets/images/Shoes/Sshoe.jpg",
+    sizes: [...shoeSizes]
+  },
+  {
+    id: "17",
+    name: "Light Trainers",
+    price: 23.75,
+    seller: "ABC comp.",
+    img: "assets/images/Shoes/shoe6.jpg",
+    sizes: [...shoeSizes]
+  },
+  {
+    id: "18",
+    name: "Daily Sneakers",
+    price: 20.40,
+    seller: "ABC comp.",
+    img: "assets/images/Shoes/Wshoe2.jpg",
+    sizes: [...shoeSizes]
+  },
+  {
+    id: "19",
+    name: "Classic Trainers",
+    price: 26.60,
+    seller: "ABC comp.",
+    img: "assets/images/Shoes/Wshoe1.jpg",
+    sizes: [...shoeSizes]
+  },
+  {
+    id: "20",
+    name: "Performance Shoes",
+    price: 29.99,
+    seller: "ABC comp.",
+    img: "assets/images/Shoes/shoe4.jpg",
+    sizes: [...shoeSizes]
+  }
+];

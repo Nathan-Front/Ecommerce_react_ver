@@ -1,23 +1,22 @@
-async function fetchProducts(){
-    const itemContainer = document.querySelector(".item-panel");
-    const resClothe = await fetch("./product/clothes.html");
-    const clotheHTML = await resClothe.text();
-    itemContainer.innerHTML += clotheHTML;
-    const resShoes = await fetch("./product/shoes.html");
-    const shoesHTML = await resShoes.text();
-    itemContainer.innerHTML += shoesHTML;
-    const resOffers = await fetch("./product/bestOffers.html");
-    const offersHTML = await resOffers.text();
-    itemContainer.innerHTML += offersHTML;
-    const resOutdoor = await fetch("./product/outdoor.html");
-    const outdorrHTML = await resOutdoor.text();
-    itemContainer.innerHTML += outdorrHTML;
+//item selected in react
+export function addToCart(item, size, qty) {
+  const selectedItem = {
+    id: item.id,
+    itemN: item.name,
+    seller: item.seller,
+    itemImg: item.img,
+    itemPrice: item.price,
+    itemSize: size,
+    qty: qty,
+    totalPrice: item.price * qty,
+  };
+
+  addItemToCart(selectedItem);
 }
 
-//Add to cart function (Clothe and shoes). Event delegation
+//Add to cart, use the function above
 export function addItemToCart(selectedItem){
     const cart = getCartStorage();
-       // const itemToCart = JSON.parse(localStorage.getItem("cartContent")) || [];
     const existingItem = cart.find(
         item => item.id === selectedItem.id && item.size === selectedItem.itemSize //Search same item with same size selected
     ); 
@@ -37,11 +36,6 @@ export function addItemToCart(selectedItem){
         });
     }
     saveToCartStorage(cart);
-    /*    alert("Added to cart");
-        saveToCartStorage(cart); //Add the item in here
-        updateCartCounter();
-        fetchCartContent();*/
-   // })
 }
 //To load curtent cart
 export function getCartStorage() {
@@ -80,35 +74,6 @@ export function saveToCartStorage(itemToCart) {
     }
     else{ //Temporary cart for logged out user
         localStorage.setItem("tempCartContent", JSON.stringify(itemToCart));
-    }
-}
-
-
-//For cart counter
-export function updateCartCounter(){
-    //const cart = JSON.parse(localStorage.getItem("cartContent")) || [];
-    const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-    const tempCart = JSON.parse(localStorage.getItem("tempCartContent"));
-    let cart = [];
-    if(loggedUser){
-        const userData = locateCartOfUser(); //Use registeredUsers cart array
-        if(!userData) return;
-        let {users, userIndex} = userData;
-        cart = users[userIndex].cart || [];
-    }else{
-        cart = tempCart || [];
-    }
-    let totalItems = 0;
-    cart.forEach(item=>{
-        totalItems += item.qty;
-    });
-    const mobileCartCounter = document.querySelector(".cart-counter");
-    const cartCounter = document.getElementById("added-to-cart");
-    if(mobileCartCounter){
-        mobileCartCounter.textContent = totalItems;
-    }
-    if(cartCounter){
-        cartCounter.textContent = totalItems;
     }
 }
 

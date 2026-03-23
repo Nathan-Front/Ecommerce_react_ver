@@ -327,7 +327,11 @@ function MainNav({ loggedUser, setLoggedUser, cartItems, setCartItems }) {
         cartItems={cartItems}
         setCartItems={setCartItems}
       />
-      <MobileFooter isCartOpen={isCartPanel} showCart={displayCart} />
+      <MobileFooter
+        isCartOpen={isCartPanel}
+        showCart={displayCart}
+        cartCount={cartCount}
+      />
       <div
         id="overlay"
         className={isLoginOpen || isRegisterOpen || isCartPanel ? "cover" : ""}

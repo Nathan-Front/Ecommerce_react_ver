@@ -1,4 +1,5 @@
 import { getCartStorage, saveToCartStorage } from "../../script/product";
+import { paymentSummary } from "../../script/cartContent";
 function Cart({ isCartOpen, toggleCart, cartItems, setCartItems }) {
   function deleteItem(id, size) {
     //Delete function
@@ -9,6 +10,7 @@ function Cart({ isCartOpen, toggleCart, cartItems, setCartItems }) {
     saveToCartStorage(updatedCart); //Store back the filtered cart
     setCartItems(updatedCart); //Update the cart loggedUser or registeredUser
   }
+
   return (
     <>
       <aside
@@ -19,7 +21,7 @@ function Cart({ isCartOpen, toggleCart, cartItems, setCartItems }) {
           <button type="button" id="close-cart" onClick={toggleCart}>
             Close cart
           </button>
-          <button type="button" id="to-payment">
+          <button type="button" id="to-payment" onClick={paymentSummary}>
             Payment
           </button>
         </div>
@@ -54,7 +56,9 @@ function Cart({ isCartOpen, toggleCart, cartItems, setCartItems }) {
                 />
                 <h3 className="total-price-item">
                   Article Total Price: $
-                  <span className="article-total-price"></span>
+                  <span className="article-total-price">
+                    {item.total.toFixed(2)}
+                  </span>
                 </h3>
               </div>
               <div className="cart-item-del-button">

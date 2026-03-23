@@ -1,4 +1,4 @@
-function MobileFooter({ showCart }) {
+function MobileFooter({ showCart, cartCount }) {
   return (
     <>
       <footer className="mobile-footer">
@@ -23,7 +23,7 @@ function MobileFooter({ showCart }) {
                 alt="cart button"
                 id="cart-button"
               />
-              <span className="cart-counter">0</span>
+              <span className="cart-counter">{cartCount}</span>
             </button>
           </li>
           <li>
