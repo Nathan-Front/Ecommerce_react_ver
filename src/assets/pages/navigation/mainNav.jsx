@@ -214,7 +214,7 @@ function MainNav({
 
           <div className="item-to-cart-checkout">
             <img
-              src="assets/images/logo/pngwing.com.png"
+              src="assets/images/logo/cart-logo.png"
               alt=""
               onClick={displayCart}
             />
