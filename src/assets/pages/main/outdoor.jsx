@@ -1,5 +1,4 @@
-import React from "react";
-
+import { images } from "../../data/items";
 function Outdoor() {
   return (
     <>
@@ -12,19 +11,19 @@ function Outdoor() {
             <div className="item-panel-lower-title">
               <h4 className="other-titles">Adventure</h4>
             </div>
-            <div className="adventure-item">
+            <div className="adventure-item" key={images.folder5.id}>
               <div>
                 <button
                   type="button"
                   className="adventure-1 other-offer-button"
                 >
                   <img
-                    src="assets/images/outdoors/folder 1/working-out.jpg"
-                    alt="item 1"
+                    src={images.folder5[0].src}
+                    alt={`item ${images.folder5[0].id}`}
                     className="other-img"
                     loading="lazy"
                   />
-                  <span>Item 1</span>
+                  <span>Item {images.folder5[0].id}</span>
                 </button>
               </div>
               <div>
@@ -33,24 +32,24 @@ function Outdoor() {
                   className="adventure-2 other-offer-button"
                 >
                   <img
-                    src="assets/images/outdoors/folder 1/hiker-enjoying-view-from-cliff.jpg"
-                    alt="item 2"
+                    src={images.folder5[1].src}
+                    alt={`item ${images.folder5[1].id}`}
                     className="other-img"
                     loading="lazy"
                   />
-                  <span>Item 2</span>
+                  <span>Item {images.folder5[1].id}</span>
                 </button>
                 <button
                   type="button"
                   className="adventure-3 other-offer-button"
                 >
                   <img
-                    src="assets/images/outdoors/folder 1/hike-gears.jpg"
-                    alt="item 3"
+                    src={images.folder5[2].src}
+                    alt={`item ${images.folder5[2].id}`}
                     className="other-img"
                     loading="lazy"
                   />
-                  <span>Item 3</span>
+                  <span>Item {images.folder5[2].id}</span>
                 </button>
               </div>
             </div>
@@ -65,21 +64,21 @@ function Outdoor() {
             <div className="gear-up-item">
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 2/young-mountaineer.jpg"
-                  alt="item 1"
+                  src={images.folder6[0].src}
+                  alt={`item ${images.folder6[0].id}`}
                   className="other-img"
                   loading="lazy"
                 />
-                <span>Item 1</span>
+                <span>Item {images.folder6[0].id}</span>
               </button>
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 2/composition.jpg"
-                  alt="item 2"
+                  src={images.folder6[1].src}
+                  alt={`item ${images.folder6[1].id}`}
                   className="other-img"
                   loading="lazy"
                 />
-                <span>Item 2</span>
+                <span>Item {images.folder6[1].id}</span>
               </button>
             </div>
             <div className="item-panel-lower-link">
@@ -93,21 +92,21 @@ function Outdoor() {
             <div className="gadget-item">
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 3/collection.jpg"
-                  alt="item 3"
+                  src={images.folder7[0].src}
+                  alt={`item ${images.folder7[0].id}`}
                   className="other-img"
                   loading="lazy"
                 />
-                <span>Item 1</span>
+                <span>Item {images.folder7[0].id}</span>
               </button>
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 3/survival-kit.jpg"
-                  alt="item 4"
+                  src={images.folder7[1].src}
+                  alt={`item ${images.folder7[1].id}`}
                   className="other-img"
                   loading="lazy"
                 />
-                <span>Item 2</span>
+                <span>Item {images.folder7[1].id}</span>
               </button>
             </div>
             <div className="item-panel-lower-link">
@@ -121,30 +120,30 @@ function Outdoor() {
             <div className="stylish-item">
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 4/beautiful-women.jpg"
-                  alt="item 1"
+                  src={images.folder8[0].src}
+                  alt={`item ${images.folder8[0].id}`}
                   className="other-img"
                   loading="lazy"
                 />
-                <span>Item 1</span>
+                <span>Item {images.folder8[0].id}</span>
               </button>
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 4/exploring-man.jpg"
-                  alt="item 2"
+                  src={images.folder8[1].src}
+                  alt={`item ${images.folder8[1].id}`}
                   className="other-img"
                   loading="lazy"
                 />
-                <span>Item 2</span>
+                <span>Item {images.folder8[1].id}</span>
               </button>
               <button type="button" className="other-offer-button">
                 <img
-                  src="assets/images/outdoors/folder 4/young-women.jpg"
-                  alt="item 3"
+                  src={images.folder8[2].src}
+                  alt={`item ${images.folder8[2].id}`}
                   className="other-img"
                   loading="lazy"
                 />
-                <span>Item 3</span>
+                <span>Item {images.folder8[2].id}</span>
               </button>
             </div>
             <div className="item-panel-lower-link">

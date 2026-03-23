@@ -170,3 +170,126 @@ export const shoesItems = [
     sizes: [...shoeSizes]
   }
 ];
+
+export const images = {
+    folder1: [
+      {
+        id: 1,
+        src: "assets/images/best offer/folder 1/close-up-basketball-shoes.jpg",
+      },
+      {
+        id: 2,
+        src: "assets/images/best offer/folder 1/couple-backpacks-rocks-sunset.jpg",
+      },
+      {
+        id: 3,
+        src: "assets/images/best offer/folder 1/shoe2.jpg",
+      },
+      {
+        id: 4,
+        src: "assets/images/best offer/folder 1/Sshoe.jpg",
+      },
+    ],
+    folder2: [
+      {
+        id: 1,
+        src: "assets/images/best offer/folder 2/decorative-cosmetics-accessories-sunglasses-hat-white-table.jpg",
+      },
+      {
+        id: 2,
+        src: "assets/images/best offer/folder 2/jewellery-bangle-background-with-place-text-banner-fashion-accessories.jpg",
+      },
+      {
+        id: 3,
+        src: "assets/images/best offer/folder 2/vecteezy_ai-generated-earrings-made-of-gold-on-a-solid-color_35705132.jpeg",
+      },
+      {
+        id: 4,
+        src: "assets/images/best offer/folder 2/vecteezy_two-elegant-silver-rings-on-white-background_65780942.jpg",
+      },
+    ],
+    folder3: [
+      {
+        id: 1,
+        src: "assets/images/best offer/folder 3/collection-beige-tone-colored-pants.jpg",
+      },
+      {
+        id: 2,
+        src: "assets/images/best offer/folder 3/denim-sneakers-street-style.jpg",
+      },
+      {
+        id: 3,
+        src: "assets/images/best offer/folder 3/shoe5.jpg",
+      },
+      {
+        id: 4,
+        src: "assets/images/best offer/folder 3/vecteezy_stylish-leather-backpack-on-white-background-generative-ai_29840187.jpg",
+      },
+    ],
+    folder4: [
+      {
+        id: 1,
+        src: "assets/images/best offer/folder 4/close-up-portrait-fascinating-happy-woman-hat-outdoor-photo-good-looking-girl-dark-sunglasses-isolated-blur-background.jpg",
+      },
+      {
+        id: 2,
+        src: "assets/images/best offer/folder 4/minimal-t-shirt-set-apparel-ad.jpg",
+      },
+      {
+        id: 3,
+        src: "assets/images/best offer/folder 4/summer_w_1.jpg",
+      },
+      {
+        id: 4,
+        src: "assets/images/best offer/folder 4/Wshoe2.jpg",
+      },
+    ],
+    folder5: [
+      {
+        id: 1,
+        src: "assets/images/outdoors/folder 1/working-out.jpg",
+      },
+      {
+        id: 2,
+        src: "assets/images/outdoors/folder 1/hiker-enjoying-view-from-cliff.jpg",
+      },
+      {
+        id: 3,
+        src: "assets/images/outdoors/folder 1/hike-gears.jpg",
+      },
+    ],
+    folder6: [
+      {
+        id: 1,
+        src: "assets/images/outdoors/folder 2/young-mountaineer.jpg",
+      },
+      {
+        id: 2,
+        src: "assets/images/outdoors/folder 2/composition.jpg",
+      },
+    ],
+    folder7: [
+      {
+        id: 1,
+        src: "assets/images/outdoors/folder 3/collection.jpg",
+      },
+      {
+        id: 2,
+        src: "assets/images/outdoors/folder 3/survival-kit.jpg",
+      },
+    ],
+    folder8: [
+      {
+        id: 1,
+        src: "assets/images/outdoors/folder 4/beautiful-women.jpg",
+      },
+      {
+        id: 2,
+        src: "assets/images/outdoors/folder 4/exploring-man.jpg",
+      },
+      {
+        id: 3,
+        src: "assets/images/outdoors/folder 4/young-women.jpg",
+      },
+    ],
+  };
