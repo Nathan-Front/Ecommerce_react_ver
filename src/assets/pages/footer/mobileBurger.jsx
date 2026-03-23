@@ -1,5 +1,5 @@
 import { useState } from "react";
-function MobileBurger({ isBurger }) {
+function MobileBurger({ isBurger, isOpen }) {
   const [toggle, setToggle] = useState("");
   function toggleMenu(menu) {
     setToggle((prev) => (prev === menu ? null : menu));
@@ -7,7 +7,7 @@ function MobileBurger({ isBurger }) {
   return (
     <>
       <div
-        className={`mobile-news ${isBurger ? "display" : ""}`}
+        className={`mobile-news ${isOpen ? "display" : ""}`}
         id="toggle-mobile-news"
       >
         <div className="mobile-menu-section">

@@ -7,7 +7,21 @@ import MobileFooter from "../footer/MobileFooter";
 import MobileBurger from "../footer/mobileBurger";
 
 //import { updateCartCounter } from "../../script/product";
-function MainNav({ loggedUser, setLoggedUser, cartItems, setCartItems }) {
+function MainNav({
+  loggedUser,
+  setLoggedUser,
+  cartItems,
+  setCartItems,
+  setIsCartOpen,
+  isMobileCart,
+  setIsMobileCart,
+  /*For mobileFooter*/
+  openCart,
+  activePanel,
+  setActivePanel,
+  openBurger,
+  closeAll,
+}) {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isBurger, setIsBurger] = useState(false);
@@ -53,7 +67,7 @@ function MainNav({ loggedUser, setLoggedUser, cartItems, setCartItems }) {
     }
   }, [isCartPanel]);
   function displayCart() {
-    setIsCartPanel((prev) => !prev);
+    openCart((prev) => !prev);
   }
   const [isActiveTab, setIsActiveTab] = useState("Trending");
   const tabs = [
@@ -324,18 +338,27 @@ function MainNav({ loggedUser, setLoggedUser, cartItems, setCartItems }) {
       />
       <Cart
         isCartOpen={isCartPanel}
-        toggleCart={displayCart}
+        isMobileCart={isMobileCart}
         cartItems={cartItems}
         setCartItems={setCartItems}
+        isOpen={activePanel === "cart"}
+        onClose={closeAll}
       />
       <MobileFooter
-        isCartOpen={isCartPanel}
-        showCart={displayCart}
         cartCount={cartCount}
-        isBurger={isBurger}
         setIsBurger={setIsBurger}
+        isMobileCart={isMobileCart}
+        setIsMobileCart={setIsMobileCart}
+        openCart={openCart}
+        openBurger={openBurger}
+        activePanel={activePanel}
+        setActivePanel={setActivePanel}
       />
-      <MobileBurger isBurger={isBurger} />
+      <MobileBurger
+        isBurger={isBurger}
+        isOpen={activePanel === "burger"}
+        onClose={closeAll}
+      />
       <div
         id="overlay"
         className={isLoginOpen || isRegisterOpen || isCartPanel ? "cover" : ""}

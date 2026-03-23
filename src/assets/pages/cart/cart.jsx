@@ -1,6 +1,6 @@
 import { getCartStorage, saveToCartStorage } from "../../script/product";
 import { paymentSummary } from "../../script/cartContent";
-function Cart({ isCartOpen, toggleCart, cartItems, setCartItems }) {
+function Cart({ isOpen, isMobileCart, onClose, cartItems, setCartItems }) {
   function deleteItem(id, size) {
     //Delete function
     const updatedCart = getCartStorage().filter(
@@ -14,11 +14,11 @@ function Cart({ isCartOpen, toggleCart, cartItems, setCartItems }) {
   return (
     <>
       <aside
-        className={`check-out-cart-panel ${isCartOpen ? "showCart" : ""}`}
+        className={`check-out-cart-panel ${isOpen ? "showCart" : ""}`}
         id="display-cart"
       >
         <div className="cart-payment">
-          <button type="button" id="close-cart" onClick={toggleCart}>
+          <button type="button" id="close-cart" onClick={onClose}>
             Close cart
           </button>
           <button type="button" id="to-payment" onClick={paymentSummary}>

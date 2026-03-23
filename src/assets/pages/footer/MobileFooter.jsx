@@ -1,12 +1,22 @@
 import { useState } from "react";
-
-function MobileFooter({ showCart, cartCount, setIsBurger }) {
+function MobileFooter({
+  cartCount,
+  setIsBurger,
+  setIsMobileCart,
+  openCart,
+  openBurger,
+  activePanel,
+  setActivePanel,
+}) {
   const [burgerOpen, setBurgerOpen] = useState(false);
   function toggleBurger() {
     setBurgerOpen((prev) => !prev);
     setIsBurger((prev) => !prev);
   }
 
+  function displayCart() {
+    setIsMobileCart(true);
+  }
   return (
     <>
       <footer className="mobile-footer">
@@ -24,7 +34,7 @@ function MobileFooter({ showCart, cartCount, setIsBurger }) {
             <button
               type="button"
               className="mobile-footer-buttons"
-              onClick={showCart}
+              onClick={openCart}
             >
               <img
                 src="assets/images/logo/pngwing.com.png"
@@ -38,11 +48,13 @@ function MobileFooter({ showCart, cartCount, setIsBurger }) {
             <button
               type="button"
               className="mobile-footer-buttons"
-              onClick={toggleBurger}
+              onClick={() =>
+                setActivePanel((prev) => (prev === "burger" ? null : "burger"))
+              }
             >
               <img
                 id="burger-open-button"
-                src={`${burgerOpen ? "assets/images/logo/icon-close.svg" : "assets/images/logo/icon-hamburger.svg"}`}
+                src={`${activePanel === "burger" ? "assets/images/logo/icon-close.svg" : "assets/images/logo/icon-hamburger.svg"}`}
                 alt="burger button"
               />
             </button>
