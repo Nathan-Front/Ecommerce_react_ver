@@ -37,7 +37,7 @@ function MobileFooter({
               onClick={openCart}
             >
               <img
-                src="assets/images/logo/pngwing.com.png"
+                src="assets/images/logo/cart-logo.png"
                 alt="cart button"
                 id="cart-button"
               />

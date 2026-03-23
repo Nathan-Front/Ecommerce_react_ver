@@ -20,6 +20,8 @@ function MainNav({
   activePanel,
   setActivePanel,
   openBurger,
+  openLoginForm,
+  openRegisterForm,
   closeAll,
 }) {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -315,7 +317,7 @@ function MainNav({
               : "assets/images/logo/profile-user-svgrepo-com-gray.svg"
           }
           alt="login button"
-          onClick={showUserIndicator}
+          onClick={openLoginForm}
         />
       </div>
       <MobileUserInfo
@@ -325,16 +327,21 @@ function MainNav({
         loggedUser={loggedUser}
       />
       <LoginForm
-        isOpen={isLoginOpen}
-        onClose={closeForm}
-        openRegister={openRegister}
+        // isOpen={isLoginOpen}
+        //onClose={closeForm}
+        //openRegister={openRegister}
+        openRegisterForm={openRegisterForm}
         setLoggedUser={setLoggedUser}
         setCartItems={setCartItems}
+        isOpen={activePanel === "login"}
+        onClose={closeAll}
       />
       <CreateForm
-        isOpen={isRegisterOpen}
-        onClose={closeForm}
+        //isOpen={isRegisterOpen}
+        //onClose={closeForm}
         openLogin={openLogin}
+        isOpen={activePanel === "register"}
+        onClose={closeAll}
       />
       <Cart
         isCartOpen={isCartPanel}
@@ -361,7 +368,7 @@ function MainNav({
       />
       <div
         id="overlay"
-        className={isLoginOpen || isRegisterOpen || isCartPanel ? "cover" : ""}
+        className={isLoginOpen || isRegisterOpen || activePanel ? "cover" : ""}
       />
     </>
   );

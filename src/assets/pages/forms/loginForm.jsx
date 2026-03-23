@@ -7,6 +7,7 @@ function LoginForm({
   openRegister,
   setLoggedUser,
   setCartItems,
+  openRegisterForm,
 }) {
   const remembered = JSON.parse(localStorage.getItem("rememberMe"));
   const [loginForm, setLoginForm] = useState({
@@ -110,7 +111,7 @@ function LoginForm({
             type="button"
             id="redirect-to-create-form"
             className="mobile-no-acc-btn"
-            onClick={openRegister}
+            onClick={openRegisterForm}
           >
             Don't have account yet?
           </button>

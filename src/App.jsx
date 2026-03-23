@@ -17,7 +17,8 @@ function App() {
   const [activePanel, setActivePanel] = useState(null);
   const openCart = () => setActivePanel("cart");
   const openBurger = () => setActivePanel("burger");
-
+  const openLogin = () => setActivePanel("login");
+  const openRegister = () => setActivePanel("register");
   const closeAll = () => setActivePanel(null);
   return (
     <>
@@ -36,6 +37,10 @@ function App() {
         setActivePanel={setActivePanel}
         /*For mobileFotter */
         openBurger={openBurger}
+        /*For loginForm*/
+        openLoginForm={openLogin}
+        /*For createForm*/
+        openRegisterForm={openRegister}
         /*For closing other panel */
         closeAll={closeAll}
       />
