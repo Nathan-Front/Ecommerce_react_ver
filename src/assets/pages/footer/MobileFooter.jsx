@@ -4,7 +4,11 @@ function MobileFooter({ cartCount, openCart, activePanel, setActivePanel }) {
       <footer className="mobile-footer">
         <ul>
           <li>
-            <button type="button" className="mobile-footer-buttons">
+            <button
+              type="button"
+              className="mobile-footer-buttons"
+              onClick={() => (window.location.href = "/")}
+            >
               <img
                 src="assets/images/logo/home.svg"
                 alt="home button"
