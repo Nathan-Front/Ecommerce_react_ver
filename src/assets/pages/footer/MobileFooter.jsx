@@ -1,4 +1,12 @@
-function MobileFooter({ showCart, cartCount }) {
+import { useState } from "react";
+
+function MobileFooter({ showCart, cartCount, setIsBurger }) {
+  const [burgerOpen, setBurgerOpen] = useState(false);
+  function toggleBurger() {
+    setBurgerOpen((prev) => !prev);
+    setIsBurger((prev) => !prev);
+  }
+
   return (
     <>
       <footer className="mobile-footer">
@@ -27,10 +35,14 @@ function MobileFooter({ showCart, cartCount }) {
             </button>
           </li>
           <li>
-            <button type="button" className="mobile-footer-buttons">
+            <button
+              type="button"
+              className="mobile-footer-buttons"
+              onClick={toggleBurger}
+            >
               <img
                 id="burger-open-button"
-                src="assets/images/logo/icon-hamburger.svg"
+                src={`${burgerOpen ? "assets/images/logo/icon-close.svg" : "assets/images/logo/icon-hamburger.svg"}`}
                 alt="burger button"
               />
             </button>

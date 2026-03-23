@@ -4,12 +4,13 @@ import CreateForm from "../forms/createForm";
 import MobileUserInfo from "../forms/mobileUserInfo";
 import Cart from "../cart/cart";
 import MobileFooter from "../footer/MobileFooter";
+import MobileBurger from "../footer/mobileBurger";
 
 //import { updateCartCounter } from "../../script/product";
 function MainNav({ loggedUser, setLoggedUser, cartItems, setCartItems }) {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-
+  const [isBurger, setIsBurger] = useState(false);
   function openLogin() {
     setIsLoginOpen(true);
     setIsRegisterOpen(false);
@@ -331,7 +332,10 @@ function MainNav({ loggedUser, setLoggedUser, cartItems, setCartItems }) {
         isCartOpen={isCartPanel}
         showCart={displayCart}
         cartCount={cartCount}
+        isBurger={isBurger}
+        setIsBurger={setIsBurger}
       />
+      <MobileBurger isBurger={isBurger} />
       <div
         id="overlay"
         className={isLoginOpen || isRegisterOpen || isCartPanel ? "cover" : ""}
