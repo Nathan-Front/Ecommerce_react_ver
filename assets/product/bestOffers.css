@@ -123,15 +123,14 @@
     text-decoration: none;
     font-size: 0.8em;
 }
-
-.popup-wrap{
+.popups{
     width: clamp(300px, 40%, 400px);
     background-color: white;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
+    display: none;
     flex-direction: column;
     z-index: 999;
     overflow-y: auto;
@@ -139,6 +138,9 @@
     transition:  0.4s  ease-in;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     border-radius: 0.25em;
+}
+.popup-wrap{
+    display: flex;
 }
 
 .Close-popup-container{
