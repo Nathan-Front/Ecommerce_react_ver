@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createAccount } from "../../script/createAccountForm";
 
-function CreateForm({ isOpen, onClose, openLogin }) {
+function CreateForm({ isOpen, onClose, openLoginForm }) {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -28,7 +28,7 @@ function CreateForm({ isOpen, onClose, openLogin }) {
 
     alert("Account created!");
 
-    openLogin();
+    openLoginForm();
   }
   const [showPassword, setShowPassword] = useState(false);
   const toggleEye = () => setShowPassword((prev) => !prev);

@@ -8,12 +8,10 @@ export default function Shoes({ setCartItems }) {
   function handleAddToCart(item) {
     const size = selectSize[item.id];
     const qty = isCount[item.id] || 0;
-
     if (!size) {
       alert("Select size");
       return;
     }
-
     if (qty <= 0) {
       alert("Add quantity first");
       return;
@@ -25,9 +23,8 @@ export default function Shoes({ setCartItems }) {
     addToCart(item, size, qty);
     setCartItems(getCartStorage());
     alert("Item added to cart");
-
-    console.log(size, qty);
   }
+
   return (
     <>
       <div className="clothe-panel owl-carousel-container-shoes">
@@ -69,11 +66,11 @@ export default function Shoes({ setCartItems }) {
                 </p>
               </div>
               <div className="item-size shoe-size-container">
-                <label htmlFor="shoe-size-1" className="shoe-label">
+                <label htmlFor={`shoe-size-${item.id}`} className="shoe-label">
                   Select Size (US / CM):
                 </label>
                 <select
-                  id="shoe-size-1"
+                  id={`shoe-size-${item.id}`}
                   className="shoe-size-dropdown"
                   value={selectSize[item.id] || ""}
                   onChange={(e) =>

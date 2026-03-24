@@ -20,6 +20,7 @@ function App() {
   const openLogin = () => setActivePanel("login");
   const openRegister = () => setActivePanel("register");
   const openUserInfo = () => setActivePanel("userInfo");
+  const imageSelect = () => setActivePanel("image");
   const closeAll = () => setActivePanel(null);
   return (
     <>
@@ -48,7 +49,11 @@ function App() {
         closeAll={closeAll}
       />
       <UpperContent />
-      <Items setCartItems={setCartItems} />
+      <Items
+        setCartItems={setCartItems}
+        imageSelect={imageSelect}
+        closeAll={closeAll}
+      />
 
       <Footer />
     </>

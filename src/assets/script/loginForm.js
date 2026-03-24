@@ -1,5 +1,5 @@
 import {hashPassword} from "./passwordHash"
-import { mergeCartOnLogin } from "./product";
+
 //Loggin account function
 export async function LoginAccount(formData){
     const users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
@@ -24,23 +24,3 @@ export async function rememberMe(check, user){
 }
 
 
-//For long user name at hover tooltip display
-function hoverLongNameUsers(){
-    const userNameHover = document.querySelector('.user-name-logged');
-    userNameHover.addEventListener('mouseenter', () => {
-        if(userNameHover.scrollWidth > userNameHover.clientWidth){ //if the logged user name is longer than the displayed
-            userNameHover.title = userNameHover.textContent; //Display the full user name
-        }else{
-            userNameHover.removeAttribute('title');
-        }
-    });
-}
-
-
-//Forgot password
-function forgotPassword(){
-    const forgotPassBtn = document.getElementById("forgot-password");
-    forgotPassBtn.addEventListener("click", ()=>{
-        alert("Link to forgot password form");
-    });
-}

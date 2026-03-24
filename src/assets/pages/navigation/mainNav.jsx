@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LoginForm from "../forms/loginForm";
 import CreateForm from "../forms/createForm";
 import MobileUserInfo from "../forms/mobileUserInfo";
 import Cart from "../cart/cart";
 import MobileFooter from "../footer/MobileFooter";
 import MobileBurger from "../footer/mobileBurger";
-
 //import { updateCartCounter } from "../../script/product";
 function MainNav({
   loggedUser,
@@ -24,15 +23,15 @@ function MainNav({
   openUserInfo,
   closeAll,
 }) {
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isBurger, setIsBurger] = useState(false);
-  function openLogin() {
-    setIsLoginOpen(true);
-    setIsRegisterOpen(false);
-    document.body.classList.add("no-scroll");
-  }
 
+  useEffect(() => {
+    if (activePanel) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  });
   function handleSignOut() {
     localStorage.removeItem("loggedUser");
     setLoggedUser(null);
@@ -307,9 +306,9 @@ function MainNav({
         onClose={closeAll}
       />
       <CreateForm
-        openLogin={openLogin}
         isOpen={activePanel === "register"}
         onClose={closeAll}
+        openLoginForm={openLoginForm}
       />
       <Cart
         isMobileCart={isMobileCart}
@@ -333,10 +332,7 @@ function MainNav({
         isOpen={activePanel === "burger"}
         onClose={closeAll}
       />
-      <div
-        id="overlay"
-        className={isLoginOpen || isRegisterOpen || activePanel ? "cover" : ""}
-      />
+      <div id="overlay" className={activePanel ? "cover" : ""} />
     </>
   );
 }

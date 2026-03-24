@@ -143,13 +143,3 @@ function closePopup(){
     });
 }
 
-function otherProductLinks(){
-    document.addEventListener("click", (e) =>{
-        const btn = e.target;
-        const linkWrap = btn.closest(".item-panel-lower-link");
-        if(!linkWrap) return;
-        const linkContent = linkWrap.querySelector(".lower-panel-item-card-links").textContent;
-        alert("Link to " + `${linkContent}` + " page");
-            
-    });
-}

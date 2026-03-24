@@ -1,5 +1,6 @@
 import { images } from "../../data/items";
-function Outdoor() {
+
+function Outdoor({ imageSelect, imageSelected }) {
   return (
     <>
       <div className="main-panel-lower outdoor-panel-wrapper">
@@ -16,6 +17,10 @@ function Outdoor() {
                 <button
                   type="button"
                   className="adventure-1 other-offer-button"
+                  onClick={() => {
+                    imageSelected(images.folder5[0].src);
+                    imageSelect();
+                  }}
                 >
                   <img
                     src={images.folder5[0].src}
@@ -30,6 +35,10 @@ function Outdoor() {
                 <button
                   type="button"
                   className="adventure-2 other-offer-button"
+                  onClick={() => {
+                    imageSelected(images.folder5[1].src);
+                    imageSelect();
+                  }}
                 >
                   <img
                     src={images.folder5[1].src}
@@ -42,6 +51,10 @@ function Outdoor() {
                 <button
                   type="button"
                   className="adventure-3 other-offer-button"
+                  onClick={() => {
+                    imageSelected(images.folder5[2].src);
+                    imageSelect();
+                  }}
                 >
                   <img
                     src={images.folder5[2].src}
@@ -62,7 +75,14 @@ function Outdoor() {
               <h4 className="other-titles">Gear up this season</h4>
             </div>
             <div className="gear-up-item">
-              <button type="button" className="other-offer-button">
+              <button
+                type="button"
+                className="other-offer-button"
+                onClick={() => {
+                  imageSelected(images.folder6[0].src);
+                  imageSelect();
+                }}
+              >
                 <img
                   src={images.folder6[0].src}
                   alt={`item ${images.folder6[0].id}`}
@@ -71,7 +91,14 @@ function Outdoor() {
                 />
                 <span>Item {images.folder6[0].id}</span>
               </button>
-              <button type="button" className="other-offer-button">
+              <button
+                type="button"
+                className="other-offer-button"
+                onClick={() => {
+                  imageSelected(images.folder6[1].src);
+                  imageSelect();
+                }}
+              >
                 <img
                   src={images.folder6[1].src}
                   alt={`item ${images.folder6[1].id}`}
@@ -90,7 +117,14 @@ function Outdoor() {
               <h4 className="other-titles">Gadgets</h4>
             </div>
             <div className="gadget-item">
-              <button type="button" className="other-offer-button">
+              <button
+                type="button"
+                className="other-offer-button"
+                onClick={() => {
+                  imageSelected(images.folder7[0].src);
+                  imageSelect();
+                }}
+              >
                 <img
                   src={images.folder7[0].src}
                   alt={`item ${images.folder7[0].id}`}
@@ -99,7 +133,14 @@ function Outdoor() {
                 />
                 <span>Item {images.folder7[0].id}</span>
               </button>
-              <button type="button" className="other-offer-button">
+              <button
+                type="button"
+                className="other-offer-button"
+                onClick={() => {
+                  imageSelected(images.folder7[1].src);
+                  imageSelect();
+                }}
+              >
                 <img
                   src={images.folder7[1].src}
                   alt={`item ${images.folder7[1].id}`}
@@ -118,7 +159,14 @@ function Outdoor() {
               <h4 className="other-titles">Stylish</h4>
             </div>
             <div className="stylish-item">
-              <button type="button" className="other-offer-button">
+              <button
+                type="button"
+                className="other-offer-button"
+                onClick={() => {
+                  imageSelected(images.folder8[0].src);
+                  imageSelect();
+                }}
+              >
                 <img
                   src={images.folder8[0].src}
                   alt={`item ${images.folder8[0].id}`}
@@ -127,7 +175,14 @@ function Outdoor() {
                 />
                 <span>Item {images.folder8[0].id}</span>
               </button>
-              <button type="button" className="other-offer-button">
+              <button
+                type="button"
+                className="other-offer-button"
+                onClick={() => {
+                  imageSelected(images.folder8[1].src);
+                  imageSelect();
+                }}
+              >
                 <img
                   src={images.folder8[1].src}
                   alt={`item ${images.folder8[1].id}`}
@@ -136,7 +191,14 @@ function Outdoor() {
                 />
                 <span>Item {images.folder8[1].id}</span>
               </button>
-              <button type="button" className="other-offer-button">
+              <button
+                type="button"
+                className="other-offer-button"
+                onClick={() => {
+                  imageSelected(images.folder8[2].src);
+                  imageSelect();
+                }}
+              >
                 <img
                   src={images.folder8[2].src}
                   alt={`item ${images.folder8[2].id}`}

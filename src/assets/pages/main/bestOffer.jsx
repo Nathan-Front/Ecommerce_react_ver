@@ -1,5 +1,6 @@
 import { images } from "../../data/items";
-function BestOffer() {
+
+function BestOffer({ imageSelect, imageSelected }) {
   return (
     <>
       <div className="main-panel-lower">
@@ -17,6 +18,10 @@ function BestOffer() {
                   type="button"
                   className="other-offer-button"
                   key={firstPanel.id}
+                  onClick={() => {
+                    imageSelected(firstPanel.src);
+                    imageSelect();
+                  }}
                 >
                   <img
                     src={firstPanel.src}
@@ -29,7 +34,12 @@ function BestOffer() {
               ))}
             </div>
             <div className="item-panel-lower-link">
-              <a className="lower-panel-item-card-links">See more</a>
+              <a
+                className="lower-panel-item-card-links"
+                onClick={() => alert("Link to See more page")}
+              >
+                See more
+              </a>
             </div>
           </div>
           <div className="item-panel-lower gift-for-love">
@@ -42,6 +52,10 @@ function BestOffer() {
                   type="button"
                   className="other-offer-button"
                   key={secondPanel.id}
+                  onClick={() => {
+                    imageSelected(secondPanel.src);
+                    imageSelect();
+                  }}
                 >
                   <img
                     src={secondPanel.src}
@@ -54,7 +68,10 @@ function BestOffer() {
               ))}
             </div>
             <div className="item-panel-lower-link">
-              <a className="lower-panel-item-card-links">
+              <a
+                className="lower-panel-item-card-links"
+                onClick={() => alert("Link to Send to your love ones page")}
+              >
                 Send to your love ones
               </a>
             </div>
@@ -69,6 +86,10 @@ function BestOffer() {
                   type="button"
                   className="other-offer-button"
                   key={thirdPanel.id}
+                  onClick={() => {
+                    imageSelected(thirdPanel.src);
+                    imageSelect();
+                  }}
                 >
                   <img
                     src={thirdPanel.src}
@@ -81,7 +102,12 @@ function BestOffer() {
               ))}
             </div>
             <div className="item-panel-lower-link">
-              <a className="lower-panel-item-card-links">Discover more</a>
+              <a
+                className="lower-panel-item-card-links"
+                onClick={() => alert("Link to Discover more page")}
+              >
+                Discover more
+              </a>
             </div>
           </div>
           <div className="item-panel-lower season-trend">
@@ -94,6 +120,10 @@ function BestOffer() {
                   type="button"
                   className="other-offer-button"
                   key={fourthPanel.id}
+                  onClick={() => {
+                    imageSelected(fourthPanel.src);
+                    imageSelect();
+                  }}
                 >
                   <img
                     src={fourthPanel.src}
@@ -106,7 +136,12 @@ function BestOffer() {
               ))}
             </div>
             <div className="item-panel-lower-link">
-              <a className="lower-panel-item-card-links">Trendings</a>
+              <a
+                className="lower-panel-item-card-links"
+                onClick={() => alert("Link to Trendings page")}
+              >
+                Trendings
+              </a>
             </div>
           </div>
         </div>
