@@ -67,7 +67,12 @@ function Outdoor({ imageSelect, imageSelected }) {
               </div>
             </div>
             <div className="item-panel-lower-link">
-              <a className="lower-panel-item-card-links">Go on hiking</a>
+              <a
+                className="lower-panel-item-card-links"
+                onClick={() => alert("Link to Go on hiking page")}
+              >
+                Go on hiking
+              </a>
             </div>
           </div>
           <div className="item-panel-lower gear-up outdoor-panel-item">
@@ -109,7 +114,12 @@ function Outdoor({ imageSelect, imageSelected }) {
               </button>
             </div>
             <div className="item-panel-lower-link">
-              <a className="lower-panel-item-card-links">Additions</a>
+              <a
+                className="lower-panel-item-card-links"
+                onClick={() => alert("Link to Additions page")}
+              >
+                Additions
+              </a>
             </div>
           </div>
           <div className="item-panel-lower gadget outdoor-panel-item">
@@ -151,7 +161,12 @@ function Outdoor({ imageSelect, imageSelected }) {
               </button>
             </div>
             <div className="item-panel-lower-link">
-              <a className="lower-panel-item-card-links">Gear up</a>
+              <a
+                className="lower-panel-item-card-links"
+                onClick={() => alert("Link to Gear up page")}
+              >
+                Gear up
+              </a>
             </div>
           </div>
           <div className="item-panel-lower stylish outdoor-panel-item">
@@ -209,7 +224,12 @@ function Outdoor({ imageSelect, imageSelected }) {
               </button>
             </div>
             <div className="item-panel-lower-link">
-              <a className="lower-panel-item-card-links">Fashion</a>
+              <a
+                className="lower-panel-item-card-links"
+                onClick={() => alert("Link to Fashion page")}
+              >
+                Fashion
+              </a>
             </div>
           </div>
         </div>
