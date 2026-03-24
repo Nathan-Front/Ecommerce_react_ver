@@ -43,7 +43,6 @@ function App() {
         openLoginForm={openLogin}
         /*For createForm*/
         openRegisterForm={openRegister}
-        /*For closing other panel */
         /*For mobileUserInfo panel */
         openUserInfo={openUserInfo}
         closeAll={closeAll}
