@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import LoginForm from "../forms/loginForm";
 import CreateForm from "../forms/createForm";
 import MobileUserInfo from "../forms/mobileUserInfo";
@@ -24,7 +24,20 @@ function MainNav({
   closeAll,
 }) {
   const [isBurger, setIsBurger] = useState(false);
-
+  const userRef = useRef(null);
+  const [hoverUser, setHoverUser] = useState(false);
+  function showFullText() {
+    const el = userRef.current;
+    setHoverUser(true);
+    if (el.scrollWidth > el.clientWidth) {
+      el.title = el.textContent;
+    } else {
+      el.removeAttribute("title");
+    }
+  }
+  function hideFullText() {
+    setHoverUser(false);
+  }
   useEffect(() => {
     if (activePanel) {
       document.body.classList.add("no-scroll");
@@ -264,7 +277,13 @@ function MainNav({
           </div>
           <div className="logged-in-user">
             <p>Hi!</p>
-            <span className="user-name-logged" id="user-to-log">
+            <span
+              ref={userRef}
+              className="user-name-logged"
+              id="user-to-log"
+              onMouseEnter={showFullText}
+              onMouseLeave={hideFullText}
+            >
               {loggedUser?.userName || " Guest"}
             </span>
             {loggedUser ? (
